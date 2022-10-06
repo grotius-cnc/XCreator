@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/clip_image_tests.dir/image_tests.cpp.o -o clip_image_tests  ../libclip.a -lxcb -lpthread -lpng 

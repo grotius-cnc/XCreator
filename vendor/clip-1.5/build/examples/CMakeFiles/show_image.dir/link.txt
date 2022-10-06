@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/show_image.dir/show_image.cpp.o -o show_image  ../libclip.a -lxcb -lpthread -lpng 

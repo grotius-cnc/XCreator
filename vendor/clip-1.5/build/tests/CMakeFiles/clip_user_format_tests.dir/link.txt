@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/clip_user_format_tests.dir/user_format_tests.cpp.o -o clip_user_format_tests  ../libclip.a -lxcb -lpthread -lpng 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libclip.a CMakeFiles/clip.dir/clip.cpp.o CMakeFiles/clip.dir/image.cpp.o CMakeFiles/clip.dir/clip_x11.cpp.o
+/usr/bin/ranlib libclip.a

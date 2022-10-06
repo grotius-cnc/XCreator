@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/put_image.dir/put_image.cpp.o -o put_image  ../libclip.a -lxcb -lpthread -lpng 

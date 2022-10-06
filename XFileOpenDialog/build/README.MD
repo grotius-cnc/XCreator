@@ -1,0 +1,3 @@
+# In terminal :
+cmake ..
+make

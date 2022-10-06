@@ -1,0 +1,45 @@
+    	//! Virtual functions.
+    	//! Type of this widget.
+    	std::string Type(){
+        	return "XTemplate";
+    	}
+    	//! Set the size of this widget. Size also handles the mouse & key events.
+    	void setSize(XSize theSize){
+        	mySize->setSize(theSize);
+    	}
+    	//! Add a origin offset.
+    		void setSizeOffset(XPoint theValue){
+        mySize->setSizeOffset(theValue);
+    	}
+    	//! Return the size.
+    	XSize Size(){
+        	return mySize->Size();
+    	}
+    	//! Return the size including relative offsets values.
+    	XSize SizeIncludeOffsets(){
+        	return mySize->SizeIncludeOffsets();
+    	}
+    	//! Set relative offset.
+    	void setRelativeOriginOffset(XPoint theRelativeOffset){
+        	mySize->setRelativeOriginOffset(theRelativeOffset);
+    	}
+    	//! Return relative offset.
+    	XPoint RelativeOriginOffset(){
+        	return mySize->RelativeOriginOffset();
+    	}
+        //! Set the relative size offset for relative width offset & relative height offset.
+        void setRelativeSizeOffset(std::pair<float,float> theRelativeDimensionOffset){
+            mySize->setRelativeSizeOffset(theRelativeDimensionOffset);
+        }
+        //! Return the relative size offset for relative width & relative height.
+        std::pair<float,float> RelativeSizeOffset(){
+            return mySize->RelativeSizeOffset();
+        }
+        //! Merge the relative origin offset into mySize and reset.
+        void applyRelativeOriginOffset(){
+            mySize->applyRelativeOriginOffset();
+        }
+        //! Merge the relative size offset into mySize and reset.
+        void applyRelativeSizeOffset(){
+            mySize->applyRelativeSizeOffset();
+        }

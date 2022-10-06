@@ -1,0 +1,3 @@
+/home/user/XCreator/XDesignerDialog/build/CMakeFiles/XDesignerDialog.dir
+/home/user/XCreator/XDesignerDialog/build/CMakeFiles/edit_cache.dir
+/home/user/XCreator/XDesignerDialog/build/CMakeFiles/rebuild_cache.dir

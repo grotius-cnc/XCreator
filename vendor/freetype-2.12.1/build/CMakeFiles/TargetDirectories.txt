@@ -1,0 +1,9 @@
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/freetype.dir
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/package.dir
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/package_source.dir
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/edit_cache.dir
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/rebuild_cache.dir
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/list_install_components.dir
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/install.dir
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/install/local.dir
+/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/install/strip.dir

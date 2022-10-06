@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/int_format.dir/int_format.cpp.o -o int_format  ../libclip.a -lxcb -lpthread -lpng 
