@@ -14,7 +14,7 @@ The XCreator project is header only. It uses classes with private and public dec
 
 To clone this repository :
 	
-	git clone https://github.com/grotius-cnc/XCreator.git
+	git clone --recurse-submodules https://github.com/grotius-cnc/XCreator.git XCreator
 
 To compile the Designer program :
 
