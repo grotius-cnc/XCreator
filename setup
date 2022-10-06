@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Installing XCreator, by Skynet Cyberdyne 2022."
 
@@ -25,6 +25,7 @@ cd glew-2.2.0 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake ./
 cd glfw-3.3.7 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
 cd glm && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
 
+# Install in system dir to avoid link error.
 cd freetype-2.12.1 && cd build && sudo make install && cd .. && cd ..
 
 # Build XCreator sample programs.
