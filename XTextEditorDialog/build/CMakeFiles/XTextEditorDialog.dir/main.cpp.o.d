@@ -531,28 +531,13 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: \
  /home/user/XCreator/XTextEditorDialog/../vendor/soil/inc/SOIL/SOIL.h \
  /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XCursorType.h \
  /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XImage.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XDialogDesigner.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XToggleButton.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XLabel.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XTextEdit.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XFile.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/clip-1.5/clip.h \
+ /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XTemplate.h \
  /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XFrame.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XSizeFrame.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XHorizontalSlider.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XImageButton.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XVerticalSlider.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XVerticalLayout.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XHorizontalLayout.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XLineEdit.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XDesignerFrame.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XWidgetPropertyInputList.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XDesignerCodeGenerator.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XStretchLayout.h \
+ /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XHorizontalSplitterLayout.h \
  /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XTreeView.h \
  /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XNode.h \
  /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XFileOption.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XHorizontalSplitterLayout.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XVerticalSplitterLayout.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XStackedFrame.h \
- /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XTemplate.h
+ /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XLineEdit.h \
+ /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XFile.h \
+ /home/user/XCreator/XTextEditorDialog/../vendor/xcreator/include/XTextEdit.h \
+ /home/user/XCreator/XTextEditorDialog/../vendor/clip-1.5/clip.h
