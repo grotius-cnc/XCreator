@@ -1,3 +1,12 @@
 [submodule "glad"]
     path = vendor/glad
     url = https://github.com/Dav1dde/glad.git
+[submodule "learnopengl"]
+    path = vendor/learnopengl
+    url = https://github.com/JoeyDeVries/LearnOpenGL.git
+[submodule "libpng"]
+    path = vendor/libpng
+    url = https://github.com/glennrp/libpng.git
+[submodule "soil"]
+	path = vendor/soil
+    url = https://github.com/paralin/soil.git
