@@ -11,8 +11,11 @@ If you want to use a lower OpenGL version, you have to downgrade the openGL shad
 
 The XCreator project is header only. It uses classes with private and public decl's.
 
+To install fast : 
 
-To clone this repository :
+    wget https://github.com/grotius-cnc/XCreator/blob/main/setup.sh && chmod +x setup.sh && ./setup.sh
+
+To clone this repository manually :
 	
 	git clone --recurse-submodules https://github.com/grotius-cnc/XCreator.git XCreator
 

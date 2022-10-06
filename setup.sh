@@ -5,7 +5,6 @@ echo "Installing XCreator, by Skynet Cyberdyne 2022."
 # Deps, it could be, there are more to install. You will find out. 
 sudo apt-get install git g++ build-essential libxmu-dev libxi-dev libgl-dev
 
-# 148 is the current archive number.
 git clone --recurse-submodules https://github.com/grotius-cnc/XCreator.git XCreator_148
 cd XCreator_148
 cd vendor
