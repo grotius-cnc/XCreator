@@ -1,16 +1,17 @@
 tests/CMakeFiles/triangle-vulkan.dir/triangle-vulkan.c.o: \
- /home/user/Downloads/glfw-3.3.7/tests/triangle-vulkan.c \
+ /home/user/XCreator/vendor/glfw-3.3.7/tests/triangle-vulkan.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/timesize.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
@@ -49,7 +50,7 @@ tests/CMakeFiles/triangle-vulkan.dir/triangle-vulkan.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h /usr/include/assert.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h /usr/include/assert.h \
  /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
@@ -66,13 +67,14 @@ tests/CMakeFiles/triangle-vulkan.dir/triangle-vulkan.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
- /home/user/Downloads/glfw-3.3.7/deps/glad/vulkan.h \
- /home/user/Downloads/glfw-3.3.7/deps/glad/vk_platform.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/deps/glad/vulkan.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/deps/glad/vk_platform.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/user/Downloads/glfw-3.3.7/include/GLFW/glfw3.h
+ /home/user/XCreator/vendor/glfw-3.3.7/include/GLFW/glfw3.h

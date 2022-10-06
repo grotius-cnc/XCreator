@@ -1,1 +1,1 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic "CMakeFiles/visualinfo.dir/home/user/XCreator/glew-2.2.0/src/visualinfo.c.o" -o bin/visualinfo  -Wl,-rpath,/home/user/XCreator/glew-2.2.0/build/lib: lib/libGLEW.so.2.2.0 -lSM -lICE -lX11 -lXext -lGL -lGLU -lSM -lICE -lX11 -lXext 
+/usr/bin/cc -O3 -DNDEBUG -rdynamic "CMakeFiles/visualinfo.dir/home/user/XCreator/vendor/glew-2.2.0/src/visualinfo.c.o" -o bin/visualinfo  -Wl,-rpath,/home/user/XCreator/vendor/glew-2.2.0/build/lib: lib/libGLEW.so.2.2.0 -lSM -lICE -lX11 -lXext -lGL -lGLU -lSM -lICE -lX11 -lXext 

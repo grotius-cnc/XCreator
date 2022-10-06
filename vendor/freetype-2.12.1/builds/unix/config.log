@@ -88,17 +88,17 @@ gcc: fatal error: no input files
 compilation terminated.
 configure:3293: $? = 1
 configure:3313: checking whether the C compiler works
-configure:3335: gcc   -lz conftest.c  >&5
+configure:3335: gcc    conftest.c  >&5
 configure:3339: $? = 0
 configure:3389: result: yes
 configure:3392: checking for C compiler default output file name
 configure:3394: result: a.out
 configure:3400: checking for suffix of executables
-configure:3407: gcc -o conftest   -lz conftest.c  >&5
+configure:3407: gcc -o conftest    conftest.c  >&5
 configure:3411: $? = 0
 configure:3434: result: 
 configure:3456: checking whether we are cross compiling
-configure:3464: gcc -o conftest   -lz conftest.c  >&5
+configure:3464: gcc -o conftest    conftest.c  >&5
 configure:3468: $? = 0
 configure:3475: ./conftest
 configure:3479: $? = 0
@@ -233,7 +233,7 @@ configure:6292: checking command to parse /usr/bin/nm -B output from gcc object
 configure:6446: gcc -c -g -O2  conftest.c >&5
 configure:6449: $? = 0
 configure:6453: /usr/bin/nm -B conftest.o | /usr/bin/sed -n -e 's/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | /usr/bin/sed '/ __gnu_lto/d' > conftest.nm
-configure:6519: gcc -o conftest -g -O2  -lz conftest.c conftstm.o >&5
+configure:6519: gcc -o conftest -g -O2   conftest.c conftstm.o >&5
 configure:6522: $? = 0
 configure:6560: result: ok
 configure:6607: checking for sysroot
@@ -324,7 +324,7 @@ configure:10729: gcc -shared  -fPIC -DPIC conftest.o  -v -Wl,-soname -Wl,conftes
 configure:10732: $? = 0
 configure:10746: result: no
 configure:10906: checking dynamic linker characteristics
-configure:11488: gcc -o conftest -g -O2  -lz -Wl,-rpath -Wl,/foo conftest.c  >&5
+configure:11488: gcc -o conftest -g -O2   -Wl,-rpath -Wl,/foo conftest.c  >&5
 configure:11488: $? = 0
 configure:11739: result: GNU/Linux ld.so
 configure:11861: checking how to hardcode library paths into programs
@@ -417,11 +417,11 @@ configure:13300: gcc -c -g -O2  conftest.c >&5
 configure:13300: $? = 0
 configure:13334: result: no
 configure:13445: checking for getpagesize
-configure:13445: gcc -o conftest -g -O2  -lz conftest.c  >&5
+configure:13445: gcc -o conftest -g -O2   conftest.c  >&5
 configure:13445: $? = 0
 configure:13445: result: yes
 configure:13456: checking for working mmap
-configure:13608: gcc -o conftest -g -O2  -lz conftest.c  >&5
+configure:13608: gcc -o conftest -g -O2   conftest.c  >&5
 configure:13608: $? = 0
 configure:13608: ./conftest
 configure:13608: $? = 0
@@ -484,7 +484,7 @@ configure:13743: gcc -c -g -O2  conftest.c >&5
 configure:13743: $? = 0
 configure:13745: result: void *
 configure:13767: checking for memcpy
-configure:13767: gcc -o conftest -g -O2  -lz conftest.c  >&5
+configure:13767: gcc -o conftest -g -O2   conftest.c  >&5
 conftest.c:44:6: warning: conflicting types for built-in function 'memcpy'; expected 'void *(void *, const void *, long unsigned int)' [-Wbuiltin-declaration-mismatch]
    44 | char memcpy ();
       |      ^~~~~~
@@ -494,7 +494,7 @@ conftest.c:36:1: note: 'memcpy' is declared in header '<string.h>'
 configure:13767: $? = 0
 configure:13767: result: yes
 configure:13773: checking for memmove
-configure:13773: gcc -o conftest -g -O2  -lz conftest.c  >&5
+configure:13773: gcc -o conftest -g -O2   conftest.c  >&5
 conftest.c:45:6: warning: conflicting types for built-in function 'memmove'; expected 'void *(void *, const void *, long unsigned int)' [-Wbuiltin-declaration-mismatch]
    45 | char memmove ();
       |      ^~~~~~~
@@ -512,7 +512,7 @@ configure:13830: gcc -c -g -O2  -pedantic -std=c99  conftest.c >&5
 configure:13830: $? = 0
 configure:13832: result: ok, adding to XX_ANSIFLAGS
 configure:13866: checking for -fvisibility=hidden compiler flag
-configure:13881: gcc -o conftest -g -O2 -fvisibility=hidden  -lz conftest.c  >&5
+configure:13881: gcc -o conftest -g -O2 -fvisibility=hidden   conftest.c  >&5
 configure:13881: $? = 0
 configure:13884: result: yes
 configure:13959: $PKG_CONFIG --exists --print-errors "$zlib_pkg"
@@ -545,7 +545,7 @@ configure:14173: $? = 1
 configure:14187: result: no
 No package 'bzip2' found
 configure:14231: checking for BZ2_bzDecompress in -lbz2
-configure:14254: gcc -o conftest -g -O2 -fvisibility=hidden  -lz conftest.c -lbz2   >&5
+configure:14254: gcc -o conftest -g -O2 -fvisibility=hidden   conftest.c -lbz2   >&5
 configure:14254: $? = 0
 configure:14264: result: yes
 configure:14268: checking for bzlib.h
@@ -590,7 +590,7 @@ configure:14603: $PKG_CONFIG --exists --print-errors "$brotli_pkg"
 configure:14606: $? = 0
 configure:14644: result: yes
 configure:14686: checking for library containing clock_gettime
-configure:14716: gcc -o conftest -g -O2 -fvisibility=hidden  -lz conftest.c  >&5
+configure:14716: gcc -o conftest -g -O2 -fvisibility=hidden   conftest.c  >&5
 configure:14716: $? = 0
 configure:14736: result: none required
 configure:14765: checking for LIBRSVG
@@ -613,17 +613,17 @@ configure:15456: result: x86_64-pc-linux-gnu
 configure:15643: checking whether gcc is Clang
 configure:15670: result: no
 configure:15735: checking whether pthreads work with "-pthread" and "-lpthread"
-configure:15846: gcc -o conftest -g -O2 -fvisibility=hidden -pthread  -lz conftest.c -lpthread  >&5
+configure:15846: gcc -o conftest -g -O2 -fvisibility=hidden -pthread   conftest.c -lpthread  >&5
 configure:15846: $? = 0
 configure:15856: result: yes
 configure:15979: checking for joinable pthread attribute
-configure:15998: gcc -o conftest -g -O2 -fvisibility=hidden -pthread  -lz conftest.c -lpthread  >&5
+configure:15998: gcc -o conftest -g -O2 -fvisibility=hidden -pthread   conftest.c -lpthread  >&5
 configure:15998: $? = 0
 configure:16007: result: PTHREAD_CREATE_JOINABLE
 configure:16020: checking whether more special flags are required for pthreads
 configure:16034: result: no
 configure:16043: checking for PTHREAD_PRIO_INHERIT
-configure:16061: gcc -o conftest -g -O2 -fvisibility=hidden -pthread  -lz conftest.c -lpthread  >&5
+configure:16061: gcc -o conftest -g -O2 -fvisibility=hidden -pthread   conftest.c -lpthread  >&5
 configure:16061: $? = 0
 configure:16071: result: yes
 configure:16255: checking for python3
@@ -695,8 +695,8 @@ ac_cv_env_HARFBUZZ_CFLAGS_set=
 ac_cv_env_HARFBUZZ_CFLAGS_value=
 ac_cv_env_HARFBUZZ_LIBS_set=
 ac_cv_env_HARFBUZZ_LIBS_value=
-ac_cv_env_LDFLAGS_set=set
-ac_cv_env_LDFLAGS_value=-lz
+ac_cv_env_LDFLAGS_set=
+ac_cv_env_LDFLAGS_value=
 ac_cv_env_LIBPNG_CFLAGS_set=
 ac_cv_env_LIBPNG_CFLAGS_value=
 ac_cv_env_LIBPNG_LIBS_set=
@@ -850,7 +850,7 @@ INSTALL_FT2_CONFIG='FALSE'
 INSTALL_PROGRAM='${INSTALL}'
 INSTALL_SCRIPT='${INSTALL}'
 LD='/usr/bin/ld -m elf_x86_64'
-LDFLAGS='-lz -L/usr/local/lib -lz -lbz2 -L/usr/local/lib -lpng16 -lz -lbrotlidec -pthread -lpthread'
+LDFLAGS=' -L/usr/local/lib -lz -lbz2 -L/usr/local/lib -lpng16 -lz -lbrotlidec -pthread -lpthread'
 LIBOBJS=''
 LIBPNG_CFLAGS='-I/usr/local/include -I/usr/include/libpng16'
 LIBPNG_LIBS='-L/usr/local/lib -lpng16 -lz'

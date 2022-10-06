@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/home/user/Downloads/glfw-3.3.7/build/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: \"/home/user/Downloads/glfw-3.3.7/build/install_manifest.txt\"")
+if (NOT EXISTS "/home/user/XCreator/vendor/glfw-3.3.7/build/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: \"/home/user/XCreator/vendor/glfw-3.3.7/build/install_manifest.txt\"")
 endif()
 
-file(READ "/home/user/Downloads/glfw-3.3.7/build/install_manifest.txt" files)
+file(READ "/home/user/XCreator/vendor/glfw-3.3.7/build/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

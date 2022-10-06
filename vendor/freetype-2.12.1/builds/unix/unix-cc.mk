@@ -106,7 +106,7 @@ endif
 
 # Linker flags.
 #
-LDFLAGS := -lz -L/usr/local/lib -lz -lbz2 -L/usr/local/lib -lpng16 -lz -lbrotlidec -pthread -lpthread
+LDFLAGS :=  -L/usr/local/lib -lz -lbz2 -L/usr/local/lib -lpng16 -lz -lbrotlidec -pthread -lpthread
 
 # export symbols
 #

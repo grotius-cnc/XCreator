@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/visualinfo.dir/home/user/XCreator/glew-2.2.0/src/visualinfo.c.o"
-  "CMakeFiles/visualinfo.dir/home/user/XCreator/glew-2.2.0/src/visualinfo.c.o.d"
+  "CMakeFiles/visualinfo.dir/home/user/XCreator/vendor/glew-2.2.0/src/visualinfo.c.o"
+  "CMakeFiles/visualinfo.dir/home/user/XCreator/vendor/glew-2.2.0/src/visualinfo.c.o.d"
   "bin/visualinfo"
   "bin/visualinfo.pdb"
 )

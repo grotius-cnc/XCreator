@@ -1,4 +1,4 @@
-# Install script for directory: /home/user/Downloads/glfw-3.3.7/examples
+# Install script for directory: /home/user/XCreator/vendor/glfw-3.3.7/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,31 +1,33 @@
 src/CMakeFiles/glfw.dir/x11_window.c.o: \
- /home/user/Downloads/glfw-3.3.7/src/x11_window.c \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/x11_window.c \
  /usr/include/stdc-predef.h \
- /home/user/Downloads/glfw-3.3.7/src/internal.h \
- /home/user/Downloads/glfw-3.3.7/build/src/glfw_config.h \
- /home/user/Downloads/glfw-3.3.7/src/../include/GLFW/glfw3.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/internal.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/build/src/glfw_config.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/../include/GLFW/glfw3.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/timesize.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/user/Downloads/glfw-3.3.7/src/x11_platform.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/x11_platform.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
  /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
@@ -34,6 +36,7 @@ src/CMakeFiles/glfw.dir/x11_window.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
@@ -47,6 +50,7 @@ src/CMakeFiles/glfw.dir/x11_window.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
@@ -60,7 +64,6 @@ src/CMakeFiles/glfw.dir/x11_window.c.o: \
  /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
@@ -71,7 +74,7 @@ src/CMakeFiles/glfw.dir/x11_window.c.o: \
  /usr/include/X11/Xosdefs.h /usr/include/X11/keysym.h \
  /usr/include/X11/keysymdef.h /usr/include/X11/Xatom.h \
  /usr/include/X11/Xcursor/Xcursor.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
@@ -90,7 +93,7 @@ src/CMakeFiles/glfw.dir/x11_window.c.o: \
  /usr/include/X11/extensions/XInput2.h /usr/include/X11/extensions/XI2.h \
  /usr/include/X11/extensions/Xge.h /usr/include/X11/extensions/Xfixes.h \
  /usr/include/X11/extensions/xfixeswire.h \
- /home/user/Downloads/glfw-3.3.7/src/posix_thread.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/posix_thread.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
@@ -103,12 +106,13 @@ src/CMakeFiles/glfw.dir/x11_window.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
- /home/user/Downloads/glfw-3.3.7/src/posix_time.h \
- /home/user/Downloads/glfw-3.3.7/src/xkb_unicode.h \
- /home/user/Downloads/glfw-3.3.7/src/glx_context.h \
- /home/user/Downloads/glfw-3.3.7/src/egl_context.h \
- /home/user/Downloads/glfw-3.3.7/src/osmesa_context.h \
- /home/user/Downloads/glfw-3.3.7/src/linux_joystick.h \
+ /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/posix_time.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/xkb_unicode.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/glx_context.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/egl_context.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/osmesa_context.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/src/linux_joystick.h \
  /usr/include/linux/input.h /usr/include/x86_64-linux-gnu/sys/time.h \
  /usr/include/x86_64-linux-gnu/sys/ioctl.h \
  /usr/include/x86_64-linux-gnu/bits/ioctls.h \
@@ -135,8 +139,8 @@ src/CMakeFiles/glfw.dir/x11_window.c.o: \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \

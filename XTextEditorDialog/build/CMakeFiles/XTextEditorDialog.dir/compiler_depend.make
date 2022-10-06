@@ -652,58 +652,33 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
   /home/user/XCreator/vendor/soil/inc/SOIL/SOIL.h \
   /home/user/XCreator/vendor/xcreator/include/XCursorType.h \
   /home/user/XCreator/vendor/xcreator/include/XImage.h \
-  /home/user/XCreator/vendor/xcreator/include/XDialogDesigner.h \
-  /home/user/XCreator/vendor/xcreator/include/XToggleButton.h \
-  /home/user/XCreator/vendor/xcreator/include/XLabel.h \
-  /home/user/XCreator/vendor/xcreator/include/XTextEdit.h \
-  /home/user/XCreator/vendor/xcreator/include/XFile.h \
-  /home/user/XCreator/vendor/clip-1.5/clip.h \
+  /home/user/XCreator/vendor/xcreator/include/XTemplate.h \
   /home/user/XCreator/vendor/xcreator/include/XFrame.h \
-  /home/user/XCreator/vendor/xcreator/include/XSizeFrame.h \
-  /home/user/XCreator/vendor/xcreator/include/XHorizontalSlider.h \
-  /home/user/XCreator/vendor/xcreator/include/XImageButton.h \
-  /home/user/XCreator/vendor/xcreator/include/XVerticalSlider.h \
-  /home/user/XCreator/vendor/xcreator/include/XVerticalLayout.h \
-  /home/user/XCreator/vendor/xcreator/include/XHorizontalLayout.h \
-  /home/user/XCreator/vendor/xcreator/include/XLineEdit.h \
-  /home/user/XCreator/vendor/xcreator/include/XDesignerFrame.h \
-  /home/user/XCreator/vendor/xcreator/include/XWidgetPropertyInputList.h \
-  /home/user/XCreator/vendor/xcreator/include/XDesignerCodeGenerator.h \
-  /home/user/XCreator/vendor/xcreator/include/XStretchLayout.h \
+  /home/user/XCreator/vendor/xcreator/include/XHorizontalSplitterLayout.h \
   /home/user/XCreator/vendor/xcreator/include/XTreeView.h \
   /home/user/XCreator/vendor/xcreator/include/XNode.h \
   /home/user/XCreator/vendor/xcreator/include/XFileOption.h \
-  /home/user/XCreator/vendor/xcreator/include/XHorizontalSplitterLayout.h \
-  /home/user/XCreator/vendor/xcreator/include/XVerticalSplitterLayout.h \
-  /home/user/XCreator/vendor/xcreator/include/XStackedFrame.h \
-  /home/user/XCreator/vendor/xcreator/include/XTemplate.h
+  /home/user/XCreator/vendor/xcreator/include/XLineEdit.h \
+  /home/user/XCreator/vendor/xcreator/include/XFile.h \
+  /home/user/XCreator/vendor/xcreator/include/XTextEdit.h \
+  /home/user/XCreator/vendor/clip-1.5/clip.h
 
 
-/home/user/XCreator/vendor/xcreator/include/XStackedFrame.h:
+/home/user/XCreator/vendor/clip-1.5/clip.h:
 
-/home/user/XCreator/vendor/xcreator/include/XHorizontalSplitterLayout.h:
+/home/user/XCreator/vendor/xcreator/include/XTextEdit.h:
+
+/home/user/XCreator/vendor/xcreator/include/XFile.h:
+
+/home/user/XCreator/vendor/xcreator/include/XLineEdit.h:
 
 /home/user/XCreator/vendor/xcreator/include/XNode.h:
 
 /home/user/XCreator/vendor/xcreator/include/XTreeView.h:
 
-/home/user/XCreator/vendor/xcreator/include/XDesignerCodeGenerator.h:
-
-/home/user/XCreator/vendor/xcreator/include/XDesignerFrame.h:
-
-/home/user/XCreator/vendor/xcreator/include/XLineEdit.h:
-
-/home/user/XCreator/vendor/xcreator/include/XHorizontalSlider.h:
-
-/home/user/XCreator/vendor/xcreator/include/XSizeFrame.h:
+/home/user/XCreator/vendor/xcreator/include/XHorizontalSplitterLayout.h:
 
 /home/user/XCreator/vendor/xcreator/include/XFrame.h:
-
-/home/user/XCreator/vendor/clip-1.5/clip.h:
-
-/home/user/XCreator/vendor/xcreator/include/XFile.h:
-
-/home/user/XCreator/vendor/xcreator/include/XTextEdit.h:
 
 /home/user/XCreator/vendor/xcreator/include/XImage.h:
 
@@ -750,8 +725,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 /usr/include/c++/12/memory_resource:
 
 /usr/include/c++/12/optional:
-
-/home/user/XCreator/vendor/xcreator/include/XVerticalLayout.h:
 
 /usr/include/c++/12/bits/fs_fwd.h:
 
@@ -879,8 +852,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 
 /usr/include/glm/detail/type_vec2.hpp:
 
-/home/user/XCreator/vendor/xcreator/include/XLabel.h:
-
 /usr/include/glm/ext/vector_uint3.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
@@ -902,8 +873,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 /usr/include/glm/detail/setup.hpp:
 
 /usr/include/glm/ext/matrix_clip_space.inl:
-
-/home/user/XCreator/vendor/xcreator/include/XStretchLayout.h:
 
 /usr/include/c++/12/bits/stl_uninitialized.h:
 
@@ -974,8 +943,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 /usr/include/c++/12/bits/uses_allocator_args.h:
 
 /usr/include/glm/ext/vector_bool2.hpp:
-
-/home/user/XCreator/vendor/xcreator/include/XHorizontalLayout.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
@@ -1179,8 +1146,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 
 /usr/include/glm/ext/matrix_float2x2_precision.hpp:
 
-/home/user/XCreator/vendor/xcreator/include/XImageButton.h:
-
 /usr/include/glm/gtc/epsilon.hpp:
 
 /usr/include/glm/detail/func_exponential.inl:
@@ -1222,8 +1187,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 /usr/include/c++/12/bits/valarray_after.h:
 
 /usr/include/c++/12/climits:
-
-/home/user/XCreator/vendor/xcreator/include/XToggleButton.h:
 
 /home/user/XCreator/vendor/glad/build/include/glad/glad.h:
 
@@ -1487,8 +1450,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 
 /usr/include/c++/12/cerrno:
 
-/home/user/XCreator/vendor/xcreator/include/XVerticalSlider.h:
-
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
 /usr/include/c++/12/bits/stl_stack.h:
@@ -1652,8 +1613,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 /usr/include/glm/ext/matrix_double4x3.hpp:
 
 /usr/include/glm/detail/type_mat3x2.hpp:
-
-/home/user/XCreator/vendor/xcreator/include/XDialogDesigner.h:
 
 /usr/include/glm/detail/type_mat3x2.inl:
 
@@ -1965,8 +1924,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 
 /usr/include/c++/12/cinttypes:
 
-/home/user/XCreator/vendor/xcreator/include/XWidgetPropertyInputList.h:
-
 /usr/include/uchar.h:
 
 /usr/include/c++/12/bitset:
@@ -1986,8 +1943,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o: /home/user/XCreator/XTextEditorDial
 /usr/include/c++/12/bits/fstream.tcc:
 
 /usr/include/c++/12/bits/std_function.h:
-
-/home/user/XCreator/vendor/xcreator/include/XVerticalSplitterLayout.h:
 
 /usr/include/c++/12/tuple:
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/glewinfo.dir/home/user/XCreator/glew-2.2.0/src/glewinfo.c.o"
-  "CMakeFiles/glewinfo.dir/home/user/XCreator/glew-2.2.0/src/glewinfo.c.o.d"
+  "CMakeFiles/glewinfo.dir/home/user/XCreator/vendor/glew-2.2.0/src/glewinfo.c.o"
+  "CMakeFiles/glewinfo.dir/home/user/XCreator/vendor/glew-2.2.0/src/glewinfo.c.o.d"
   "bin/glewinfo"
   "bin/glewinfo.pdb"
 )

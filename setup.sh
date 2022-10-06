@@ -1,0 +1,41 @@
+#!/bin/bash
+
+echo "Installing XCreator, by Skynet Cyberdyne 2022."
+
+# Deps, it could be, there are more to install. You will find out. 
+sudo apt-get install git g++ build-essential libxmu-dev libxi-dev libgl-dev
+
+# 148 is the current archive number.
+git clone --recurse-submodules https://github.com/grotius-cnc/XCreator.git XCreator_148
+cd XCreator_148
+cd vendor
+
+# Remove old CMakeCache files. 
+# Git recursive clones:
+cd glad && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd learnopengl && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd libpng && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd soil && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd zlib && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+
+# Included clones:
+cd clip-1.5 && mkdir -p build && cd build && cmake .. && make && cd .. && cd ..
+cd freetype-2.12.1 && ./configure && ./autogen.sh && mkdir -p build && cd build && cmake .. && make && cd .. && cd ..
+cd glew-2.2.0 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake ./cmake && make && cd .. && cd .. 
+cd glfw-3.3.7 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd glm && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+
+cd freetype-2.12.1 && cd build && sudo make install && cd .. && cd ..
+
+# Build XCreator sample programs.
+cd ..
+cd XDesignerDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd XFileOpenDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd XTextEditorDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+
+echo "Finished Installing XCreator, starting sample program now."
+
+# Start XCreator sample program.
+cd XTextEditorDialog && cd build && ./XTextEditorDialog
+
+echo "Do you like it?"

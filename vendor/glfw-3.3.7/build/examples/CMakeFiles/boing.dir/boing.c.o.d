@@ -1,16 +1,17 @@
 examples/CMakeFiles/boing.dir/boing.c.o: \
- /home/user/Downloads/glfw-3.3.7/examples/boing.c \
+ /home/user/XCreator/vendor/glfw-3.3.7/examples/boing.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/timesize.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
@@ -53,10 +54,10 @@ examples/CMakeFiles/boing.dir/boing.c.o: \
  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/user/Downloads/glfw-3.3.7/deps/glad/gl.h \
- /home/user/Downloads/glfw-3.3.7/deps/glad/khrplatform.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/deps/glad/gl.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/deps/glad/khrplatform.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/user/Downloads/glfw-3.3.7/include/GLFW/glfw3.h \
- /home/user/Downloads/glfw-3.3.7/deps/linmath.h
+ /home/user/XCreator/vendor/glfw-3.3.7/include/GLFW/glfw3.h \
+ /home/user/XCreator/vendor/glfw-3.3.7/deps/linmath.h
