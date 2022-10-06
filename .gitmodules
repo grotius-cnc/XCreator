@@ -1,0 +1,15 @@
+[submodule "vendor/glad"]
+	path = vendor/glad
+	url = https://github.com/Dav1dde/glad.git
+[submodule "vendor/zlib"]
+	path = vendor/zlib
+	url = https://github.com/madler/zlib.git
+[submodule "vendor/soil"]
+	path = vendor/soil
+	url = https://github.com/paralin/soil.git
+[submodule "vendor/learnopengl"]
+	path = vendor/learnopengl
+	url = https://github.com/JoeyDeVries/LearnOpenGL.git
+[submodule "vendor/libpgn"]
+	path = vendor/libpgn
+	url = https://github.com/glennrp/libpng.git
