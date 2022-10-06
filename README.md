@@ -22,18 +22,17 @@ To compile the Designer program :
 	cmake ..
 	make
 	
-# Build submodule glad :
+Build submodule glad :
 	
 	cd XCreator/vendor/glad && mkdir build && cd build && cmake .. && make
 	
-# Build submodule zlib :
+Build submodule zlib :
 	
 	cd XCreator/vendor/zlib && mkdir build && cd build && cmake .. && make
 	
-# And so on for learnopengl, libpng, soil.
-# Rebuild freetype-2.12.1, glew-2-2.0, glfw-3.3.7, glm can be done by removing all content in /build dir, then : "cmake .. && make"
-# For freetype-2.12.1 i advise to do a : "sudo make install" afterwards. 
-
+And so on for learnopengl, libpng, soil.
+Rebuild freetype-2.12.1, glew-2-2.0, glfw-3.3.7, glm can be done by removing all content in /build dir, then : "cmake .. && make"
+For freetype-2.12.1 i advise to do a : "sudo make install" afterwards. 
 
 To start the program :
 
