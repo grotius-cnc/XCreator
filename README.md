@@ -13,7 +13,7 @@ The XCreator project is header only. It uses classes with private and public dec
 
 To install fast : 
 
-    wget https://github.com/grotius-cnc/XCreator/blob/main/setup.sh && chmod +x setup.sh && ./setup.sh
+    wget https://github.com/grotius-cnc/XCreator/blob/main/setup && chmod +x setup && ./setup
 
 To clone this repository manually :
 	
