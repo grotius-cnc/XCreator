@@ -19,8 +19,8 @@ cd soil && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && ma
 cd zlib && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
 
 # Included clones:
-cd clip-1.5 && mkdir -p build && cd build && cmake .. && make && cd .. && cd ..
-cd freetype-2.12.1 && ./configure && ./autogen.sh && mkdir -p build && cd build && cmake .. && make && cd .. && cd ..
+cd clip-1.5 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd freetype-2.12.1 && ./configure && ./autogen.sh && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
 cd glew-2.2.0 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake ./cmake && make && cd .. && cd .. 
 cd glfw-3.3.7 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
 cd glm && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
