@@ -1,0 +1,35 @@
+#!/bin/sh
+
+echo "			Enter a project name:"
+read projectname
+echo "			Creating project directory: $projectname"
+
+mkdir -p $projectname
+cd $projectname
+
+cp ../vendor/xcreator/include/XMainWindow.h .
+cp ../vendor/xcreator/include/main.cpp .
+cp ../vendor/xcreator/include/CMakeProjectTemplate.txt .
+
+# Remove first 2 lines.
+sed -i '1d' CMakeProjectTemplate.txt
+sed -i '1d' CMakeProjectTemplate.txt
+
+# Append to CMakeLists.txt
+echo "cmake_minimum_required(VERSION 3.5)
+project($projectname LANGUAGES CXX)
+" > CMakeLists.txt
+# Append to CMakeLists.txt
+cat CMakeProjectTemplate.txt >> CMakeLists.txt
+# Remove temp file
+rm CMakeProjectTemplate.txt
+
+echo "Creating build directory"
+mkdir -p build
+cd build
+cmake .. && make
+
+echo "Run"
+./$projectname
+
+echo "Have fun!, you can edit your new project by opening the CMakeLists.txt as project in a c++ editor like Qt."

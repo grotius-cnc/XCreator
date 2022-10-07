@@ -9,27 +9,27 @@ cd vendor
 
 # Remove old CMakeCache files. 
 # Git recursive clones:
-cd glad && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd learnopengl && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd libpng && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd soil && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd zlib && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd glad && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd learnopengl && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd libpng && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd soil && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd zlib && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
 
 # Included clones:
-cd clip-1.5 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd freetype-2.12.1 && ./configure && ./autogen.sh && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd glew-2.2.0 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake ./cmake && make && cd .. && cd .. 
-cd glfw-3.3.7 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd glm && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd clip-1.5 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd freetype-2.12.1 && ./configure && ./autogen.sh && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd glew-2.2.0 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake ./cmake && make -j2 && cd .. && cd .. 
+cd glfw-3.3.7 && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd glm && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
 
 # Install in system dir to avoid link error.
 cd freetype-2.12.1 && cd build && sudo make install && cd .. && cd ..
 
 # Build XCreator sample programs.
 cd ..
-cd XDesignerDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd XFileOpenDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
-cd XTextEditorDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make && cd .. && cd ..
+cd XDesignerDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd XFileOpenDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd XTextEditorDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
 
 echo "Finished Installing XCreator, starting sample program now."
 

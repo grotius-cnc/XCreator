@@ -1,0 +1,46 @@
+# XCreator
+
+Requirments:
+
+	This project is programmed for using with modern OpenGL 3.0 or higher.
+	If you want to use a lower OpenGL version, 
+	you have to downgrade the openGL shader language inside the xcreator code yourself. 
+	
+To clone this repository including installing the submodules :
+	
+	git clone --recurse-submodules https://github.com/grotius-cnc/XCreator.git XCreator
+	cd XCreator
+	./setup
+	
+To build a single XCreator program :
+
+	cd /XCreator/XDesignerDialog/build/
+	rm -rf *
+	cmake ..
+ 	make -j2
+	
+To build a single submodule like glad, zlib, learnopengl, libpng, soil, freetype-2.12.1, glew-2-2.0, glfw-3.3.7 :
+	
+	cd XCreator/vendor/<vendorName>
+	mkdir -p build 
+	rm -rf *
+	cd build 
+    cmake .. 
+    make -j2
+	
+To build submodule glew-2.2.0
+
+	cd XCreator/vendor/glew-2.2.0
+	mkdir -p build 
+	rm -rf *
+	cd build 
+    cmake ./cmake
+    make -j2
+    
+To avoid a link error for freetype-2.12.1
+
+	cd XCreator/vendor/freetype-2.12.1/build
+	sudo make install
+	
+If you have any questions or problems, just open a issue. 
+
