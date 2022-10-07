@@ -1,0 +1,21 @@
+# Usage notes of XDesigner.
+
+1. Start the XDesigner application.
+
+	cd  XCreator/XDesignerDialog/build/
+	./QDesignerDialog
+	
+2. Drag and drop the widgets to your needs. 
+
+	"del" button can be used to remove widgets.
+	"Mouse left button" is drag and drop.
+	"Mouse right button" is for resize widgets. Widget resize works at widgets border if widgets are stacked.
+	
+3. Process layout code button.
+
+	This will generate a "XTemplate.h" file in the build directory that can be used in your project.
+	Hint -> Edit the XTemplate.h file to your needs, for example : XYourWidget.h
+	Try to stay with the X.. format style.
+	
+	
+	

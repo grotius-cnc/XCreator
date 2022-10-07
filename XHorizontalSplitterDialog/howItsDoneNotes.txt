@@ -1,0 +1,24 @@
+# How its done notes.
+
+1. The "XTemplate.h" file is a auto generated file by the XCreator widget layout designer program :
+ 
+	cd XDesignerDialog/build/
+	./XDesignerDialog 
+	
+2. The "XLayout.h" file is a renamed file. The original name was "XTemplate.h".
+
+	Inside the XLayout.h file, some text is edited from "XTemplate" to "XLayout."
+	
+3. The "CMakeLists.txt" is edited at one line, the following line is added :
+
+	"${XCREATOR_DIR}/XTemplate.h"
+	
+4. The "XMainWindow.h" file is then edited in a code editor, the "XTemplate.h" is integrated into the "XMainWindow.h".
+
+5. The project is build.
+
+	cd build
+	cmake ..
+	make	
+	
+	

@@ -1,0 +1,4 @@
+ - DesignerFrame
+     |- HorizontalSplitterLayout_0
+          |- TextEdit_2
+          |- TextEdit_3
