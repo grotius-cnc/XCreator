@@ -17,7 +17,7 @@ To build a single XCreator program :
 	cd /XCreator/XDesignerDialog/build/
 	rm -rf *
 	cmake ..
- 	make -j2
+	make -j2
 	
 To build a single submodule like glad, zlib, learnopengl, libpng, soil, freetype-2.12.1, glew-2-2.0, glfw-3.3.7 :
 	
@@ -25,8 +25,8 @@ To build a single submodule like glad, zlib, learnopengl, libpng, soil, freetype
 	mkdir -p build 
 	rm -rf *
 	cd build 
-    cmake .. 
-    make -j2
+	cmake .. 
+	make -j2
 	
 To build submodule glew-2.2.0
 
@@ -34,8 +34,8 @@ To build submodule glew-2.2.0
 	mkdir -p build 
 	rm -rf *
 	cd build 
-    cmake ./cmake
-    make -j2
+	cmake ./cmake
+	make -j2
     
 To avoid a link error for freetype-2.12.1
 

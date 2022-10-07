@@ -3,8 +3,8 @@
 echo "Installing XCreator, by Skynet Cyberdyne 2022."
 
 # Deps, it could be, there are more to install. You will find out. 
-sudo apt-get install git g++ build-essential libxmu-dev libxi-dev libgl-dev
-
+sudo apt-get install git g++ cmake build-essential libxmu-dev libxi-dev libgl-dev xorg-dev libglu1-mesa-dev 
+  
 cd vendor
 
 # Remove old CMakeCache files. 
