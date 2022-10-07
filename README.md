@@ -31,6 +31,8 @@ Examples:
 	
 ![XTextEditor](https://user-images.githubusercontent.com/44880102/194404400-12750fca-4301-4aa4-a9c4-6ff7d00b8811.jpg)
 
+![XDesignerDialog](https://github.com/grotius-cnc/XCreator/blob/main/XDrawOpenGLPrimitives/XDrawOpenGLPrimitives.jpg)
+
 This project is tested on:
 
 	https://sourceforge.net/projects/linux-11-pro/
