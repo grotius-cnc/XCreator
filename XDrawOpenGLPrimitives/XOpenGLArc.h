@@ -95,7 +95,7 @@ public:
                 }
             }
             if(d == 0){ //! Draw a straight line.
-                XOpenGLLine().drawLine(theStart,theEnd,theWidth,theColor);
+                XOpenGLLine().drawLineOldOpenGL(theStart,theEnd,theWidth,theColor);
                 return; //! End here.
             }
         }

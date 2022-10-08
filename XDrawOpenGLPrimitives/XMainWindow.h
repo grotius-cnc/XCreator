@@ -127,13 +127,21 @@ public:
             myContent->setSize({{0,0,0},50,50});
 
             //! draw content.
-            // drawWidgetVec();
+            drawWidgetVec();
 
-            //! Draw a few primitives. Add shaders to it.
-            XOpenGLLine().drawLine({0,0,0},{400,200,0},1,{0.0,1.0,0.0,1.0});
-            XOpenGLCircle().drawCircle({50,50,0},40,1,20,{1.0,0.0,0.0,1.0});
-            XOpenGLPoint().drawPoint({250,250,0},2,{1.0,0.0,0.0,1.0});
-            XOpenGLArc().draw_3P_Arc({100,100,0},{200,200,0},{300,125,0},1.0,20,{1.0,1.0,0.0,1.0});
+            //! Draw a few primitives.
+           // XOpenGLLine().drawLine({50,50,0},{400,400,0},10,{1.0,1.0,0.0,1.0},Window());
+
+            XOpenGLLine().drawLineStrip({{100,100,0}},9.25,{1.0,0,0,1.0},Window());
+
+            //XOpenGLCircle().drawCircle({50,50,0},40,1,20,{1.0,0.0,0.0,1.0});
+            //XOpenGLPoint().drawPoint({250,250,0},2,{1.0,0.0,0.0,1.0});
+            //XOpenGLArc().draw_3P_Arc({100,100,0},{200,200,0},{300,125,0},1.0,20,{1.0,1.0,0.0,1.0});
+
+            //! Test a line rotate2D.
+           // XOpenGLLine().offset2Side({50,50,0},{400,400,0},10,ccw);
+
+
 
             glfwSwapBuffers(window);
             glfwPollEvents();

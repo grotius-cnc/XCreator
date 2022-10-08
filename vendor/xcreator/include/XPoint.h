@@ -73,6 +73,9 @@ public:
     float Dist(XPoint *thePoint){
         return sqrt(pow(thePoint->X()-myX,2)+pow(thePoint->Y()-myY,2+pow(thePoint->Z()-myZ,2)));
     }
+    float Dist(XPoint thePoint){
+        return sqrt(pow(thePoint.X()-myX,2)+pow(thePoint.Y()-myY,2+pow(thePoint.Z()-myZ,2)));
+    }
     //! Substract this point from a given point.
     XPoint Substract(XPoint thePoint){
         return {myX-thePoint.X(),myY-thePoint.Y(),myZ-thePoint.Z()};
