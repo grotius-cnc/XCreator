@@ -6,6 +6,7 @@
 
 #include <XPoint.h>
 
+//! Draw old scool OpenGL.
 class XOpenGLPrimitives {
 public:
     XOpenGLPrimitives(){}

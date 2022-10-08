@@ -118,16 +118,6 @@ public:
         }
     }
 
-    //! Draw openGL line.
-    void drawLineOldOpenGL(XPoint theStart, XPoint theEnd, float theWidth, XColor theColor){
-        glLineWidth(theWidth);
-        glColor4f(theColor.Red(),theColor.Green(),theColor.Blue(),theColor.Alpha());
-        glBegin(GL_LINES);
-        glVertex3f(theStart.X(),theStart.Y(),theStart.Z());
-        glVertex3f(theEnd.X(),theEnd.Y(),theEnd.Z());
-        glEnd();
-    }
-
     //! Offset the line to both sides. For the return value : theWindingOrder=false=ccw (counterclockwise).
     std::vector<XPoint> offset2Side(XPoint theStart, XPoint theEnd, float theOffset, bool theWindingOrder = cw){
 

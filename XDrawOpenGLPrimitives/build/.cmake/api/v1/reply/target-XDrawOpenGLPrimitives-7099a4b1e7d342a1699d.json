@@ -26,19 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 24,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 56,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 25,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
@@ -62,7 +56,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 30,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
@@ -81,6 +75,12 @@
 				"command" : 2,
 				"file" : 0,
 				"line" : 33,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 34,
 				"parent" : 0
 			}
 		]
@@ -260,7 +260,8 @@
 				3,
 				4,
 				5,
-				6
+				6,
+				7
 			]
 		}
 	],
@@ -295,6 +296,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "XOpenGLPoint.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "XOpenGL3PSurface.h",
 			"sourceGroupIndex" : 1
 		},
 		{

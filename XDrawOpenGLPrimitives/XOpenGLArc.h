@@ -15,7 +15,7 @@ public:
 
     //! Draw a arc given 3 circumfence points.
     //! Arc preprocess. Calculate the arc centerpoint, arc start & arc end angles in radians.
-    void draw_3P_Arc(XPoint theStart, XPoint theWay, XPoint theEnd, float theWidth, int theDivision, XColor theColor){
+    void draw_3P_Arc(XPoint theStart, XPoint theWay, XPoint theEnd, float theWidth, int theDivision, XColor theColor, XWindow *theWindow){
 
         float X1=theStart.X();
         float Y1=theStart.Y();
@@ -95,20 +95,17 @@ public:
                 }
             }
             if(d == 0){ //! Draw a straight line.
-                XOpenGLLine().drawLineOldOpenGL(theStart,theEnd,theWidth,theColor);
+                XOpenGLLine().drawLine(theStart,theEnd,theWidth,theColor,theWindow);
                 return; //! End here.
             }
         }
         //! Call a more standarized function now.
-        drawOpenGLArc({x_center,y_center,0},radius,radian_start,radian_end,theWidth,theDivision,theColor);
+        drawOpenGLArc({x_center,y_center,0},radius,radian_start,radian_end,theWidth,theDivision,theColor,theWindow);
     }
 
 private:
     //! Draw universal openGL arc. Division is the ammount of linestrips, or segments of the arc.
-    void drawOpenGLArc(XPoint theCenter, float theRadius, float theAngleStartRad, float theAngleEndRad, float theWidth, int theDivision, XColor theColor){
-        glLineWidth(theWidth);
-        glColor4f(theColor.Red(),theColor.Green(),theColor.Blue(),theColor.Alpha());
-
+    void drawOpenGLArc(XPoint theCenter, float theRadius, float theAngleStartRad, float theAngleEndRad, float theWidth, int theDivision, XColor theColor, XWindow *theWindow){
         if (theAngleEndRad <= theAngleStartRad){  //! Avoid the start angle is bigger then the end angle value
             theAngleEndRad += 2*M_PI;
         }
@@ -120,10 +117,10 @@ private:
         float x = theRadius * cosf(theAngleStartRad); //! We now start at the start angle
         float y = theRadius * sinf(theAngleStartRad);
 
-        glBegin(GL_LINE_STRIP); //! Since the arc is not a closed curve, this is a strip now
+        std::vector<XPoint> thePointVec;
         for(int ii = 0; ii < theDivision; ii++)
         {
-            glVertex2f(x + theCenter.X(), y + theCenter.Y());
+            thePointVec.push_back({x + theCenter.X(), y + theCenter.Y(), theCenter.Z()});
             float tx = -y;
             float ty = x;
             x += tx * tangetial_factor;
@@ -131,7 +128,7 @@ private:
             x *= radial_factor;
             y *= radial_factor;
         }
-        glEnd();
+        XOpenGLLine().drawLineStrip(thePointVec,theWidth,theColor,theWindow);
     }
 };
 # endif

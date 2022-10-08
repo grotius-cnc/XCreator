@@ -19,6 +19,7 @@ set(SOURCES
     "${XCREATOR_DIR}/XOpenGLCircle.h"
     "${XCREATOR_DIR}/XOpenGLLine.h"
     "${XCREATOR_DIR}/XOpenGLPoint.h"
+    "${XCREATOR_DIR}/XOpenGL3PSurface.h"
     "${XCREATOR_DIR}/XOpenGL4PSurface.h"
     )
 add_executable(${PROJECT_NAME} ${SOURCES})

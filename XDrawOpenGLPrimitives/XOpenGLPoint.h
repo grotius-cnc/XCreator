@@ -5,18 +5,15 @@
 #include <GLFW/glfw3.h>
 
 #include <XPoint.h>
+#include <XOpenGLLine.h>
 
 class XOpenGLPoint {
 public:
     XOpenGLPoint(){}
 
-    //! Draw openGL point.
-    void drawPoint(XPoint thePoint, float thePointSize, XColor theColor){
-        glPointSize(1.0);
-        glColor4f(theColor.Red(),theColor.Green(),theColor.Blue(),theColor.Alpha());
-        glBegin(GL_POINTS);
-        glVertex3f(thePoint.X(),thePoint.Y(),thePoint.Z());
-        glEnd();
+    //! Draw a point using modern openGL.
+    void drawPoint(XPoint thePoint, float thePointSize, XColor theColor, XWindow *theWindow){
+        XOpenGLLine().drawLineStrip({thePoint},thePointSize,theColor,theWindow);
     }
 
 private:

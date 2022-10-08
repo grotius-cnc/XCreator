@@ -651,8 +651,11 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
   /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLLine.h \
   /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGL4PSurface.h \
   /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLCircle.h \
+  /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGL3PSurface.h \
   /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLPoint.h
 
+
+/home/user/XCreator/XDrawOpenGLPrimitives/XOpenGL3PSurface.h:
 
 /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLCircle.h:
 

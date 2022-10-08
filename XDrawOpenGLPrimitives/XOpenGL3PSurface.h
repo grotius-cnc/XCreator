@@ -1,5 +1,5 @@
-#ifndef XOPENGL4PSURFACE_H
-#define XOPENGL4PSURFACE_H
+#ifndef XOPENGL3PSURFACE_H
+#define XOPENGL3PSURFACE_H
 
 /*
         Copyright (c) 2022 Skynet Cyberdyne
@@ -37,18 +37,18 @@
 #include <XTriangle.h>
 #include <XPip.h>
 
-//! The XOpenGL4PSurface : OpenGL 4 Point Surface, is derived from the XRectangular class, but then may have a 4 point non-square surface.
-//! Therefore the setSize is not used. To set the size of the 4 surface points, use the setSurface function.
+//! The XOpenGL3PSurface : OpenGL 3 Point Triangle surface, is derived from the XTriangle class.
+//! Therefore the setSize is not used. To set the size of the 3 triangle points, use the setPoint function.
 //! A clockwise input is ok. When using a counterclockwise input, the back of the surface may be viewed.
 //! The XOpenGLLine class is the class that primairy uses the XOpenGL4PSurface.
-class XOpenGL4PSurface : public XWidget {
+class XOpenGL3PSurface : public XWidget {
 public:
     //! Empty destructor.
-    XOpenGL4PSurface(){
+    XOpenGL3PSurface(){
         init();
     }
     //! Constructor setting the GLFWwindow pointer.
-    XOpenGL4PSurface(XWindow *theWindow){
+    XOpenGL3PSurface(XWindow *theWindow){
         this->setWindow(theWindow);
         init();
     }
@@ -57,7 +57,7 @@ public:
         initGL();
     }
     //! Destructor.
-    ~XOpenGL4PSurface(){
+    ~XOpenGL3PSurface(){
         destroyGL();
         glDeleteProgram(shaderProgram);
         delete this;
@@ -65,7 +65,7 @@ public:
     //! Virtual functions.
     //! Type of this widget.
     std::string Type(){
-        return "XOpenGL4PSurface";
+        return "XOpenGL3PSurface";
     }
     //! Example : {{0,0,0},100,20}
     void setSize(XSize theSize){
@@ -132,11 +132,12 @@ public:
     void setColor(XColor theColor){
         myColor->setColor(theColor);
     }
-    //! Set the surface points, input them clockwise cw.
-    //! Input 4 points.
-    void setSurface(std::vector<XPoint> thePointVec){
-        myPointVec=thePointVec;
-    }
+    //! Set points for the triangle surface.
+    void setPoints(XPoint a, XPoint b, XPoint c){
+         A.setPoint(a);
+         B.setPoint(b);
+         C.setPoint(c);
+     }
 
 private:
     std::string myName;
@@ -144,9 +145,9 @@ private:
     XColor //! Create colors and set standard values.
     *myColor=new XColor(0.1,0.1,0.1,0.9);
 
-    std::vector<XPoint> myPointVec={{0,0,0},{0,0,0},{0,0,0},{0,0,0}};
+    XPoint A,B,C;
 
-    // OpenGL section.
+    //! OpenGL section.
     uint VBO, VAO, EBO;
     uint shaderProgram;
 
@@ -210,80 +211,60 @@ private:
     }
 
     void drawGL(){
-        glEnable(GL_BLEND);
-        //! glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC1_ALPHA);
-        //// glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC1_ALPHA);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        //! The Window-Y is inverted because most widgets start on the top side of window and are build up from there.
+           glEnable(GL_BLEND);
+           //glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC1_ALPHA);
+           glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC1_ALPHA);
+           // XWindow.height();
+           // The Window-Y is inverted because most widgets start on the top side of window and are build up from there.
+           float vertices[] = {
+               // ensure float format with openGL.
 
-        float vertices[] = {
-            //! To integer resolution. For cad displays this could be avoided.
-            //! UpperRight.
-            myPointVec.at(1).X(), this->Window()->Height()-(myPointVec.at(1).Y()), myPointVec.at(1).Z(),
-            //! LowerRight.
-            myPointVec.at(2).X(), this->Window()->Height()-(myPointVec.at(2).Y()), myPointVec.at(2).Z(),
-            //! LowerLeft.
-            myPointVec.at(3).X(), this->Window()->Height()-(myPointVec.at(3).Y()), myPointVec.at(3).Z(),
-            //! UpperLeft.
-            myPointVec.at(0).X(), this->Window()->Height()-(myPointVec.at(0).Y()), myPointVec.at(0).Z()
-        };
-        uint indices[] = {
-            0, 1, 3, // first triangle
-            1, 2, 3  // second triangle
-        };
+               A.X(),Window()->Height()-A.Y(),A.Z(),
+               B.X(),Window()->Height()-B.Y(),B.Z(),
+               C.X(),Window()->Height()-C.Y(),C.Z()
+           };
 
-        glGenVertexArrays(1, &VAO);
-        glGenBuffers(1, &VBO);
-        glGenBuffers(1, &EBO);
-        glBindVertexArray(VAO);
+           glGenVertexArrays(1, &VAO);
+           glGenBuffers(1, &VBO);
+           // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
+           glBindVertexArray(VAO);
 
-        glBindBuffer(GL_ARRAY_BUFFER, VBO);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+           glBindBuffer(GL_ARRAY_BUFFER, VBO);
+           glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-        // position attribute
-        glBindBuffer(GL_ARRAY_BUFFER, VBO);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+           // position attribute
+           glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+           glEnableVertexAttribArray(0);
 
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+           // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
+           glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-        // position attribute
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-        glEnableVertexAttribArray(0);
+           // draw our first triangle
+           glUseProgram(shaderProgram);
 
-        // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
+           int vertexColorLocation = glGetUniformLocation(shaderProgram, "myColor");
 
-        // draw
-        glUseProgram(shaderProgram);
-        int vertexColorLocation = glGetUniformLocation(shaderProgram, "myColor");
+           glUniform4f(vertexColorLocation, myColor->Red(), myColor->Green(), myColor->Blue(), myColor->Alpha());
 
-        glUniform4f(vertexColorLocation,
-                    myColor->Red(),
-                    myColor->Green(),
-                    myColor->Blue(),
-                    myColor->Alpha());
 
-        // use window size float format with openGL.
-        glm::mat4 projection = glm::ortho(0.0f, this->Window()->Width(), 0.0f, this->Window()->Height());
-        glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "myProjection"), 1, GL_FALSE, glm::value_ptr(projection));
-        glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+           // use window size float format with openGL.
+           glm::mat4 projection = glm::ortho(0.0f, Window()->Width(), 0.0f, Window()->Height());
+           glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "myProjection"), 1, GL_FALSE, glm::value_ptr(projection));
+           glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
+           glDrawArrays(GL_TRIANGLES, 0, 3);
 
-        // no need to unbind it every time
-        glBindVertexArray(0);
+           // no need to unbind it every time
+           glBindVertexArray(0);
 
-        glDisable(GL_BLEND);
+           glDisable(GL_BLEND);
+           destroyGL();
+       }
 
-        destroyGL();
-    }
-
-    void destroyGL(){
-        // optional: de-allocate all resources once they've outlived their purpose:
-        glDeleteVertexArrays(1, &VAO);
-        glDeleteBuffers(1, &VBO);
-        glDeleteBuffers(1, &EBO);
-    }
+       void destroyGL(){
+           // optional: de-allocate all resources once they've outlived their purpose:
+           glDeleteVertexArrays(1, &VAO);
+           glDeleteBuffers(1, &VBO);
+       }
 };
 #endif 
 

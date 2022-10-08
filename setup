@@ -28,7 +28,10 @@ cd freetype-2.12.1 && cd build && sudo make install && cd .. && cd ..
 # Build XCreator sample programs.
 cd ..
 cd XDesignerDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd XDrawOpenGLPrimitives && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
 cd XFileOpenDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd XHorizonalSplitterDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
+cd XSingleButtonDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
 cd XTextEditorDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
 
 echo "Finished Installing XCreator, starting sample program now."

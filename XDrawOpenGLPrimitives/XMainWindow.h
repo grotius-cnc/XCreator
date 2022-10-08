@@ -130,18 +130,17 @@ public:
             drawWidgetVec();
 
             //! Draw a few primitives.
-           // XOpenGLLine().drawLine({50,50,0},{400,400,0},10,{1.0,1.0,0.0,1.0},Window());
+            XOpenGLPoint().drawPoint({20,20,0},9.25,{1.0,0,0,1.0},Window());
 
-            XOpenGLLine().drawLineStrip({{100,100,0}},9.25,{1.0,0,0,1.0},Window());
+            XOpenGLLine().drawLine({50,50,0},{100,200,0},2,{1.0,0.0,0.0,1.0},Window());
 
-            //XOpenGLCircle().drawCircle({50,50,0},40,1,20,{1.0,0.0,0.0,1.0});
-            //XOpenGLPoint().drawPoint({250,250,0},2,{1.0,0.0,0.0,1.0});
-            //XOpenGLArc().draw_3P_Arc({100,100,0},{200,200,0},{300,125,0},1.0,20,{1.0,1.0,0.0,1.0});
+            XOpenGLLine().drawLineStrip({{50,50,0},{300,50,0},{300,100,0},{350,100,0}},2,{0.0,0.0,1.0,1.0},Window());
 
-            //! Test a line rotate2D.
-           // XOpenGLLine().offset2Side({50,50,0},{400,400,0},10,ccw);
+            XOpenGLCircle().drawCircle({250,100,0},40,5,20,{1.0,1.0,0.0,0.2},Window());
 
+            XOpenGLCircle().drawSolidCircle({250,100,0},20,5,20,{0.80,0.25,0.25,1.0},Window());
 
+            XOpenGLArc().draw_3P_Arc({100,100,0},{200,200,0},{300,125,0},20,20,{1.0,1.0,0.0,1.0},Window());
 
             glfwSwapBuffers(window);
             glfwPollEvents();
