@@ -1,68 +1,79 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.5)
+project(XOpenCascadeDialog LANGUAGES CXX)
 
-project(glfw-occt-demo)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/adm/cmake" ${CMAKE_MODULE_PATH})
+# Rescan project to ensure the copy is done.
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/fonts DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
-set(APP_VERSION_MAJOR 1)
-set(APP_VERSION_MINOR 0)
-set(APP_TARGET glfwocct)
+set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+set(LIB_DIR "${SRC_DIR}/../vendor")
+set(XCREATOR_DIR "${SRC_DIR}")
+set(SOURCES
+    # main.cpp is only used to tell cmake it has to be compiled for c++ language.
+    "${XCREATOR_DIR}/main.cpp"
+    "${XCREATOR_DIR}/XMainWindow.h"
+    "${XCREATOR_DIR}/XOpencascade.h"
+    "${XCREATOR_DIR}/GlfwOcctView.h"
+    "${XCREATOR_DIR}/GlfwOcctView.cpp"
+    "${XCREATOR_DIR}/GlfwOcctWindow.h"
+    "${XCREATOR_DIR}/GlfwOcctWindow.cpp"
+    )
 
-INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
-file(GLOB SOURCES
-  *.h
-  *.cpp
-)
-source_group ("Headers" FILES
-  GlfwOcctView.h
-  GlfwOcctWindow.h)
-source_group ("Sources" FILES
-  GlfwOcctView.cpp
-  GlfwOcctWindow.cpp
-  main.cpp)
+add_executable(${PROJECT_NAME} ${SOURCES})
+target_include_directories(${PROJECT_NAME} PRIVATE "${SRC_DIR}/")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/glad/build/include")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/glfw-3.3.7/include/GLFW")
+#target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/zlib/build")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/freetype-2.12.1/include")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/soil/inc")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/clip-1.5")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/xcreator/include")
+target_include_directories(${PROJECT_NAME} PRIVATE "${XCREATOR_DIR}/")
 
-# OpenGL
-find_package(OpenGL REQUIRED)
+# When compiling zlib and freetypes, we got error. When using internal libs, no problem occurs.
+#add_library(zlib SHARED IMPORTED)
+#set_target_properties(zlib PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/zlib/build/libz.so)
 
-# Open CASCADE Technology
+#add_library(freetypes SHARED IMPORTED)
+#set_target_properties(freetypes PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/freetype-2.12.1/build/libfreetype.a)
+
+# Window library.
+add_library(glfw3 SHARED IMPORTED)
+set_target_properties(glfw3 PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/glfw-3.3.7/build/src/libglfw3.a)
+
+# OpenGL interface lib.
+add_library(glad SHARED IMPORTED)
+set_target_properties(glad PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/glad/build/libglad.a)
+
+# Simple open image library.
+add_library(soil SHARED IMPORTED)
+set_target_properties(soil PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/soil/build/libsoil.a)
+
+# Needs png xcb X11 clip.
+add_library(clip SHARED IMPORTED)
+set_target_properties(clip PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/clip-1.5/build/libclip.a)
+
+# Opencascade technologie.
 find_package (OpenCASCADE REQUIRED)
-if (NOT OpenCASCADE_FOUND)
-  message (FATAL_ERROR "coult not find OpenCASCADE, please set OpenCASCADE_DIR variable" )
-else()
-  message (STATUS "Using OpenCASCADE from \"${OpenCASCADE_INSTALL_PREFIX}\"" )
-  message (STATUS "OpenCASCADE_INCLUDE_DIR=${OpenCASCADE_INCLUDE_DIR}")
-  message (STATUS "OpenCASCADE_LIBRARY_DIR=${OpenCASCADE_LIBRARY_DIR}")
-  INCLUDE_DIRECTORIES(${OpenCASCADE_INCLUDE_DIR})
-endif()
+INCLUDE_DIRECTORIES(${OpenCASCADE_INCLUDE_DIR})
+SET(OpenCASCADE_LIBS
+    TKernel
+    TKService
+    TKV3d
+    TKOpenGl
+    TKBRep
+    TKGeomBase
+    TKGeomAlgo
+    TKG3d
+    TKG2d
+    TKTopAlgo
+    TKPrim
+    )
 
-SET(OpenCASCADE_LIBS 
-  TKernel
-  TKService
-  TKV3d
-  TKOpenGl
-  TKBRep
-  TKGeomBase
-  TKGeomAlgo
-  TKG3d
-  TKG2d
-  TKTopAlgo
-  TKPrim
-)
+target_link_libraries(${PROJECT_NAME} PRIVATE soil glfw3 GLU clip xcb X11 GL glad Xrandr pthread Xi dl Xcursor freetype png ${OpenCASCADE_LIBS})
 
-# glfw
-find_package(glfw3 REQUIRED)
-if (glfw3_FOUND)
-  message (STATUS "Using glfw3 ${glfw3_VERSION}" )
-  INCLUDE_DIRECTORIES(${GLFW_INCLUDE_DIRS})
-  LINK_DIRECTORIES(${GLFW_LIBRARY_DIRS})
-else()
-  message (STATUS "glfw3 is not found." )
-endif()
 
-add_executable(${APP_TARGET} ${SOURCES})
-target_link_libraries(
-  ${APP_TARGET}
-  ${OpenCASCADE_LIBS}
-  glfw
-  ${OPENGL_LIBRARIES}
-)

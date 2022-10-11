@@ -36,7 +36,7 @@ class GlfwOcctWindow : public Aspect_Window
   DEFINE_STANDARD_RTTI_INLINE(GlfwOcctWindow, Aspect_Window)
 public:
   //! Main constructor.
-  GlfwOcctWindow (int theWidth, int theHeight, std::string theTitle);
+  GlfwOcctWindow (GLFWwindow *theWindow);
 
   //! Close the window.
   virtual ~GlfwOcctWindow() { Close(); }
@@ -48,7 +48,7 @@ public:
   const Handle(Aspect_DisplayConnection)& GetDisplay() const { return myDisplay; }
 
   //! Return GLFW window.
-  GLFWwindow* getGlfwWindow() { return myGlfwWindow; }
+  GLFWwindow* getGlfwWindow() { return myWindow; }
 
   //! Return native OpenGL context.
   Aspect_RenderingContext NativeGlContext() const;
@@ -105,11 +105,11 @@ public:
 
 protected:
   Handle(Aspect_DisplayConnection) myDisplay;
-  GLFWwindow*      myGlfwWindow;
-  Standard_Integer myXLeft;
-  Standard_Integer myYTop;
-  Standard_Integer myXRight;
-  Standard_Integer myYBottom;
+  GLFWwindow*      myWindow;
+  Standard_Integer myXLeft=0;
+  Standard_Integer myYTop=0;
+  Standard_Integer myXRight=0;
+  Standard_Integer myYBottom=0;
 };
 
 #endif // _GlfwOcctWindow_Header

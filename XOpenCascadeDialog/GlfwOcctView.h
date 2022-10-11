@@ -33,18 +33,26 @@ class GlfwOcctView : protected AIS_ViewController
 {
 public:
   //! Default constructor.
-	GlfwOcctView();
+    GlfwOcctView();
 
   //! Destructor.
-	~GlfwOcctView();
+    ~GlfwOcctView();
+
+    void setWindow(GLFWwindow *theWindow){
+        myWindow=theWindow;
+    }
+
+    void init();
 
   //! Main application entry point.
-  void run();
+  void draw();
 
 private:
 
+  GLFWwindow *myWindow;
+
   //! Create GLFW window.
-  void initWindow (int theWidth, int theHeight, const char* theTitle);
+  void initWindow ();
 
   //! Create 3D Viewer.
   void initViewer();

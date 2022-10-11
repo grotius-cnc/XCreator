@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "Installing qt-creator to edit a c++ project, by Skynet Cyberdyne 2022."
+
+# Deps, it could be, there are more to install. You will find out. 
+sudo apt-get update
+sudo apt-get install -y git g++ cmake build-essential cmake libxmu-dev libxi-dev libgl-dev xorg-dev libglu1-mesa-dev libfreetype6-dev libeigen3-dev libassimp-dev pkg-config mesa-utils freeglut3-dev mesa-common-dev libglew-dev libglfw3-dev libglm-dev libao-dev libmpg123-dev libclang-cpp11 libclang1-11 libfreeimage3 libjxr0 libtcl8.6 libtk8.6 tcl tcl8.6 tcl8.6-dev tk tk8.6 tk8.6-dev python3-pip 
+
+python3 -m pip install docwriter
+
+echo "Installing qt-creator, this can take a few minutes, be patient. It will create a desktop startmenu entry."
+wget https://github.com/grotius-cnc/Linux-Pro/releases/download/1.0.0/qt-creator.deb
+sudo dpkg -i qt-creator.deb
+
+echo "Finished Installing qt-creator in the /opt/ dir."

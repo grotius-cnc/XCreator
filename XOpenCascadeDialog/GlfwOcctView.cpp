@@ -108,30 +108,39 @@ void GlfwOcctView::errorCallback (int theError, const char* theDescription)
 }
 
 // ================================================================
-// Function : run
+// Function : init
 // Purpose  :
 // ================================================================
-void GlfwOcctView::run()
+void GlfwOcctView::init()
 {
-  initWindow (800, 600, "glfw occt");
+  initWindow();
   initViewer();
   initDemoScene();
   if (myView.IsNull())
   {
     return;
   }
-
   myView->MustBeResized();
   myOcctWindow->Map();
+
+}
+
+
+// ================================================================
+// Function : run
+// Purpose  :
+// ================================================================
+void GlfwOcctView::draw()
+{
   mainloop();
-  cleanup();
+  // cleanup();
 }
 
 // ================================================================
 // Function : initWindow
 // Purpose  :
 // ================================================================
-void GlfwOcctView::initWindow (int theWidth, int theHeight, const char* theTitle)
+void GlfwOcctView::initWindow ()
 {
   glfwSetErrorCallback (GlfwOcctView::errorCallback);
   glfwInit();
@@ -145,7 +154,7 @@ void GlfwOcctView::initWindow (int theWidth, int theHeight, const char* theTitle
 #endif
     glfwWindowHint (GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
   }
-  myOcctWindow = new GlfwOcctWindow (theWidth, theHeight, theTitle);
+  myOcctWindow = new GlfwOcctWindow (myWindow);
   glfwSetWindowUserPointer       (myOcctWindow->getGlfwWindow(), this);
   // window callback
   glfwSetWindowSizeCallback      (myOcctWindow->getGlfwWindow(), GlfwOcctView::onResizeCallback);
@@ -221,17 +230,17 @@ void GlfwOcctView::initDemoScene()
 // ================================================================
 void GlfwOcctView::mainloop()
 {
-  while (!glfwWindowShouldClose (myOcctWindow->getGlfwWindow()))
-  {
+  //while(!glfwWindowShouldClose (myOcctWindow->getGlfwWindow()))
+  //{
     // glfwPollEvents() for continuous rendering (immediate return if there are no new events)
     // and glfwWaitEvents() for rendering on demand (something actually happened in the viewer)
-    //glfwPollEvents();
+    glfwPollEvents();
     glfwWaitEvents();
     if (!myView.IsNull())
     {
       FlushViewEvents (myContext, myView, true);
     }
-  }
+  //}
 }
 
 // ================================================================
