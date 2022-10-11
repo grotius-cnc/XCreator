@@ -11,11 +11,29 @@
 #define ccw false
 #define cw true
 
+//! Todo calculate the surface's at init, then only draw the surfaces result, instead of recalculate everything each time.
+//! Espaccialy for linestrips, this consumes a lot of cpu time.
 class XOpenGLLine {
 public:
     //! Draw a line or linestrip using modern OpenGL.
 
     XOpenGLLine(){}
+    XOpenGLLine(XPoint theStart, XPoint theEnd, float theWidth, XColor theColor, XWindow *theWindow) :
+        myWidth(theWidth), myColor(theColor), myWindow(theWindow){
+        myPointVec.push_back(theStart);
+        myPointVec.push_back(theEnd);
+        mySurfaceVec=getSurfaceVec(myPointVec,myWidth,myColor,myWindow);
+    }
+    XOpenGLLine(std::vector<XPoint> thePointVec, float theWidth, XColor theColor, XWindow *theWindow) :
+        myPointVec(thePointVec), myWidth(theWidth), myColor(theColor), myWindow(theWindow){
+        mySurfaceVec=getSurfaceVec(myPointVec,myWidth,myColor,myWindow);
+    }
+    void drawLine(){
+         drawSurfaceVec(mySurfaceVec);
+    }
+    void drawLineStrip(){
+         drawSurfaceVec(mySurfaceVec);
+    }
 
     //! Draw modern openGL line.
     //! Example:
@@ -36,33 +54,41 @@ public:
     //! Or to draw a Point, just give one point.
     //! XOpenGLLine().drawLineStrip({{100,100,0}}},10,{1.0,0,0,1.0},Window());
     void drawLineStrip(std::vector<XPoint> thePointVec, float theWidth, XColor theColor, XWindow *theWindow){
+        std::vector<XOpenGL4PSurface*> theSurfaceVec=getSurfaceVec(thePointVec,theWidth,theColor,theWindow);
+        drawSurfaceVec(theSurfaceVec);
+    }
 
+    void drawSurfaceVec( std::vector<XOpenGL4PSurface*> theSurfaceVec){
+        for(uint i=0; i<theSurfaceVec.size(); i++){
+            theSurfaceVec.at(i)->draw();
+        }
+    }
+    std::vector<XOpenGL4PSurface*> getSurfaceVec(std::vector<XPoint> thePointVec, float theWidth, XColor theColor, XWindow *theWindow){
+        std::vector<XOpenGL4PSurface*> theSurfaceVec;
         if(thePointVec.size()==1){
             XPoint P=thePointVec.front();
             float x=P.X();
             float y=P.Y();
             float z=P.Z();
             float hw=theWidth/2;
-            mySurface->setWindow(theWindow);
-            mySurface->setSurface({{x-hw,y-hw,z},{x+hw,y-hw,z},{x+hw,y+hw,z},{x-hw,y+hw,z}});
-            mySurface->setColor(theColor);
-            mySurface->draw();
-            std::cout<<"drawing point?"<<std::endl;
-            return;
+
+            XOpenGL4PSurface *theSurface=new XOpenGL4PSurface(theWindow);
+            theSurface->setColor(theColor);
+            theSurface->setSurface({{x-hw,y-hw,z},{x+hw,y-hw,z},{x+hw,y+hw,z},{x-hw,y+hw,z}});
+            theSurfaceVec.push_back(theSurface);
+            return theSurfaceVec;
         }
 
         if(thePointVec.size()==2){
-            drawLine(thePointVec.at(0),thePointVec.at(1),theWidth,theColor,theWindow);
-            std::cout<<"drawing line instead of linestrip."<<std::endl;
-            return;
-        }
+            std::vector<XPoint> theTempVec=offset2Side(thePointVec.at(0),thePointVec.at(1),theWidth/2,cw);
+            //! It needs the window dimensions to calculate the mirrored y axis.
+            XOpenGL4PSurface *theSurface=new XOpenGL4PSurface(theWindow);
+            theSurface->setColor(theColor);
+            theSurface->setSurface(theTempVec);
+            theSurfaceVec.push_back(theSurface);
+            return theSurfaceVec;
 
-        if(thePointVec.size()<3){
-            std::cout<<"incorect pointVec size from function drawLineStrip"<<std::endl;
-            return;
         }
-        //! Set the GlfwWindow for the surface widget.
-        mySurface->setWindow(theWindow);
 
         //! Surface S0.
         std::vector<XPoint> S0={{0,0,0},{0,0,0},{0,0,0},{0,0,0}}; //! Initialized for 4 points.
@@ -112,10 +138,13 @@ public:
                 SR.at(3)=B;
             }
             //! Draw result.
-            mySurface->setSurface(SR);
-            mySurface->setColor(theColor);
-            mySurface->draw();
+            //! Set the GlfwWindow for the surface widget.
+            XOpenGL4PSurface *theSurface=new XOpenGL4PSurface(theWindow);
+            theSurface->setColor(theColor);
+            theSurface->setSurface(SR);
+            theSurfaceVec.push_back(theSurface);
         }
+        return theSurfaceVec;
     }
 
     //! Offset the line to both sides. For the return value : theWindingOrder=false=ccw (counterclockwise).
@@ -234,6 +263,12 @@ public:
 
 private:
     XOpenGL4PSurface *mySurface=new XOpenGL4PSurface();
+
+    std::vector<XPoint> myPointVec;
+    float myWidth;
+    XColor myColor;
+    XWindow *myWindow;
+    std::vector<XOpenGL4PSurface*> mySurfaceVec;
 };
 #endif
 

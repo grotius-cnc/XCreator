@@ -72,8 +72,8 @@ PKG_CONFIG                 := /usr/bin/pkg-config
 PKGCONFIG_REQUIRES         := 
 PKGCONFIG_REQUIRES_PRIVATE := zlib, libpng, libbrotlidec
 PKGCONFIG_LIBS             := -L${libdir} -lfreetype
-PKGCONFIG_LIBS_PRIVATE     := -lbz2
-LIBSSTATIC_CONFIG          := -lfreetype -L/usr/local/lib -lz -lbz2 -L/usr/local/lib -lpng16 -lm -lz -lm -lz -lbrotlidec -lbrotlicommon
+PKGCONFIG_LIBS_PRIVATE     := 
+LIBSSTATIC_CONFIG          := -lfreetype -lz -lpng16 -lm -lz -lm -lz -lbrotlidec -lbrotlicommon
 build_libtool_libs         := 
 ft_version                 := 24.3.18
 

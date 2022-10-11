@@ -38,6 +38,7 @@
 #include <XOpenGLCircle.h>
 #include <XOpenGLLine.h>
 #include <XOpenGLPoint.h>
+#include <XOpenGLSpline.h>
 #include <XRectangular.h>
 
 class XMainWindow : public XWidget {
@@ -94,6 +95,13 @@ public:
         myContent->setColor(XColorType::BackgroundColor,{0.1,0.1,0.1,1.0});
         addWidget(myContent);
 
+        mySpline=new XOpenGLSpline({{20,5,0},{600,60,0},{20,250,0}},3,20,{0.0,1.0,0.0,1.0},Window());
+        myLine=new XOpenGLLine({50,50,0},{300,300,0},2,{1.0,0.0,0.0,1.0},Window());
+        myCircle=new XOpenGLCircle({200,175,0},40,2,20,{1,1,1,1},Window());
+        mySolidCircle=new XOpenGLCircle({300,175,0},30,2,20,{1,0,1,0.5},Window());
+        myArc=new XOpenGLArc({10,100,0},{150,200,0},{275,20,0},15,20,{1,1,0,0.25},Window());
+        myPoint=new XOpenGLPoint({50,75,0},10,20,{0,1,1,0.8},Window()),
+
         setScissorWindow(Window());
         enableScissor(1);
 
@@ -129,18 +137,25 @@ public:
             //! draw content.
             drawWidgetVec();
 
-            //! Draw a few primitives.
-            XOpenGLPoint().drawPoint({20,20,0},9.25,{1.0,0,0,1.0},Window());
-
+            //! Draw a few primitives cpu time consuming. This can end up in a buffer overflow after some time.
+            /*
+            XOpenGLPoint().drawSquarePoint({20,20,0},10,{1.0,0,0,1.0},Window());
+            XOpenGLPoint().drawRoundPoint({50,20,0},10,20,{1.0,0,0,1.0},Window());
             XOpenGLLine().drawLine({50,50,0},{100,200,0},2,{1.0,0.0,0.0,1.0},Window());
-
             XOpenGLLine().drawLineStrip({{50,50,0},{300,50,0},{300,100,0},{350,100,0}},2,{0.0,0.0,1.0,1.0},Window());
-
             XOpenGLCircle().drawCircle({250,100,0},40,5,20,{1.0,1.0,0.0,0.2},Window());
-
-            XOpenGLCircle().drawSolidCircle({250,100,0},20,5,20,{0.80,0.25,0.25,1.0},Window());
-
+            XOpenGLCircle().drawSolidCircle({250,100,0},15,20,{0.80,0.25,0.25,1.0},Window());
             XOpenGLArc().draw_3P_Arc({100,100,0},{200,200,0},{300,125,0},20,20,{1.0,1.0,0.0,1.0},Window());
+            XOpenGLSpline().drawSpline({{50,50,0},{300,50,0},{300,100,0},{350,100,0}},5,20,{0.0,1.0,1.0,1.0},Window());
+            */
+
+            //! Optimized for cpu.
+            myLine->drawLine();
+            myCircle->drawCircle();
+            mySolidCircle->drawSolidCircle();
+            myArc->draw_3P_Arc();
+            myPoint->drawRoundPoint();
+            mySpline->drawSpline();
 
             glfwSwapBuffers(window);
             glfwPollEvents();
@@ -159,6 +174,13 @@ private:
 
     //! XButton *myButton = new XButton(myWindow); does not work because myWindow has not been initialised at this stage.
     XFrame *myContent;
+
+    XOpenGLSpline *mySpline;
+    XOpenGLLine *myLine;
+    XOpenGLCircle *myCircle;
+    XOpenGLCircle *mySolidCircle;
+    XOpenGLArc *myArc;
+    XOpenGLPoint *myPoint;
 };
 #endif
 

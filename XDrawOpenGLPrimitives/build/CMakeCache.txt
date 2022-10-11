@@ -195,6 +195,9 @@ XDrawOpenGLPrimitives_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 XDrawOpenGLPrimitives_SOURCE_DIR:STATIC=/home/user/XCreator/XDrawOpenGLPrimitives
 
+//The directory containing a CMake configuration file for libeigen3-dev.
+libeigen3-dev_DIR:PATH=libeigen3-dev_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

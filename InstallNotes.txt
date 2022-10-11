@@ -1,5 +1,28 @@
 # XCreator
 
+For a new debian installation you could consider my latest way of installing Debian. I had some problem's with non-free filmware using original debian iso's.
+
+To create a debian 11 system on a usb, your pc is becoming the docking station.
+The usb boots the Debian 11 during startup of your pc, you have to select the boot device during startup.
+
+Step 1. Create a bootable usb containing :
+
+	https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current-live/amd64/iso-hybrid/debian-live-11.5.0-amd64-lxqt+nonfree.iso
+	
+Step 2. Run the usb in live mode. When desktop starts, run the desktop icon for cinnamon installation. 
+
+Now you can place a second usb in your pc that will have your new debian installation on it. Use a large usb or sdd disk for this.
+You need to create 2 partitions yourself during the installation process. The comments of the cinnamon installer program are good enough to understand howto.
+
+My partitions looks like :
+	1. Partition : 8Mb unformatted with grub flag.
+	2. Partition : ..Mb flag boot, mount / 
+	
+	
+After installation reboot your pc into the new usb.
+	
+
+
 Requirments:
 
 	This project is programmed for using with modern OpenGL 3.0 or higher.

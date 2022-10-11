@@ -3,6 +3,10 @@ project(XDesignerDialog LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_compile_options(
+	-no-pie
+)
+
 # Rescan project to ensure the copy is done.
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/fonts DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

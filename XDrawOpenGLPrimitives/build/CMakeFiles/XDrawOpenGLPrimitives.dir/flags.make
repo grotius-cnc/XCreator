@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/user/XCreator/XDrawOpenGLPrimitives -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/glad/build/include -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/glfw-3.3.7/include/GLFW -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/freetype-2.12.1/include -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/soil/inc -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/clip-1.5 -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/xcreator/include
+CXX_INCLUDES = -I/home/user/XCreator/XDrawOpenGLPrimitives -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/glad/build/include -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/glfw-3.3.7/include/GLFW -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/freetype-2.12.1/include -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/soil/inc -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/clip-1.5 -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/splinelib -I/home/user/XCreator/XDrawOpenGLPrimitives/../vendor/xcreator/include
 
 CXX_FLAGS = -std=gnu++17
 

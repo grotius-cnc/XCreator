@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/XTextEditorDialog.dir/main.cpp.o"
-  "CMakeFiles/XTextEditorDialog.dir/main.cpp.o.d"
   "XTextEditorDialog"
   "XTextEditorDialog.pdb"
 )

@@ -1,8 +1,8 @@
 #!/bin/sh
 
-echo "			Enter a project name:"
+echo "Enter a project name:"
 read projectname
-echo "			Creating project directory: $projectname"
+echo "Creating project directory: $projectname"
 
 mkdir -p $projectname
 cd $projectname

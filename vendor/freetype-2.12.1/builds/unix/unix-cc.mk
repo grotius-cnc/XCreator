@@ -79,7 +79,7 @@ T := -o$(space)
 #   We use our own FreeType configuration files overriding defaults.
 #
 CPPFLAGS := 
-CFLAGS   := -c -Wall -g -O2 -fvisibility=hidden -I/usr/local/include  -I/usr/local/include -I/usr/include/libpng16  -pthread \
+CFLAGS   := -c -Wall -g -O2 -fvisibility=hidden  -I/usr/include/libpng16  -pthread \
             $DFT_CONFIG_CONFIG_H="<ftconfig.h>" \
             $DFT_CONFIG_MODULES_H="<ftmodule.h>" \
             $DFT_CONFIG_OPTIONS_H="<ftoption.h>"
@@ -106,7 +106,7 @@ endif
 
 # Linker flags.
 #
-LDFLAGS :=  -L/usr/local/lib -lz -lbz2 -L/usr/local/lib -lpng16 -lz -lbrotlidec -pthread -lpthread
+LDFLAGS :=  -lz -lpng16 -lz -lbrotlidec -pthread -lpthread
 
 # export symbols
 #

@@ -20,7 +20,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE "${SRC_DIR}/")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/glad/build/include")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/glfw-3.3.7/include/GLFW")
-#target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/zlib/build")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/zlib/build")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/freetype-2.12.1/include")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/soil/inc")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/clip-1.5")
@@ -28,11 +28,11 @@ target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/xcreator/include"
 target_include_directories(${PROJECT_NAME} PRIVATE "${XCREATOR_DIR}/")
 
 # When compiling zlib and freetypes, we got error. When using internal libs, no problem occurs.
-#add_library(zlib SHARED IMPORTED)
-#set_target_properties(zlib PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/zlib/build/libz.so)
+# add_library(libz SHARED IMPORTED)
+# set_target_properties(libz PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/zlib/libz.so)
 
-#add_library(freetypes SHARED IMPORTED)
-#set_target_properties(freetypes PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/freetype-2.12.1/build/libfreetype.a)
+# add_library(freetypes SHARED IMPORTED)
+# set_target_properties(freetypes PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/freetype-2.12.1/build/libfreetype.a)
 
 add_library(glfw3 SHARED IMPORTED)
 set_target_properties(glfw3 PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/glfw-3.3.7/build/src/libglfw3.a)

@@ -595,7 +595,7 @@ old_postuninstall_cmds=''
 old_archive_cmds='$AR $AR_FLAGS $oldlib$oldobjs~$RANLIB $tool_oldlib'
 lock_old_archive_extraction='no'
 CC='gcc'
-CFLAGS='-g -O2 -fvisibility=hidden -I/usr/local/include  -I/usr/local/include -I/usr/include/libpng16  -pthread'
+CFLAGS='-g -O2 -fvisibility=hidden  -I/usr/include/libpng16  -pthread'
 compiler='gcc'
 GCC='yes'
 lt_cv_sys_global_symbol_pipe='/usr/bin/sed -n -e '\''s/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p'\'' | /usr/bin/sed '\''/ __gnu_lto/d'\'''
@@ -673,7 +673,7 @@ postuninstall_cmds=''
 finish_cmds='PATH="\$PATH:/sbin" ldconfig -n $libdir'
 finish_eval=''
 hardcode_into_libs='yes'
-sys_lib_search_path_spec='/usr/lib/gcc/x86_64-linux-gnu/12 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib '
+sys_lib_search_path_spec='/usr/lib/gcc/x86_64-linux-gnu/10 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib '
 configure_time_dlsearch_path='/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /usr/local/lib /usr/local/lib/x86_64-linux-gnu /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu '
 configure_time_lt_sys_library_path=''
 hardcode_action='immediate'
@@ -779,7 +779,7 @@ fi
 
 
 
-FTOPTION_H_SED=" -e \"s|.*#.*def.*FT_CONFIG_OPTION_SYSTEM_ZLIB.*|#define FT_CONFIG_OPTION_SYSTEM_ZLIB|\" -e \"s|.*#.*def.*FT_CONFIG_OPTION_USE_BZIP2.*|#define FT_CONFIG_OPTION_USE_BZIP2|\" -e \"s|.*#.*def.*FT_CONFIG_OPTION_USE_PNG.*|#define FT_CONFIG_OPTION_USE_PNG|\" -e \"s|.*#.*def.*FT_CONFIG_OPTION_USE_HARFBUZZ.*|/* #undef FT_CONFIG_OPTION_USE_HARFBUZZ */|\" -e \"s|.*#.*def.*FT_CONFIG_OPTION_USE_BROTLI.*|#define FT_CONFIG_OPTION_USE_BROTLI|\""
+FTOPTION_H_SED=" -e \"s|.*#.*def.*FT_CONFIG_OPTION_SYSTEM_ZLIB.*|#define FT_CONFIG_OPTION_SYSTEM_ZLIB|\" -e \"s|.*#.*def.*FT_CONFIG_OPTION_USE_BZIP2.*|/* #undef FT_CONFIG_OPTION_USE_BZIP2 */|\" -e \"s|.*#.*def.*FT_CONFIG_OPTION_USE_PNG.*|#define FT_CONFIG_OPTION_USE_PNG|\" -e \"s|.*#.*def.*FT_CONFIG_OPTION_USE_HARFBUZZ.*|/* #undef FT_CONFIG_OPTION_USE_HARFBUZZ */|\" -e \"s|.*#.*def.*FT_CONFIG_OPTION_USE_BROTLI.*|#define FT_CONFIG_OPTION_USE_BROTLI|\""
 
 
 # Handling of arguments.
@@ -861,13 +861,13 @@ S["LIBOBJS"]=""
 S["build_libtool_libs"]=""
 S["wl"]="-Wl,"
 S["hardcode_libdir_flag_spec"]="$wl-rpath $wl$libdir"
-S["LIBSSTATIC_CONFIG"]="-lfreetype -L/usr/local/lib -lz -lbz2 -L/usr/local/lib -lpng16 -lm -lz -lm -lz -lbrotlidec -lbrotlicommon"
-S["PKGCONFIG_LIBS_PRIVATE"]="-lbz2"
+S["LIBSSTATIC_CONFIG"]="-lfreetype -lz -lpng16 -lm -lz -lm -lz -lbrotlidec -lbrotlicommon"
+S["PKGCONFIG_LIBS_PRIVATE"]=""
 S["PKGCONFIG_REQUIRES_PRIVATE"]="zlib, libpng, libbrotlidec"
 S["PKGCONFIG_LIBS"]="-L${libdir} -lfreetype"
 S["PKGCONFIG_REQUIRES"]=""
 S["ftmac_c"]=""
-S["PYTHON_VERSION"]="3.10.7"
+S["PYTHON_VERSION"]="3.9.2"
 S["PYTHON"]="python3"
 S["PTHREAD_CFLAGS"]="-pthread"
 S["PTHREAD_LIBS"]="-lpthread"
@@ -886,13 +886,13 @@ S["BROTLI_LIBS"]="-lbrotlidec"
 S["BROTLI_CFLAGS"]=""
 S["HARFBUZZ_LIBS"]=""
 S["HARFBUZZ_CFLAGS"]=""
-S["LIBPNG_LIBS"]="-L/usr/local/lib -lpng16 -lz"
-S["LIBPNG_CFLAGS"]="-I/usr/local/include -I/usr/include/libpng16"
-S["BZIP2_LIBS"]="-lbz2"
+S["LIBPNG_LIBS"]="-lpng16 -lz"
+S["LIBPNG_CFLAGS"]="-I/usr/include/libpng16"
+S["BZIP2_LIBS"]=""
 S["BZIP2_CFLAGS"]=""
 S["SYSTEM_ZLIB"]="yes"
-S["ZLIB_LIBS"]="-L/usr/local/lib -lz"
-S["ZLIB_CFLAGS"]="-I/usr/local/include"
+S["ZLIB_LIBS"]="-lz"
+S["ZLIB_CFLAGS"]=""
 S["XX_ANSIFLAGS"]=" -pedantic -std=c99"
 S["XX_CFLAGS"]="-Wall"
 S["FTSYS_SRC"]="$(PLATFORM_DIR)/ftsystem.c"
@@ -938,8 +938,8 @@ S["OBJEXT"]="o"
 S["EXEEXT"]=""
 S["ac_ct_CC"]="gcc"
 S["CPPFLAGS"]=""
-S["LDFLAGS"]=" -L/usr/local/lib -lz -lbz2 -L/usr/local/lib -lpng16 -lz -lbrotlidec -pthread -lpthread"
-S["CFLAGS"]="-g -O2 -fvisibility=hidden -I/usr/local/include  -I/usr/local/include -I/usr/include/libpng16  -pthread"
+S["LDFLAGS"]=" -lz -lpng16 -lz -lbrotlidec -pthread -lpthread"
+S["CFLAGS"]="-g -O2 -fvisibility=hidden  -I/usr/include/libpng16  -pthread"
 S["CC"]="gcc"
 S["host_os"]="linux-gnu"
 S["host_vendor"]="pc"

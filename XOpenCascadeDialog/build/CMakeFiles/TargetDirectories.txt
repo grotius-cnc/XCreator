@@ -1,0 +1,3 @@
+/home/user/XCreator/XOpenCascadeDialog/build/CMakeFiles/glfwocct.dir
+/home/user/XCreator/XOpenCascadeDialog/build/CMakeFiles/edit_cache.dir
+/home/user/XCreator/XOpenCascadeDialog/build/CMakeFiles/rebuild_cache.dir

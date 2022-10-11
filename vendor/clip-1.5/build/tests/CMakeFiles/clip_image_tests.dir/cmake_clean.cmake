@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/clip_image_tests.dir/image_tests.cpp.o"
-  "CMakeFiles/clip_image_tests.dir/image_tests.cpp.o.d"
   "clip_image_tests"
   "clip_image_tests.pdb"
 )

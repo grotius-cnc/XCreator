@@ -14,6 +14,7 @@ git submodule add https://github.com/madler/zlib.git vendor/zlib
 git submodule add https://github.com/paralin/soil.git vendor/soil
 git submodule add https://github.com/JoeyDeVries/LearnOpenGL.git vendor/learnopengl
 git submodule add https://github.com/glennrp/libpng.git vendor/libpgn
+git submodule add https://github.com/grotius-cnc/OCCT.git vendor/OCCT
 
 git submodule sync
 git add .

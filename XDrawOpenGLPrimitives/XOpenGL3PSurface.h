@@ -40,7 +40,6 @@
 //! The XOpenGL3PSurface : OpenGL 3 Point Triangle surface, is derived from the XTriangle class.
 //! Therefore the setSize is not used. To set the size of the 3 triangle points, use the setPoint function.
 //! A clockwise input is ok. When using a counterclockwise input, the back of the surface may be viewed.
-//! The XOpenGLLine class is the class that primairy uses the XOpenGL4PSurface.
 class XOpenGL3PSurface : public XWidget {
 public:
     //! Empty destructor.

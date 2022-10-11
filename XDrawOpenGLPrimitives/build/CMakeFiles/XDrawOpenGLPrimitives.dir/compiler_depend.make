@@ -94,6 +94,7 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
@@ -652,8 +653,396 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
   /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGL4PSurface.h \
   /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLCircle.h \
   /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGL3PSurface.h \
-  /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLPoint.h
+  /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLPoint.h \
+  /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLSpline.h \
+  /home/user/XCreator/vendor/splinelib/cubic_spline.h \
+  /home/user/XCreator/vendor/splinelib/spline.h \
+  /usr/include/eigen3/Eigen/Dense \
+  /usr/include/eigen3/Eigen/Core \
+  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
+  /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/mmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/emmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/xmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/mm_malloc.h \
+  /usr/include/eigen3/Eigen/src/Core/util/Constants.h \
+  /usr/include/eigen3/Eigen/src/Core/util/Meta.h \
+  /usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
+  /usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
+  /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h \
+  /usr/include/eigen3/Eigen/src/Core/util/Memory.h \
+  /usr/include/eigen3/Eigen/src/Core/NumTraits.h \
+  /usr/include/eigen3/Eigen/src/Core/MathFunctions.h \
+  /usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
+  /usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/Half.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/TypeCasting.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
+  /usr/include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h \
+  /usr/include/eigen3/Eigen/src/Core/IO.h \
+  /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
+  /usr/include/eigen3/Eigen/src/Core/DenseBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+  /usr/include/eigen3/Eigen/src/Core/MatrixBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/Core/EigenBase.h \
+  /usr/include/eigen3/Eigen/src/Core/Product.h \
+  /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
+  /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
+  /usr/include/eigen3/Eigen/src/Core/Assign.h \
+  /usr/include/eigen3/Eigen/src/Core/ArrayBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
+  /usr/include/eigen3/Eigen/src/Core/DenseStorage.h \
+  /usr/include/eigen3/Eigen/src/Core/NestByValue.h \
+  /usr/include/eigen3/Eigen/src/Core/ReturnByValue.h \
+  /usr/include/eigen3/Eigen/src/Core/NoAlias.h \
+  /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
+  /usr/include/eigen3/Eigen/src/Core/Matrix.h \
+  /usr/include/eigen3/Eigen/src/Core/Array.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
+  /usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
+  /usr/include/eigen3/Eigen/src/Core/Dot.h \
+  /usr/include/eigen3/Eigen/src/Core/StableNorm.h \
+  /usr/include/eigen3/Eigen/src/Core/Stride.h \
+  /usr/include/eigen3/Eigen/src/Core/MapBase.h \
+  /usr/include/eigen3/Eigen/src/Core/Map.h \
+  /usr/include/eigen3/Eigen/src/Core/Ref.h \
+  /usr/include/eigen3/Eigen/src/Core/Block.h \
+  /usr/include/eigen3/Eigen/src/Core/VectorBlock.h \
+  /usr/include/eigen3/Eigen/src/Core/Transpose.h \
+  /usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/Diagonal.h \
+  /usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
+  /usr/include/eigen3/Eigen/src/Core/Redux.h \
+  /usr/include/eigen3/Eigen/src/Core/Visitor.h \
+  /usr/include/eigen3/Eigen/src/Core/Fuzzy.h \
+  /usr/include/eigen3/Eigen/src/Core/Swap.h \
+  /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h \
+  /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h \
+  /usr/include/eigen3/Eigen/src/Core/Solve.h \
+  /usr/include/eigen3/Eigen/src/Core/Inverse.h \
+  /usr/include/eigen3/Eigen/src/Core/SolverBase.h \
+  /usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/Transpositions.h \
+  /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
+  /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+  /usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
+  /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
+  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
+  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h \
+  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
+  /usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
+  /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
+  /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
+  /usr/include/eigen3/Eigen/src/Core/BandMatrix.h \
+  /usr/include/eigen3/Eigen/src/Core/CoreIterators.h \
+  /usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
+  /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h \
+  /usr/include/eigen3/Eigen/src/Core/Select.h \
+  /usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
+  /usr/include/eigen3/Eigen/src/Core/Random.h \
+  /usr/include/eigen3/Eigen/src/Core/Replicate.h \
+  /usr/include/eigen3/Eigen/src/Core/Reverse.h \
+  /usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
+  /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
+  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/LU \
+  /usr/include/eigen3/Eigen/src/misc/Kernel.h \
+  /usr/include/eigen3/Eigen/src/misc/Image.h \
+  /usr/include/eigen3/Eigen/src/LU/FullPivLU.h \
+  /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h \
+  /usr/include/eigen3/Eigen/src/LU/Determinant.h \
+  /usr/include/eigen3/Eigen/src/LU/InverseImpl.h \
+  /usr/include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h \
+  /usr/include/eigen3/Eigen/Cholesky \
+  /usr/include/eigen3/Eigen/Jacobi \
+  /usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
+  /usr/include/eigen3/Eigen/src/Cholesky/LLT.h \
+  /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h \
+  /usr/include/eigen3/Eigen/QR \
+  /usr/include/eigen3/Eigen/Householder \
+  /usr/include/eigen3/Eigen/src/Householder/Householder.h \
+  /usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
+  /usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
+  /usr/include/eigen3/Eigen/src/QR/HouseholderQR.h \
+  /usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
+  /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
+  /usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+  /usr/include/eigen3/Eigen/SVD \
+  /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
+  /usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
+  /usr/include/eigen3/Eigen/src/SVD/SVDBase.h \
+  /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
+  /usr/include/eigen3/Eigen/src/SVD/BDCSVD.h \
+  /usr/include/eigen3/Eigen/Geometry \
+  /usr/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
+  /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
+  /usr/include/eigen3/Eigen/src/Geometry/RotationBase.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Quaternion.h \
+  /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Transform.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Translation.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Scaling.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
+  /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
+  /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
+  /usr/include/eigen3/Eigen/src/Geometry/Umeyama.h \
+  /usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SSE.h \
+  /usr/include/eigen3/Eigen/Eigenvalues \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
 
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h:
+
+/usr/include/eigen3/Eigen/Eigenvalues:
+
+/usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/Scaling.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/Translation.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/Quaternion.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/RotationBase.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/OrthoMethods.h:
+
+/usr/include/eigen3/Eigen/Geometry:
+
+/usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h:
+
+/usr/include/eigen3/Eigen/SVD:
+
+/usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
+
+/usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h:
+
+/usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h:
+
+/usr/include/eigen3/Eigen/Householder:
+
+/usr/include/eigen3/Eigen/QR:
+
+/usr/include/eigen3/Eigen/src/Cholesky/LDLT.h:
+
+/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:
+
+/usr/include/eigen3/Eigen/Jacobi:
+
+/usr/include/eigen3/Eigen/src/misc/Kernel.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
+
+/usr/include/eigen3/Eigen/src/Core/Select.h:
+
+/usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
+
+/usr/include/eigen3/Eigen/src/Core/CoreIterators.h:
+
+/usr/include/eigen3/Eigen/src/Core/BandMatrix.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h:
+
+/usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h:
+
+/usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h:
+
+/usr/include/eigen3/Eigen/src/LU/InverseImpl.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h:
+
+/usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h:
+
+/usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h:
+
+/usr/include/eigen3/Eigen/src/Core/Inverse.h:
+
+/usr/include/eigen3/Eigen/src/Core/Solve.h:
+
+/usr/include/eigen3/Eigen/src/Core/GeneralProduct.h:
+
+/usr/include/eigen3/Eigen/src/Core/CommaInitializer.h:
+
+/usr/include/eigen3/Eigen/src/Core/Visitor.h:
+
+/usr/include/eigen3/Eigen/src/Core/Redux.h:
+
+/usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
+
+/usr/include/eigen3/Eigen/src/Core/Diagonal.h:
+
+/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
+
+/usr/include/eigen3/Eigen/src/Core/VectorBlock.h:
+
+/usr/include/eigen3/Eigen/src/Core/Block.h:
+
+/usr/include/eigen3/Eigen/src/Core/Map.h:
+
+/usr/include/eigen3/Eigen/src/Core/MapBase.h:
+
+/usr/include/eigen3/Eigen/src/Core/StableNorm.h:
+
+/usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h:
+
+/usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h:
+
+/usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h:
+
+/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:
+
+/usr/include/eigen3/Eigen/src/Core/ReturnByValue.h:
+
+/usr/include/eigen3/Eigen/src/Core/NestByValue.h:
+
+/usr/include/eigen3/Eigen/src/Core/DenseStorage.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h:
+
+/usr/include/eigen3/Eigen/src/SVD/BDCSVD.h:
+
+/usr/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h:
+
+/usr/include/eigen3/Eigen/src/Core/ArrayBase.h:
+
+/usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
+
+/usr/include/eigen3/Eigen/src/Core/Product.h:
+
+/usr/include/eigen3/Eigen/src/Core/EigenBase.h:
+
+/usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h:
+
+/usr/include/eigen3/Eigen/src/SVD/SVDBase.h:
+
+/usr/include/eigen3/Eigen/src/Core/DenseBase.h:
+
+/usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:
+
+/usr/include/eigen3/Eigen/src/Core/IO.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h:
+
+/usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:
+
+/usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h:
+
+/usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h:
+
+/usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h:
+
+/usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h:
+
+/usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h:
+
+/usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/CUDA/Half.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h:
+
+/usr/include/eigen3/Eigen/src/LU/FullPivLU.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h:
+
+/usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h:
+
+/usr/include/eigen3/Eigen/src/Core/NumTraits.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/Memory.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/XprHelper.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/mm_malloc.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/mmintrin.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
+
+/usr/include/eigen3/Eigen/Dense:
+
+/home/user/XCreator/vendor/splinelib/cubic_spline.h:
+
+/home/user/XCreator/XDrawOpenGLPrimitives/XOpenGLSpline.h:
 
 /home/user/XCreator/XDrawOpenGLPrimitives/XOpenGL3PSurface.h:
 
@@ -673,6 +1062,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /home/user/XCreator/vendor/freetype-2.12.1/include/freetype/ftmodapi.h:
 
+/usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h:
+
 /home/user/XCreator/vendor/freetype-2.12.1/include/freetype/ftrender.h:
 
 /home/user/XCreator/vendor/freetype-2.12.1/include/freetype/ftglyph.h:
@@ -689,6 +1080,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /home/user/XCreator/vendor/freetype-2.12.1/include/freetype/freetype.h:
 
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h:
+
 /home/user/XCreator/vendor/freetype-2.12.1/include/freetype/config/ftheader.h:
 
 /home/user/XCreator/vendor/xcreator/include/XChar.h:
@@ -701,6 +1094,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/optional:
 
+/usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
+
 /usr/include/c++/12/bits/fs_fwd.h:
 
 /usr/include/c++/12/filesystem:
@@ -711,9 +1106,13 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/bits/regex_executor.h:
 
+/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
+
 /usr/include/c++/12/bits/regex.tcc:
 
 /usr/include/c++/12/bits/regex.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/Rotation2D.h:
 
 /usr/include/c++/12/bits/regex_compiler.h:
 
@@ -735,6 +1134,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/forward_list:
 
+/usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
+
 /usr/include/c++/12/bits/unique_lock.h:
 
 /usr/include/c++/12/bits/std_mutex.h:
@@ -748,6 +1149,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/c++/12/chrono:
 
 /usr/include/c++/12/atomic:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/emmintrin.h:
 
 /usr/include/c++/12/bits/gslice.h:
 
@@ -763,11 +1166,17 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/stack:
 
+/usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h:
+
 /usr/include/c++/12/set:
 
 /usr/include/c++/12/queue:
 
 /usr/include/c++/12/pstl/glue_numeric_defs.h:
+
+/usr/include/c++/12/numeric:
+
+/usr/include/eigen3/Eigen/Core:
 
 /usr/include/glm/ext/vector_bool2_precision.hpp:
 
@@ -787,11 +1196,15 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/bits/stl_algo.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/12/include/xmmintrin.h:
+
 /usr/include/c++/12/tr1/riemann_zeta.tcc:
 
 /usr/include/c++/12/bits/basic_ios.tcc:
 
 /usr/include/c++/12/tr1/poly_laguerre.tcc:
+
+/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
 
 /usr/include/glm/detail/func_geometric.inl:
 
@@ -805,17 +1218,23 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/ext/vector_uint1.hpp:
 
+/usr/include/eigen3/Eigen/src/Core/util/Meta.h:
+
 /usr/include/c++/12/cfenv:
 
 /usr/include/c++/12/charconv:
 
 /usr/include/c++/12/tr1/ell_integral.tcc:
 
+/usr/include/eigen3/Eigen/src/Core/util/Constants.h:
+
 /usr/include/c++/12/cwchar:
 
 /usr/include/glm/ext/matrix_double2x2.hpp:
 
 /usr/include/c++/12/cstdalign:
+
+/usr/include/eigen3/Eigen/src/Core/util/MKL_support.h:
 
 /usr/include/c++/12/tr1/gamma.tcc:
 
@@ -827,19 +1246,29 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/detail/type_vec2.hpp:
 
+/usr/include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h:
+
 /usr/include/glm/ext/vector_uint3.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
+/usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
+
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
+/usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h:
+
+/usr/include/eigen3/Eigen/src/LU/PartialPivLU.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/glm/detail/_vectorize.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h:
+
+/home/user/XCreator/vendor/splinelib/spline.h:
 
 /usr/include/glm/ext/vector_float3_precision.hpp:
 
@@ -857,17 +1286,17 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /home/user/XCreator/vendor/xcreator/include/XPoint.h:
 
-/usr/include/c++/12/numeric:
-
 /usr/include/c++/12/vector:
 
+/usr/include/eigen3/Eigen/src/Geometry/Transform.h:
+
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/eigen3/Eigen/src/Core/NoAlias.h:
 
 /usr/include/glm/ext/vector_float4_precision.hpp:
 
 /usr/include/c++/12/bits/streambuf_iterator.h:
-
-/usr/include/c++/12/bits/ostream.tcc:
 
 /usr/include/c++/12/bits/locale_facets.h:
 
@@ -917,7 +1346,11 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/ext/vector_bool2.hpp:
 
+/usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h:
 
 /usr/include/c++/12/ext/type_traits.h:
 
@@ -933,11 +1366,19 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/limits.h:
 
+/usr/include/c++/12/bits/ostream.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
 /usr/include/c++/12/bits/stl_bvector.h:
 
 /usr/include/c++/12/bits/streambuf.tcc:
 
 /usr/include/glm/detail/type_mat4x3.inl:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h:
+
+/usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
 
 /usr/include/c++/12/bits/string_view.tcc:
 
@@ -1031,6 +1472,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/wchar.h:
 
+/usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
+
 /usr/include/c++/12/bits/ios_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
@@ -1039,9 +1482,13 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/ext/vector_float3.hpp:
 
+/usr/include/eigen3/Eigen/src/Core/Random.h:
+
 /usr/include/c++/12/ios:
 
 /usr/include/c++/12/bits/stream_iterator.h:
+
+/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
 
 /usr/include/c++/12/ext/alloc_traits.h:
 
@@ -1069,15 +1516,23 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
+/usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SSE.h:
+
 /usr/include/glm/exponential.hpp:
 
 /usr/include/glm/mat3x3.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:
+
+/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:
 
 /usr/include/c++/12/algorithm:
 
 /usr/include/c++/12/iosfwd:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
 
 /usr/include/glm/ext/quaternion_double_precision.hpp:
 
@@ -1092,6 +1547,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/glm/ext/scalar_constants.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/MathFunctions.h:
 
 /usr/include/c++/12/csetjmp:
 
@@ -1111,6 +1568,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
+/usr/include/eigen3/Eigen/src/Core/SolverBase.h:
+
 /usr/include/glm/ext/vector_float1_precision.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h:
@@ -1118,8 +1577,6 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/c++/12/tr1/beta_function.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h:
-
-/usr/include/glm/ext/vector_float2.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/float.h:
 
@@ -1145,6 +1602,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /home/user/XCreator/vendor/glad/build/include/glad/glad.h:
 
+/usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
 /usr/include/c++/12/bits/stl_numeric.h:
@@ -1165,11 +1624,51 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /home/user/XCreator/vendor/xcreator/include/XColor.h:
 
+/usr/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h:
+
 /usr/include/c++/12/exception:
 
 /home/user/XCreator/XDrawOpenGLPrimitives/XMainWindow.h:
 
+/usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/eigen3/Eigen/src/Core/SolveTriangular.h:
+
+/usr/include/c++/12/bits/align.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/c++/12/bits/basic_string.h:
+
+/usr/include/c++/12/bits/fs_dir.h:
+
+/usr/include/glm/ext/vector_float1.hpp:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/home/user/XCreator/XDrawOpenGLPrimitives/main.cpp:
+
+/usr/include/c++/12/bits/stl_algobase.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h:
+
+/usr/include/fenv.h:
+
 /usr/include/c++/12/bits/locale_classes.tcc:
+
+/usr/include/eigen3/Eigen/src/Householder/Householder.h:
 
 /usr/include/glm/mat4x4.hpp:
 
@@ -1180,30 +1679,6 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/c++/12/bits/locale_facets_nonio.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigaction.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
-
-/usr/include/c++/12/bits/align.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/c++/12/bits/basic_string.h:
-
-/usr/include/c++/12/bits/fs_dir.h:
-
-/usr/include/glm/ext/vector_float1.hpp:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/home/user/XCreator/XDrawOpenGLPrimitives/main.cpp:
-
-/usr/include/c++/12/bits/stl_algobase.h:
-
-/usr/include/fenv.h:
 
 /usr/include/glm/detail/qualifier.hpp:
 
@@ -1233,6 +1708,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/new:
 
+/usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
+
 /usr/include/features.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
@@ -1242,6 +1719,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/c++/12/debug/assertions.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/eigen3/Eigen/src/Core/Assign.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
@@ -1269,11 +1748,15 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
 
+/usr/include/eigen3/Eigen/src/Core/Fuzzy.h:
+
 /usr/include/glm/detail/func_packing.inl:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/c++/12/iostream:
+
+/usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
@@ -1282,14 +1765,6 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/c++/12/istream:
 
 /usr/include/c++/12/stdexcept:
-
-/home/user/XCreator/vendor/xcreator/include/XPip.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/glm/ext/vector_uint1_sized.hpp:
-
-/usr/include/c++/12/ext/aligned_buffer.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
@@ -1300,6 +1775,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/glm/ext/vector_bool1_precision.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/eigen3/Eigen/src/misc/Image.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h:
 
@@ -1336,6 +1813,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/x86_64-linux-gnu/c++/12/bits/c++allocator.h:
 
 /usr/include/glm/ext/scalar_uint_sized.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/Dot.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
@@ -1399,6 +1878,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
+/usr/include/eigen3/Eigen/src/Core/Ref.h:
+
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
@@ -1406,6 +1887,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/c++/12/bits/ostream_insert.h:
+
+/usr/include/eigen3/Eigen/src/Core/Transpositions.h:
 
 /usr/include/c++/12/bits/allocator.h:
 
@@ -1427,15 +1910,25 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
+/usr/include/c++/12/bits/functexcept.h:
+
 /usr/include/c++/12/bits/stl_stack.h:
 
 /usr/include/c++/12/bits/cxxabi_forced.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
+/usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
+
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h:
 
+/usr/include/eigen3/Eigen/src/QR/HouseholderQR.h:
+
+/usr/include/eigen3/Eigen/src/Core/Stride.h:
+
 /usr/include/c++/12/bits/atomic_base.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h:
 
 /usr/include/glm/ext/vector_int4_sized.hpp:
 
@@ -1471,15 +1964,27 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/bits/refwrap.h:
 
-/usr/include/c++/12/bits/functexcept.h:
+/usr/include/glm/ext/vector_float2.hpp:
+
+/home/user/XCreator/vendor/xcreator/include/XPip.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/c++/12/ext/aligned_buffer.h:
+
+/usr/include/glm/ext/vector_uint1_sized.hpp:
 
 /usr/include/glm/ext/vector_float2_precision.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h:
 
 /usr/include/glm/ext/vector_relational.hpp:
 
 /usr/include/glm/ext/vector_double2_precision.hpp:
 
 /usr/include/glm/ext/vector_int2.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/Swap.h:
 
 /usr/include/c++/12/bits/atomic_futex.h:
 
@@ -1499,7 +2004,11 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/detail/type_vec3.inl:
 
+/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:
+
 /usr/include/glm/ext/vector_bool3_precision.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h:
 
 /usr/include/glm/ext/vector_double3.hpp:
 
@@ -1516,6 +2025,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/glm/ext/vector_int3.hpp:
 
 /usr/include/glm/ext/vector_double1_precision.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/arch/CUDA/TypeCasting.h:
 
 /usr/include/glm/vec4.hpp:
 
@@ -1567,6 +2078,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/ext/matrix_float2x3.hpp:
 
+/usr/include/eigen3/Eigen/Cholesky:
+
 /usr/include/c++/12/bits/shared_ptr_atomic.h:
 
 /usr/include/c++/12/regex:
@@ -1590,6 +2103,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/glm/detail/type_mat3x2.hpp:
 
 /usr/include/glm/detail/type_mat3x2.inl:
+
+/usr/include/eigen3/Eigen/src/LU/Determinant.h:
 
 /usr/include/glm/ext/matrix_double3x2_precision.hpp:
 
@@ -1691,6 +2206,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/detail/type_float.hpp:
 
+/usr/include/eigen3/Eigen/src/Core/Transpose.h:
+
 /usr/include/glm/detail/func_vector_relational.inl:
 
 /usr/include/linux/close_range.h:
@@ -1713,11 +2230,15 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/cuchar:
 
+/usr/include/eigen3/Eigen/src/Geometry/Umeyama.h:
+
 /usr/include/glm/trigonometric.hpp:
 
 /usr/include/glm/packing.hpp:
 
 /usr/include/glm/detail/type_half.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/BooleanRedux.h:
 
 /usr/include/glm/detail/type_half.inl:
 
@@ -1735,6 +2256,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/gtc/constants.hpp:
 
+/usr/include/eigen3/Eigen/src/Core/MatrixBase.h:
+
 /usr/include/glm/ext/vector_uint3_sized.hpp:
 
 /usr/include/glm/ext/scalar_constants.inl:
@@ -1744,6 +2267,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/glm/ext/matrix_projection.inl:
 
 /usr/include/inttypes.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h:
 
 /usr/include/glm/ext/matrix_transform.hpp:
 
@@ -1783,7 +2308,11 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/glm/ext/vector_int1.hpp:
 
+/usr/include/eigen3/Eigen/src/Core/Reverse.h:
+
 /usr/include/glm/ext/vector_int1_sized.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h:
 
@@ -1796,6 +2325,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/libintl.h:
+
+/usr/include/eigen3/Eigen/LU:
 
 /usr/include/GLFW/glfw3.h:
 
@@ -1825,7 +2356,11 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/bits/erase_if.h:
 
+/usr/include/eigen3/Eigen/src/Core/Array.h:
+
 /home/user/XCreator/vendor/xcreator/include/XMouse.h:
+
+/usr/include/eigen3/Eigen/src/Core/Replicate.h:
 
 /usr/include/c++/12/ciso646:
 
@@ -1911,6 +2446,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 
 /usr/include/c++/12/fstream:
 
+/usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
+
 /usr/include/c++/12/bits/mask_array.h:
 
 /usr/include/c++/12/bits/fstream.tcc:
@@ -1934,6 +2471,8 @@ CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o: /home/user/XCreator/XDrawOpenGL
 /usr/include/c++/12/list:
 
 /usr/include/c++/12/bits/stl_list.h:
+
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:
 
 /usr/include/c++/12/bits/list.tcc:
 

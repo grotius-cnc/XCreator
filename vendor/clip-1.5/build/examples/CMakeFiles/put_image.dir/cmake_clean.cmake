@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/put_image.dir/put_image.cpp.o"
-  "CMakeFiles/put_image.dir/put_image.cpp.o.d"
   "put_image"
   "put_image.pdb"
 )

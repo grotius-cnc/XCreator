@@ -3,7 +3,10 @@
 echo "Installing XCreator, by Skynet Cyberdyne 2022."
 
 # Deps, it could be, there are more to install. You will find out. 
-sudo apt-get install git g++ cmake build-essential libxmu-dev libxi-dev libgl-dev xorg-dev libglu1-mesa-dev 
+sudo apt-get update
+sudo apt-get install -y git g++ cmake build-essential cmake libxmu-dev libxi-dev libgl-dev xorg-dev libglu1-mesa-dev libfreetype6-dev libeigen3-dev libassimp-dev pkg-config mesa-utils freeglut3-dev mesa-common-dev libglew-dev libglfw3-dev libglm-dev libao-dev libmpg123-dev libclang-cpp11 libclang1-11 libfreeimage3 libjxr0 libtcl8.6 libtk8.6 tcl tcl8.6 tcl8.6-dev tk tk8.6 tk8.6-dev python3-pip 
+
+python3 -m pip install docwriter
   
 cd vendor
 
@@ -34,9 +37,7 @@ cd XHorizonalSplitterDialog && mkdir -p build && cd build && rm -rf CMakeCache.t
 cd XSingleButtonDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
 cd XTextEditorDialog && mkdir -p build && cd build && rm -rf CMakeCache.txt && cmake .. && make -j2 && cd .. && cd ..
 
-echo "Finished Installing XCreator, starting sample program now."
+# Install Opencascade OCCT library. This will ask the user to build the library.
+cd OCCT && ./setup && cd ..
 
-# Start XCreator sample program.
-cd XTextEditorDialog && cd build && ./XTextEditorDialog
-
-echo "Do you like it?"
+echo "Finished Installing XCreator"

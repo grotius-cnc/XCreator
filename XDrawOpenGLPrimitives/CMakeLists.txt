@@ -19,8 +19,13 @@ set(SOURCES
     "${XCREATOR_DIR}/XOpenGLCircle.h"
     "${XCREATOR_DIR}/XOpenGLLine.h"
     "${XCREATOR_DIR}/XOpenGLPoint.h"
+    "${XCREATOR_DIR}/XOpenGLSpline.h"
     "${XCREATOR_DIR}/XOpenGL3PSurface.h"
     "${XCREATOR_DIR}/XOpenGL4PSurface.h"
+
+    # To show the splinelib files wich i converted to header only.
+    # "${LIB_DIR}/splinelib/spline.h"
+    # "${LIB_DIR}/splinelib/cubic_spline.h"
     )
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE "${SRC_DIR}/")
@@ -31,8 +36,14 @@ target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/glfw-3.3.7/includ
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/freetype-2.12.1/include")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/soil/inc")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/clip-1.5")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/splinelib")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/xcreator/include")
 target_include_directories(${PROJECT_NAME} PRIVATE "${XCREATOR_DIR}/")
+
+# For the splinelib :
+# sudo apt install libeigen3-dev
+# For opencascade :
+# sudo apt-get install libfreetype6-dev
 
 # When compiling zlib and freetypes, we got error. When using internal libs, no problem occurs.
 #add_library(zlib SHARED IMPORTED)

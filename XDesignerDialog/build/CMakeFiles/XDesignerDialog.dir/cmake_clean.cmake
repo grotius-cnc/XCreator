@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/XDesignerDialog.dir/main.cpp.o"
-  "CMakeFiles/XDesignerDialog.dir/main.cpp.o.d"
   "XDesignerDialog"
   "XDesignerDialog.pdb"
 )

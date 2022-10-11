@@ -13,3 +13,6 @@
 [submodule "vendor/libpgn"]
 	path = vendor/libpgn
 	url = https://github.com/glennrp/libpng.git
+[submodule "OCCT"]
+	path = OCCT
+	url = https://github.com/grotius-cnc/OCCT

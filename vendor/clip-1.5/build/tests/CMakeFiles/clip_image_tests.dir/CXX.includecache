@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../clip.h
+cassert
+-
+memory
+-
+string
+-
+
+/home/user/XCreator/vendor/clip-1.5/tests/image_tests.cpp
+test.h
+/home/user/XCreator/vendor/clip-1.5/tests/test.h
+clip.h
+/home/user/XCreator/vendor/clip-1.5/tests/clip.h
+cstring
+-
+
+/home/user/XCreator/vendor/clip-1.5/tests/test.h
+cstdlib
+-
+iostream
+-
+
