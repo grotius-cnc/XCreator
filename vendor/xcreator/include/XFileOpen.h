@@ -139,7 +139,7 @@ public:
 
         //! Initialize content of current path and set toplevel item to unfold.
         process(CurrentPath());
-        myTreeView->setTopLevelItemUnfold();
+     //   myTreeView->setTopLevelItemUnfold();
     }
     void draw(){
         //! Save the current scissor size to be restored at end of this function.

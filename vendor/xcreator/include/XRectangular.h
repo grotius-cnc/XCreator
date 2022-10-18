@@ -272,8 +272,7 @@ private:
     }
 };
 
-#endif // XRECTANGULAR_H
-
+#endif
 
 
 

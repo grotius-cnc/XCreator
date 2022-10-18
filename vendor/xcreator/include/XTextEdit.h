@@ -624,6 +624,7 @@ private:
                     myString.erase(myCursorCount);
                     myCursorCount--;
                 }
+                Key.resetScanCode();
             }
             if(Key.isGlfwTabKey()){
                 myString.insert(myCursorCount,XChar(' '));
@@ -637,9 +638,11 @@ private:
                 Key.resetScanCode();
             }
             if(Key.getGlfwCharKey()!=-1){
-                myString.insert(myCursorCount,XChar(Key.getGlfwCharKey(),{0.0,0.0,0.0,0.9}));
+                myString.insert(myCursorCount,XChar(Key.Char(),{0.0,0.0,0.0,0.9}));
                 myCursorCount++;
                 Key.resetScanCode();
+                //! Set no selection at a left press.
+                mySelectionEndCharNr=mySelectionStartCharNr;
             }
             if(Key.isGlfwControlAKey()){
                 clip::set_text(myString.toStdString());

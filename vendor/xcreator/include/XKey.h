@@ -34,12 +34,35 @@ class XKey {
 public:
     XKey(){ };
 
-    void setKey(GLFWwindow* theWindow, int theKey, uint theScancode){
+    void setKey(GLFWwindow* theWindow, int theKey, uint theScancode, int theAction, int theMods){ 
         myWindowPointer=theWindow;
         myKey=theKey;
+        myTempKey=theKey;
         myScancode=theScancode;
-        // use this: std::cout<<"myKey:"<<myKey<<std::endl;
-        // dont use this: std::cout<<"myScancode:"<<myScancode<<std::endl;
+        myAction=theAction;
+        myMods=theMods;
+        //! std::cout<<"myKey:"<<myKey<<std::endl;
+        //! std::cout<<"myScancode:"<<myScancode<<std::endl;
+    }
+    void setChar(uint theChar){
+        myChar=theChar;
+    }
+    uint Char(){
+        uint r=myChar;
+        myChar=-1; //! Reset.
+        return r;
+    }
+    int Key(){
+        return myTempKey;
+    }
+    int Action(){
+        return myAction;
+    }
+    int Mods(){
+        return myMods;
+    }
+    int ScanCode(){
+        return myScancode;
     }
     int getGlfwCharKey(){
         int r=myScancode;
@@ -72,6 +95,20 @@ public:
     }
     bool isGlfwEnterKey(){
         if(myKey==257){
+            myKey=-1;
+            return 1;
+        }
+        return 0;
+    }
+    bool isGlfwShiftKey(){
+        if(myKey==340){
+            myKey=-1;
+            return 1;
+        }
+        return 0;
+    }
+    bool isGlfwControlKey(){
+        if(myKey==341){
             myKey=-1;
             return 1;
         }
@@ -187,8 +224,9 @@ public:
     }
 private:
     GLFWwindow* myWindowPointer;
-    int myKey;
+    int myKey, myTempKey, myAction, myMods;
     uint myScancode;
+    uint myChar=-1;
 };
 XKey Key;
 #endif // XKEYS_H

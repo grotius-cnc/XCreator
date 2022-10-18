@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o"
-  "CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o.d"
   "XHorizontalSplitterDialog"
   "XHorizontalSplitterDialog.pdb"
 )

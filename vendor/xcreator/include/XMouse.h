@@ -35,6 +35,11 @@ public:
     XMouse(){}
     void setMouseButtons(GLFWwindow* theWindow,int btn, int status, int spare){
         myWindowPointer=theWindow;
+        myButton=btn;
+        myStatus=status;
+        mySpare=spare;
+
+        // std::cout<<"status"<<status<<std::endl;
 
         if(btn==0 && status==1){
             myLeftMouseSnapShot->setPoint(Position()->Point());
@@ -105,6 +110,9 @@ public:
             return myMouseScrollValueY;
         }
         return 0;
+    }
+    void resetMouseScrollValueXToZero(){
+        myMouseScrollValueX=0;
     }
     void resetMouseScrollValueYToZero(){
         myMouseScrollValueY=0;
@@ -195,6 +203,15 @@ public:
     void setScrollLock(bool theStatus){
         myScrolLock=theStatus;
     }
+    int Button(){
+        return myButton;
+    }
+    int Status(){
+        return myStatus;
+    }
+    int Spare(){
+        return mySpare;
+    }
 
 private:
     GLFWwindow* myWindowPointer;
@@ -209,6 +226,9 @@ private:
     XPoint *myMidMouseSnapShot=new XPoint();
     XPoint *myRightMouseSnapShot=new XPoint();
     int myMouseScrollValueX=0, myMouseScrollValueY=0;
+    int myButton;
+    int myStatus;
+    int mySpare;
     GLFWwindow* myNewWindow;
 };
 XMouse Mouse;

@@ -32,7 +32,7 @@
 
 void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if(action){
-        Key.setKey(window,key,-1);
+        Key.setKey(window,key,scancode,action,mods);
     }
     // std::cout<<"Window:"<<window<<std::endl;
     // std::cout<<"key:"<<key<<std::endl;
@@ -43,9 +43,11 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 
 static void CharacterCallback(GLFWwindow* window, uint codepoint)
 {
-    Key.setKey(window,-1,codepoint);
+    //! The keyboard character.
+    Key.setChar(codepoint);
+
     // std::cout<<"Window:"<<window<<std::endl;
-    // std::cout<<(unsigned char)codepoint<<std::endl;
+    std::cout<<(unsigned char)codepoint<<std::endl;
 }
 
 static void MousePosCallBack(GLFWwindow* window, double theXPos, double theYPos){

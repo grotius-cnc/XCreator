@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/XSingleButtonDialog.dir/main.cpp.o"
-  "CMakeFiles/XSingleButtonDialog.dir/main.cpp.o.d"
   "XSingleButtonDialog"
   "XSingleButtonDialog.pdb"
 )

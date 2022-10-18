@@ -1,0 +1,3 @@
+/home/user/XCreator/XOpenCascadeTexture/build/CMakeFiles/rebuild_cache.dir
+/home/user/XCreator/XOpenCascadeTexture/build/CMakeFiles/edit_cache.dir
+/home/user/XCreator/XOpenCascadeTexture/build/CMakeFiles/XOpenCascadeTexture.dir

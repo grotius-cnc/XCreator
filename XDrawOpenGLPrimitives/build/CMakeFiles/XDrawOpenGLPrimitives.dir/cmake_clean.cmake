@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o"
-  "CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o.d"
   "XDrawOpenGLPrimitives"
   "XDrawOpenGLPrimitives.pdb"
 )
