@@ -139,7 +139,7 @@ public:
 private:
     GLFWwindow* window;
     std::string myDialogName="XTextEditor";
-    int myWidth=600, myHeight=600;
+    int myWidth=500, myHeight=250;
     XSize *mySize=new XSize();
 
     //! XButton *myButton = new XButton(myWindow); does not work because myWindow has not been initialised at this stage.

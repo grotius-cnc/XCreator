@@ -32,11 +32,11 @@ OpenGl primitives :
 ![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XDrawOpenGLPrimitives/XDrawOpenGLPrimitives.jpg)
 
 Splitter layout : 
-![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XHorizontalSplitterDialog/XHorizontalSplitterLayoutDialog.jpg)
+![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XHorizontalSplitterDialog/XHorizontalSplitterLayout.jpg)
 	
 TextEditor :
 
-![XTextEditor](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XTextEditorDialog/XTextEditor.jpg)
+![XTextEditor](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XTextEditorDialog/XTextEditorDialog.jpg)
 
 
 This project is tested on:

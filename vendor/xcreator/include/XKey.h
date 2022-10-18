@@ -47,10 +47,8 @@ public:
     void setChar(uint theChar){
         myChar=theChar;
     }
-    uint Char(){
-        uint r=myChar;
-        myChar=-1; //! Reset.
-        return r;
+    int Char(){
+        return myChar;
     }
     int Key(){
         return myTempKey;
@@ -225,8 +223,8 @@ public:
 private:
     GLFWwindow* myWindowPointer;
     int myKey, myTempKey, myAction, myMods;
-    uint myScancode;
-    uint myChar=-1;
+    int myScancode;
+    int myChar=-1;
 };
 XKey Key;
 #endif // XKEYS_H

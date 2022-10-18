@@ -71,6 +71,7 @@ public:
 
         //! During startup somehow a key is pressed wich will result in a char on the screen. Avoid this.
         Key.resetScanCode();
+        Key.resetKey();
         myInit=1;
 
         mySize->setReturnSizeIncludingRelativeOffsets(1);
@@ -637,10 +638,11 @@ private:
                 myCursorCount++;
                 Key.resetScanCode();
             }
-            if(Key.getGlfwCharKey()!=-1){
+            if(Key.Char()!=-1){
                 myString.insert(myCursorCount,XChar(Key.Char(),{0.0,0.0,0.0,0.9}));
                 myCursorCount++;
                 Key.resetScanCode();
+                Key.setChar(-1);
                 //! Set no selection at a left press.
                 mySelectionEndCharNr=mySelectionStartCharNr;
             }
