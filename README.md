@@ -23,9 +23,7 @@ To start a new project :
 
 Examples:
 
-Opencascade implementation, notice the button widget on top of the opencascade widget : 
-
-![XDesignerDialog](https://github.com/grotius-cnc/XCreator/blob/main/XOpenCascadeTexture/video.mp4)
+Opencascade implementation, notice the button widget on top of the opencascade widget :
 
 ![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XOpenCascadeTexture/XOpenCascadeTexture.jpg)
 
