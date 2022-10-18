@@ -23,7 +23,7 @@ To start a new project :
 
 Examples:
 
-Opencascade : 
+Opencascade implementation, notice the button widget on top of the opencascade widget : 
  
 ![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XOpenCascadeTexture/XOpenCascadeTexture.jpg)
 
@@ -31,13 +31,13 @@ OpenGl primitives :
 
 ![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XDrawOpenGLPrimitives/XDrawOpenGLPrimitives.jpg)
 
-Splitter layout : 
-![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XHorizontalSplitterDialog/XHorizontalSplitterLayout.jpg)
-	
 TextEditor :
 
 ![XTextEditor](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XTextEditorDialog/XTextEditorDialog.jpg)
 
+Splitter layout : 
+
+![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XHorizontalSplitterDialog/XHorizontalSplitterLayout.jpg)
 
 This project is tested on:
 
