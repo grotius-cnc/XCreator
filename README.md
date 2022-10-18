@@ -17,21 +17,27 @@ To clone this repository including installing the submodules and automated insta
 	cd XCreator
 	./setup
 
-To start a new project fast:
+To start a new project :
 
-	./newXProject  # This will ask you for a XProjectName. The project starts after the build is ok.
+	./newXProject  # This will ask you for a XProjectName.
 
 Examples:
 
-![XDesignerDialog](https://github.com/grotius-cnc/XCreator/blob/main/XHorizontalSplitterDialog/XHorizontalSplitterLayoutDialog.jpg)
+Opencascade : 
+ 
+![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XOpenCascadeTexture/XOpenCascadeTexture.jpg)
 
-![XDesignerDialog](https://user-images.githubusercontent.com/44880102/194404378-7965d88d-a66b-4fd6-8747-61146b25c7c8.jpg)
+OpenGl primitives :
 
-![XFileOpenDialog](https://user-images.githubusercontent.com/44880102/194404395-12e6be5d-ba60-4a6e-bd87-ab3418a3d4db.jpg)
+![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XDrawOpenGLPrimitives/XDrawOpenGLPrimitives.jpg)
+
+Splitter layout : 
+![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XHorizontalSplitterDialog/XHorizontalSplitterLayoutDialog.jpg)
 	
-![XTextEditor](https://user-images.githubusercontent.com/44880102/194404400-12750fca-4301-4aa4-a9c4-6ff7d00b8811.jpg)
+TextEditor :
 
-![XDesignerDialog](https://github.com/grotius-cnc/XCreator/blob/main/XDrawOpenGLPrimitives/XDrawOpenGLPrimitives.jpg)
+![XTextEditor](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XTextEditorDialog/XTextEditor.jpg)
+
 
 This project is tested on:
 
