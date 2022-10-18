@@ -1,6 +1,5 @@
 #ifndef XDIALOG_H
 #define XDIALOG_H
-
 /*
         Copyright (c) 2022 Skynet Cyberdyne
 
@@ -23,7 +22,6 @@
         3. This notice may not be removed or altered from any source
            distribution.
 */
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <SOIL/SOIL.h>
@@ -35,20 +33,26 @@
 //! Thiss class is just a GlfwWindow creation and updated by the XMainWindow thread by calling : draw();
 class XDialog: public XWidget {
 public:
-    XDialog(){init();}
+    //! Empty constructor.
+    XDialog(){
+        init();
+    }
+    //! Empty destructor.
     ~XDialog(){}
-
+    //! Return widget type.
     std::string Type(){
         return "XDialog";
     }
+    //! Set the widget size.
     void setSize(XSize theSize){
         myWidth=theSize.Width();
         myHeight=theSize.Height();
     }
+    //! Return the widget size.
     XSize Size(){
         return {{0.0,0.0,0.0},float(myWidth),float(myHeight)};
     }
-
+    //! Init, cq setup the dialog.
     void init(){
         //! Ensure the init stage is done once.
         if(!myInit){
@@ -70,23 +74,24 @@ public:
             //! Usable for debugging.
             //! glfwSetWindowPos(window,10,10);
 
-            if (window == NULL)
-            {
+            if (window==NULL){
                 std::cout << "Failed to create GLFW window" << std::endl;
                 glfwTerminate();
                 exit(EXIT_FAILURE);
             }
 
-            glfwSetWindowOpacity(window,1.0); // 0-1. 1=no opacy.
+            glfwSetWindowOpacity(window,1.0); //! 0-1. 1=no opacy.
             glfwMakeContextCurrent(window);
             glfwSwapInterval(0);
 
+            //! Callback functions, visit XWindow.h
             glfwSetKeyCallback(window, KeyCallback);
             glfwSetCharCallback(window, CharacterCallback);
             glfwSetScrollCallback(window, ScrollCallBack);
             glfwSetCursorPosCallback(window, MousePosCallBack);
             glfwSetMouseButtonCallback(window, MouseButtonCallBack);
 
+            //! Use a window icon.
             GLFWimage images[1];
             int width, height, channels; //! Channels 4=RGBA.
             images[0].pixels=SOIL_load_image("icons/Adwaita/16x16/legacy/dialog-information.png",&width,&height,&channels,0);
@@ -94,6 +99,7 @@ public:
             images[0].width=height;
             glfwSetWindowIcon(window, 1, images);
 
+            //! Set the openGl scissor size.
             setScissorWindow(Window());
 
             //! Add opencascade widget.
@@ -103,6 +109,7 @@ public:
             myInit=1;
         }
     }
+    //! Update the dialog, draw content.
     void draw(){
         glfwMakeContextCurrent(window); //! Solves window flickering.
         glfwGetFramebufferSize(window, &myWidth, &myHeight);
@@ -111,19 +118,23 @@ public:
         //! Draw WidgetVec content.
         drawWidgetVec();
     }
+    //! Function to draw the openGl texture.
     void drawTexture(){
         myOcct->drawTexture();
     }
+    //! Return if this window should be closed.
     bool shouldClose(){
         if(glfwWindowShouldClose(window)){
             return 1;
         }
         return 0;
     }
+    //! Close this window.
     void close(){
         myOcct=NULL;
         glfwDestroyWindow(window);
     }
+    //! Process opencascade keyboard and mouse events.
     void processEvents(){
         myOcct->processEvents();
     }

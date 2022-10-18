@@ -1,6 +1,5 @@
 #ifndef XMAINWINDOW_H
 #define XMAINWINDOW_H
-
 /*
         Copyright (c) 2022 Skynet Cyberdyne
 
@@ -23,7 +22,6 @@
         3. This notice may not be removed or altered from any source
            distribution.
 */
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -53,12 +51,11 @@ public:
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-        //! glfw window creation
+        //! Glfw window creation
         window=glfwCreateWindow(myWidth, myHeight, myDialogName.c_str(), NULL, NULL);
         setWindowPointer(window);
 
-        if (window == NULL)
-        {
+        if (window==NULL){
             std::cout << "Failed to create GLFW window" << std::endl;
             glfwTerminate();
             exit(EXIT_FAILURE);
@@ -69,12 +66,12 @@ public:
         glfwSwapInterval(0);
 
         //! glad: load all OpenGL function pointers
-        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-        {
+        if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
             std::cout << "Failed to initialize GLAD" << std::endl;
             exit(EXIT_FAILURE);
         }
 
+        //! Callback functions, visit XWindow.h
         glfwSetKeyCallback(window, KeyCallback);
         glfwSetCharCallback(window, CharacterCallback);
         glfwSetScrollCallback(window, ScrollCallBack);
@@ -83,28 +80,32 @@ public:
         glfwSetWindowCloseCallback(window, WindowCloseCallBack);
         glfwSetWindowSizeLimits(window,0,0,GLFW_DONT_CARE,GLFW_DONT_CARE);
 
+        //! OpenGl scissor implementation.
         setScissorWindow(Window());
         enableScissor(1);
 
+        //! A button.
         myButton=new XButton(Window());
         myButton->setSize({{200,100,0},200,100});
         myButton->setColor(XColorType::BackgroundColor,{0.9,0.9,0.9,1.0});
         myButton->setString("button");
         addWidget(myButton);
 
+        //! The dialog where opencascade is drawed to. Like offscreen rendering, cq offscreen Framebuffer Fbo.
         myDummyDialog=new XDialog();
-        myDummyDialog->init();
 
+        //! Main thread.
         while (!glfwWindowShouldClose(window)){
-            glfwMakeContextCurrent(window); // Solves window flickering.
+            glfwMakeContextCurrent(window); //! Solves window flickering.
             glfwGetFramebufferSize(window, &myWidth, &myHeight);
             //! Set the XWindow size.
             this->setWindowDimension(myWidth,myHeight);
-            //! Set the scissor size.
             mySize->setSize({{0,0,0},float(myWidth),float(myHeight)});
+            //! Set the scissor size.
             setScissorSize(mySize->Size());
             //! ScissorSize().printSize("ScissorSize Mainwindow:");
 
+            //! Reset OpenGl state.
             glViewport(0, 0, myWidth, myHeight);
             glClear(GL_COLOR_BUFFER_BIT);
             glMatrixMode(GL_PROJECTION);
@@ -113,27 +114,34 @@ public:
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
 
-            if(glfwGetTime()>1){ // Reset every 1000 Ms.
+            //! Used for mouse cursor blink and animation.
+            if(glfwGetTime()>1){ //! Reset every 1000 Ms.
                 glfwSetTime(0);
             }
             //! Timer for blinking mouse cursor when using text editor widgets. This function has to be done called once each project.
             Mouse.setTime(glfwGetTime()*1000);
 
+            //! If dummy dialog is up and running, draw the opencascade texture on this window.
             if(myDummyDialog!=NULL){
+                //! This draw's the openGl texture, here right now. OpenGl's state machine trick.
+                //! Draw it in this window before the glfw buffer swap.
                 myDummyDialog->drawTexture();
             }
-            //! draw content.
+            //! Draw content, this will draw the button, wich is part of the widgetVec. The above addWidget function.
             drawWidgetVec();
-
+            //! Draw the result.
             glfwSwapBuffers(window);
             glfwPollEvents();
 
+            //! Subwindow's are processed after the MainWindow bufferswap.
             if(myDummyDialog!=NULL){
                 //! Hide the dummy window.
                 glfwHideWindow(myDummyDialog->Window()->GlfwWindowPointer());
-
+                //! Set the dummy window size the same as this window size. This is also the OpenGl texture output size.
                 glfwSetWindowSize(myDummyDialog->Window()->GlfwWindowPointer(),mySize->Width(),mySize->Height());
+                //! This update opencascade myView, the central opencascade routine.
                 myDummyDialog->draw();
+                //! Process opencascade mouse and key events.
                 myDummyDialog->processEvents();
                 //! If this window has to close, close also the dummydialog.
                 if(myDummyDialog->shouldClose() || glfwWindowShouldClose(window)){
@@ -143,6 +151,7 @@ public:
                 }
             }
         }
+        //! Disable the scissor.
         enableScissor(0);
         //! Destroy dummy dialog.
         myDummyDialog->close();

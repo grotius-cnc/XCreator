@@ -1,6 +1,5 @@
 #ifndef XOPENCASCADE_H
 #define XOPENCASCADE_H
-
 /*
         Copyright (c) 2022 Skynet Cyberdyne
 
@@ -23,7 +22,6 @@
         3. This notice may not be removed or altered from any source
            distribution.
 */
-
 #include <XWidget.h>
 #include <XSize.h>
 #include <XRectangular.h>
