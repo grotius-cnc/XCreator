@@ -1,6 +1,6 @@
 # XCreator
 
-A Work in progress of Skynet Cyberdyne 2022.
+A Work in progress, by Skynet Cyberdyne 2022.
 
 Specification:
 
