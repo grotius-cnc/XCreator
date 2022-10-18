@@ -25,9 +25,8 @@ Examples:
 
 Opencascade implementation, notice the button widget on top of the opencascade widget : 
 
-<video src='https://github.com/grotius-cnc/XCreator/blob/main/XOpenCascadeTexture/video.mp4' width=180/>
+![XDesignerDialog](https://github.com/grotius-cnc/XCreator/blob/main/XOpenCascadeTexture/video.mp4)
 
- 
 ![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XOpenCascadeTexture/XOpenCascadeTexture.jpg)
 
 OpenGl primitives :
