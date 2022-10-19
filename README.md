@@ -33,6 +33,10 @@ OpenGl primitives :
 
 TextEditor :
 
+![XTextEditor](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XTinyDialogs/XTinyDialogs.jpg)
+
+Ready to go ImageButtons that will pop up different dialogs like [FileOpen, FileSave, Message, Input, CheckList, ArrayInput, ColorChooser]
+
 ![XTextEditor](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XTextEditorDialog/XTextEditorDialog.jpg)
 
 Splitter layout : 

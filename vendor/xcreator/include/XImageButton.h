@@ -39,7 +39,7 @@ public:
         this->setWindow(theWindow);
         myBorder->setWindow(this->Window());
         myBackground->setWindow(this->Window());
-        myIcon->setWindow(this->Window());
+        myIcon=new XIcon(Window(),myImagePath,{{0,0,0},15,15});
     }
     //! Empty destructor.
     ~XImageButton(){}
@@ -47,6 +47,13 @@ public:
     //! Type of this widget.
     std::string Type(){
         return "XImageButton";
+    }
+    //! To initialize afterwards when using a empty constructor.
+    void initImageButton(XWindow *theWindow, std::string theImagePath){
+        this->setWindow(theWindow);
+        myBorder->setWindow(this->Window());
+        myBackground->setWindow(this->Window());
+        myIcon=new XIcon(Window(),theImagePath,{{0,0,0},15,15});
     }
     //! Set the size of this widget. Size also handles the mouse & key events.
     void setSize(XSize theSize){
@@ -132,6 +139,15 @@ public:
         }
         return {0,0,0,0};
     }
+    //! If this widget is subclassed, use the IsPressedPrivate to avoid duplicate name clashes.
+    bool isPressed(){
+        return isPressedPrivate();
+    }
+    bool isPressedPrivate(){
+        bool r=myIsPressed;
+        myIsPressed=false; //! Reset after request.
+        return r;
+    }
     //! draw this widget. Eventually use xyz offsets, for example while dragging a widget.
     void draw(){
         myBorder->setSize(mySize->Size());
@@ -150,6 +166,12 @@ public:
         myIcon->setRelativeOriginOffset(mySize->RelativeOriginOffset());
         myIcon->draw();
 
+        if(myBackground->Event(XEventEnum::PressedLeft)){
+            myIsPressed=true;
+        }
+        myBackground->Event(XEventEnum::ReleasedLeft);
+
+
         //! draw content.
         for(uint i=0; i<WidgetVec().size(); i++){
             WidgetVec().at(i)->setRelativeOriginOffset(mySize->RelativeOriginOffset());
@@ -159,8 +181,8 @@ public:
 private:
     std::string myName;
     XString *myString=new XString("ImageButton");
-    XSize *mySize=new XSize();
-    float myBorderSize=1;
+    XSize *mySize=new XSize({{0,0,0},20,20});
+    float myBorderSize=2;
     XColor //! Create colors and set standard values.
     *myBackgroundColor=new XColor(0.1,0.1,0.1,0.9),
     *myBorderColor=new XColor(0.0,0.0,0.0,0.9),
@@ -170,11 +192,10 @@ private:
     XRectangular *myBorder=new XRectangular();
     XRectangular *myBackground=new XRectangular();
     std::string myImagePath;
-    XIcon *myIcon=new XIcon(Window(),myImagePath,{{0,0,0},15,15});
+    XIcon *myIcon;
+    bool myIsPressed=0;
 };
-
-
-#endif // XIMAGEBUTTON_H
+#endif
 
 
 
