@@ -3,7 +3,7 @@
 int main(int argc, char** argv)
 {
     // Create new application.
-    XMainWindow *MainWindow=new XMainWindow("XFileDialog",800,500);
+    XMainWindow *MainWindow=new XMainWindow();
     // Show application.
     MainWindow->run();
 }

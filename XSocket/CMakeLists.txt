@@ -17,6 +17,7 @@ set(SOURCES
     "${XCREATOR_DIR}/XMainWindow.h"
     "${XCREATOR_DIR}/XServer.h"
     "${XCREATOR_DIR}/XClient.h"
+    "${XCREATOR_DIR}/XChatEditor.h"
     )
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE "${SRC_DIR}/")

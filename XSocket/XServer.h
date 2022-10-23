@@ -67,18 +67,37 @@ public:
         myThread = new std::thread(&XServer::thread,this);
         myThread->detach(); //! Execute the thread independent from other programs.
     }
-    void sendMessage(){
-        mySend=true;
+    //! Send message to client.
+    void sendMessage(std::string theMessage){
+        myMessageOut=theMessage;
+        //! std::cout<<"server has recieved message in XServer class."<<std::endl;
+    }
+    std::string Message(){
+        return myMessageIn;
+    }
+    bool hasNewMessage(){
+        if(myIncomingMessageToPickUp>myIncomingMessagePickedUp){
+            return 1;
+        }
+        return 0;
     }
     //! Close connection.
     void terminate(){
         closeServer();
     }
-
+    //! Up.
+    bool Ready(){
+        if(myServerUp && myClientUp){
+            return 1;
+        }
+        return 0;
+    }
 private:
-    int myPortNumber=8011;
-    //! Buffer to send and receive messages with
-    char myBuffer[1500]; //! Values possible in range of 0-255.
+    int myPortNumber=9000;
+    //! Buffer for incloming traffic.
+    char myInBuffer[1500];
+    //! Buffer for outgoing traffic.
+    char myOutBuffer[1500];
     //! Server adres.
     sockaddr_in myServerAddress;
     //! Socket descriptor
@@ -87,10 +106,14 @@ private:
     int myBindStatus=0;
     //! Logging.
     int myBytes=0, myBytesRead=0, myBytesWritten=0;
-    //! The data to send.
-    std::string myData;
     //! Session time.
     std::string myExitMessage = "exit";
+    //! Incoming message.
+    std::string myIncomingMessage;
+    //! Incoming message counter.
+    uint myIncomingMessageToPickUp=0;
+    //! Incoming messages picked up.
+    uint myIncomingMessagePickedUp=0;
     //! Logging session time.
     struct timeval myStartTime, myEndTime;
     //! Run this app in thread so it does not lock our program.
@@ -99,8 +122,8 @@ private:
     uint myClientUp=0;
     //! Status.
     uint myServerUp=0;
-    //! Send message.
-    bool mySend=0;
+    //! Messgae.
+    std::string myMessageIn="<< Server\n", myMessageOut;
 
     //! Run a seperate thread to avoid locking our main program loop.
     void thread(){
@@ -111,13 +134,7 @@ private:
             myClientUp=initCLient();
         }
         if(myServerUp && myClientUp){
-            if(!runServer()){
-                delete myThread;
-                myThread=NULL;
-            }
-            if(myThread==NULL){
-                std::cout<<"Server thread destroyed."<<std::endl;
-            }
+            runServer();
         }
     }
     //! Init the server socket.
@@ -168,34 +185,27 @@ private:
     //! Update server thread.
     int runServer(){
         while(1){
-            //! Receive a message from the client (listen)
-            std::cout << "Server: Awaiting client response..." << std::endl;
-            //! Use myBuffer to recieve.
-            memset(&myBuffer, 0, sizeof(myBuffer)); //! Clear the buffer
-            myBytes = recv(myNewSd, (char*)&myBuffer, sizeof(myBuffer), 0);
-            //! Log the session.
-            myBytesRead+=myBytes;
+            if(myMessageOut==""){
+                //! Recieving data.
+                std::string str;
+                memset(&myInBuffer, 0, sizeof(myInBuffer)); //! Clear the buffer
+                myBytes = recv(myNewSd, (char*)&myInBuffer, sizeof(myInBuffer), 0);
 
-            if(!strcmp(myBuffer, "exit")){
-                std::cout << "Server: Client has quit the session" << std::endl;
-                break;
+                if(myBytes>0){
+                    std::cout << "Server << " << myInBuffer << std::endl;
+                    for(int i=0; i<myBytes; i++){
+                        std::string s(1,myInBuffer[i]);
+                        str.append(s);
+                    }
+                    myMessageIn.append("<< "+str+"\n");
+                }
+
+            } else { /* //! Write data example.
+                memset(&myOutBuffer, 0, sizeof(myOutBuffer)); //! Clear the buffer
+                strcpy(myOutBuffer, myMessage.c_str());
+                myBytesWritten+=send(myNewSd, (char*)&myOutBuffer, strlen(myOutBuffer), 0);
+                myMessage.clear(); */
             }
-
-            //! Do something with the myBuffer content, and responce with message to client.
-            std::cout << "Server << " << myBuffer << std::endl;
-            std::cout << "> ";
-            getline(std::cin, myData);
-
-            //! Use myBuffer to send.
-            memset(&myBuffer, 0, sizeof(myBuffer)); //! Clear the buffer
-            strcpy(myBuffer, myData.c_str());
-            if(myData == myExitMessage){
-                //! Send to the client that server has closed the connection
-                send(myNewSd, (char*)&myBuffer, strlen(myBuffer), 0);
-                break;
-            }
-            //! Send the message to client, log the bytes of the session.
-            myBytesWritten+=send(myNewSd, (char*)&myBuffer, strlen(myBuffer), 0);
         }
         closeServer();
         return 0;

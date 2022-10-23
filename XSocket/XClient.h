@@ -42,6 +42,8 @@
 #include <fstream>
 #include <thread>
 
+std::string commonData;
+
 class XClient {
 public:
     //! Empty constructor using default port adres : 5000
@@ -59,13 +61,18 @@ public:
         myThread = new std::thread(&XClient::thread,this);
         myThread->detach(); //! Execute the thread independent from other programs.
     }
-    //! Send message
-    void sendMessage(){
-        mySend=true;
+    //! Send message to server.
+    void sendMessage(std::string theMessage){
+        myMessage=theMessage;
+        //! std::cout<<"Client has recieved message in XServer class: "<<myMessage<<std::endl;
     }
     //! Close connection.
     void terminate(){
         closeClient();
+    }
+    //! Up.
+    bool Up(){
+        return myClientUp;
     }
 private:
     //! Run this app in thread so it does not lock our program.
@@ -73,9 +80,11 @@ private:
     //! Localhost.
     std::string myServerIp="127.0.0.1";
     //! Port number.
-    int myPortNumber=8011;
-    //! message buffer
-    char msg[1500];
+    int myPortNumber=9000;
+    //! message buffer incoming traffic.
+    char myInBuffer[1500];
+    //! message buffer outgoing traffic.
+    char myOutBuffer[1500];
     //! Logger.
     int myBytesRead=0, myBytesWritten=0;
     //! Host.
@@ -84,12 +93,12 @@ private:
     struct timeval myStartTime, myEndTime;
     //! Client socket descriptor.
     int clientSd=0;
-    //! Data.
-    std::string myData;
     //! Client status.
     bool myClientUp=0;
-    //! Send message.
-    bool mySend=0;
+    //! The message.
+    std::string myMessage;
+    //! Test
+    std::ifstream myStream;
 
     void thread(){
         if(!myClientUp){
@@ -110,7 +119,7 @@ private:
                 inet_addr(inet_ntoa(*(struct in_addr*)*myHost->h_addr_list));
         sendSockAddr.sin_port = htons(myPortNumber);
         clientSd = socket(AF_INET, SOCK_STREAM, 0);
-        //try to connect...
+        //! try to connect...
         int status = connect(clientSd,(sockaddr*) &sendSockAddr, sizeof(sendSockAddr));
         if(status < 0){
             std::cout<<"CLient: Error connecting to socket!"<<std::endl;
@@ -122,27 +131,22 @@ private:
     }
     //! Run client.
     int runClient(){
-        while(1)
-        {
-            std::cout << ">";
-            getline(std::cin, myData);
+        while(1){
+            if(myMessage==""){
 
-            memset(&msg, 0, sizeof(msg)); //! clear the buffer
-            strcpy(msg, myData.c_str());
-            if(myData == "exit"){
-                send(clientSd, (char*)&msg, strlen(msg), 0);
-                break;
+                /* //! Read data example.
+                memset(&myInBuffer, 0, sizeof(myInBuffer)); //! clear the buffer
+                myBytesRead += recv(clientSd, (char*)&myInBuffer, sizeof(myInBuffer), 0);
+                std::cout << "Client << " << myInBuffer << std::endl;
+                */
+            } else { //! Write data.
+                memset(&myOutBuffer, 0, sizeof(myOutBuffer)); //! clear the buffer
+                strcpy(myOutBuffer, myMessage.c_str());
+                send(clientSd, (char*)&myOutBuffer, strlen(myOutBuffer), 0);
+                myMessage.clear();
             }
-            myBytesWritten += send(clientSd, (char*)&msg, strlen(msg), 0);
-            std::cout << "CLient: Awaiting server response..." << std::endl;
-            memset(&msg, 0, sizeof(msg)); //! clear the buffer
-            myBytesRead += recv(clientSd, (char*)&msg, sizeof(msg), 0);
-            if(!strcmp(msg, "exit")){
-                std::cout << "Client: Server has quit the session." << std::endl;
-                break;
-            }
-            std::cout << "Client << " << msg << std::endl;
         }
+        std::cout<<"out of while loop."<<std::endl;
         closeClient();
         return 0;
     }

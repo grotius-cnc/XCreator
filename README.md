@@ -47,6 +47,9 @@ Splitter layout :
 
 ![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XHorizontalSplitterDialog/XHorizontalSplitterLayout.jpg)
 
+Socket server client, in this example we tranfer data from client to server : 
+
+![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XSocket/XSocket.jpg)
 
 This project is tested on:
 

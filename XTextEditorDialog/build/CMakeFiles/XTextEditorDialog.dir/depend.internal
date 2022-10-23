@@ -38,5 +38,6 @@ CMakeFiles/XTextEditorDialog.dir/main.cpp.o
  ../../vendor/xcreator/include/XTriangle.h
  ../../vendor/xcreator/include/XWidget.h
  ../../vendor/xcreator/include/XWindow.h
+ ../../vendor/zlib/build/zconf.h
  /home/user/XCreator/XTextEditorDialog/XMainWindow.h
  /home/user/XCreator/XTextEditorDialog/main.cpp

@@ -17,7 +17,27 @@ string
 ../../vendor/freetype-2.12.1/include/freetype/config/ftheader.h
 
 ../../vendor/freetype-2.12.1/include/ft2build.h
+zconf.h
+-
 freetype/config/ftheader.h
+-
+
+../../vendor/freetype-2.12.1/include/zconf.h
+stddef.h
+-
+windows.h
+-
+limits.h
+-
+sys/types.h
+-
+stdarg.h
+-
+stddef.h
+-
+unistd.h
+-
+unixio.h
 -
 
 ../../vendor/glad/build/include/KHR/khrplatform.h

@@ -22,6 +22,7 @@ CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XFileOption.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XFrame.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XHorizontalSplitterLayout.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XIcon.h
+CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XImage.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XKey.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XLineEdit.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XMouse.h
@@ -39,6 +40,7 @@ CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XTreeView.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XTriangle.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XWidget.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../../vendor/xcreator/include/XWindow.h
+CMakeFiles/XSocket.dir/main.cpp.o: ../XChatEditor.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../XClient.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../XServer.h
 CMakeFiles/XSocket.dir/main.cpp.o: ../XMainWindow.h

@@ -29,7 +29,6 @@
 
 #include <XWidget.h>
 #include <XButton.h>
-#include <XTextEdit.h>
 #include <XWindow.h>
 #include <XMouse.h>
 #include <XKey.h>
@@ -37,7 +36,7 @@
 #include <XScissor.h>
 #include <XServer.h>
 #include <XClient.h>
-//#include <XTerminalTextEdit.h>
+#include <XChatEditor.h>
 
 class XMainWindow : public XWidget {
 public:
@@ -55,8 +54,7 @@ public:
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-        // glfw window creation
-        // --------------------
+        //! glfw window creation
         window=glfwCreateWindow(myWidth, myHeight, myDialogName.c_str(), NULL, NULL);
         setWindowPointer(window);
 
@@ -67,12 +65,11 @@ public:
             exit(EXIT_FAILURE);
         }
 
-        glfwSetWindowOpacity(window,1.0); // 0-1. 1=no opacy.
+        glfwSetWindowOpacity(window,1.0); //! 0-1. 1=no opacy.
         glfwMakeContextCurrent(window);
         glfwSwapInterval(1);
 
-        // glad: load all OpenGL function pointers
-        // ---------------------------------------
+        //! glad: load all OpenGL function pointers
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         {
             std::cout << "Failed to initialize GLAD" << std::endl;
@@ -88,41 +85,31 @@ public:
         glfwSetWindowSizeLimits(window,0,0,GLFW_DONT_CARE,GLFW_DONT_CARE);
 
         //! Class to populate the file dialog with content.
-        myButtonServer=new XButton(Window());
-        myButtonServer->setSize({{0,0,0},200,100});
-        myButtonServer->setString("Server");
-        addWidget(myButtonServer);
+        myServerEditor=new XChatEditor(Window());
+        myServerEditor->init();
+        myServerEditor->setText("\0",{1.0,1.0,0.0,0.9});
+        addWidget(myServerEditor);
 
-        myButtonClient=new XButton(Window());
-        myButtonClient->setSize({{205,0,0},200,100});
-        myButtonClient->setString("Client");
-        addWidget(myButtonClient);
+        myClientEditor=new XChatEditor(Window());
+        myClientEditor->init();
+        myClientEditor->setText("\0",{1.0,1.0,0.0,0.9});
+        addWidget(myClientEditor);
 
-        myTextEditServerInput=new XTextEdit(Window());
-        myTextEditServerInput->setSize({{0,105,0},200,100});
-        addWidget(myTextEditServerInput);
-
-        myTextEditClientInput=new XTextEdit(Window());
-        myTextEditClientInput->setSize({{205,105,0},200,100});
-        addWidget(myTextEditClientInput);
-
-        //myTerminalServer=new XTerminalTextEdit(Window());
-        //myTerminalServer->setSize({{205,210,0},200,200});
-        //addWidget(myTerminalServer);
+        int port=6500;
 
         //! Setup server.
-        myServer=new XServer();
+        myServer=new XServer(port);
         myServer->run();
 
         //! Setup client.
-        myClient=new XClient();
+        myClient=new XClient(port);
         myClient->run();
 
         setScissorWindow(Window());
         enableScissor(1);
 
         while (!glfwWindowShouldClose(window)){
-            glfwMakeContextCurrent(window); // Solves window flickering.
+            glfwMakeContextCurrent(window); //! Solves window flickering.
 
             glfwGetFramebufferSize(window, &myWidth, &myHeight);
             //! Set the XWindow size.
@@ -139,24 +126,33 @@ public:
             glLoadIdentity();
             glOrtho(0, myWidth, myHeight, 0, -10000, 10000);
             glMatrixMode(GL_MODELVIEW);
-            glClearColor(0.5,0.0,0.2,1.0);
             glLoadIdentity();
 
-            if(glfwGetTime()>1){ // Reset every 1000 Ms.
+            if(glfwGetTime()>1){ //! Reset every 1000 Ms.
                 glfwSetTime(0);
             }
             //! Timer for blinking mouse cursor when using text editor widgets. This function has to be done called once each project.
             Mouse.setTime(glfwGetTime()*1000);
 
+            //! Process the terminal enter input.
+            myServerEditor->setSize({{0,0,0},mySize->Width()/2,mySize->Height()});
+            myClientEditor->setSize({{mySize->Width()/2,0,0},mySize->Width()/2,mySize->Height()});
+
+            //! Once they are up, input is welcome.
+            if(myServer->Ready()){
+                //! Process input enter.
+                if(myClientEditor->hasCommand()){
+                    myClient->sendMessage(myClientEditor->Command());
+                    myClientEditor->resetCommand();
+                }
+                if(myServerEditor->hasCommand()){
+                    myServer->sendMessage(myServerEditor->Command());
+                    myServerEditor->resetCommand();
+                }
+                myServerEditor->setText(myServer->Message(),{0.0,1.0,1.0,0.9});
+            }
             //! draw content.
             drawWidgetVec();
-
-            if(myButtonServer->isPressed()){
-                myServer->sendMessage();
-            }
-            if(myButtonClient->isPressed()){
-                myClient->sendMessage();
-            }
 
             glfwSwapBuffers(window);
             glfwPollEvents();
@@ -172,19 +168,13 @@ public:
     }
 private:
     GLFWwindow* window;
-    std::string myDialogName="XMainWindow";
-    int myWidth=0, myHeight=0;
+    std::string myDialogName="XServerClient";
+    int myWidth=500, myHeight=250;
     XSize *mySize=new XSize();
 
-    //! XButton *myButton = new XButton(myWindow); does not work because myWindow has not been initialised at this stage.
-    XButton *myButtonServer;
-    XButton *myButtonClient;
-
-    XTextEdit *myTextEditServerInput;
-    XTextEdit *myTextEditClientInput;
-
-    XServer *myServer;
     XClient *myClient;
+    XServer *myServer;
+    XChatEditor *myServerEditor, *myClientEditor;
 };
 #endif
 

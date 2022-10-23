@@ -23,6 +23,7 @@ CMakeFiles/XSocket.dir/main.cpp.o
  ../../vendor/xcreator/include/XFrame.h
  ../../vendor/xcreator/include/XHorizontalSplitterLayout.h
  ../../vendor/xcreator/include/XIcon.h
+ ../../vendor/xcreator/include/XImage.h
  ../../vendor/xcreator/include/XKey.h
  ../../vendor/xcreator/include/XLineEdit.h
  ../../vendor/xcreator/include/XMouse.h
@@ -40,6 +41,7 @@ CMakeFiles/XSocket.dir/main.cpp.o
  ../../vendor/xcreator/include/XTriangle.h
  ../../vendor/xcreator/include/XWidget.h
  ../../vendor/xcreator/include/XWindow.h
+ ../XChatEditor.h
  ../XClient.h
  ../XServer.h
  /home/user/XCreator/XSocket/XMainWindow.h

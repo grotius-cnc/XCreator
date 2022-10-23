@@ -35,29 +35,26 @@
 #include <XKey.h>
 #include <XTemplate.h>
 #include <XScissor.h>
-
 #include <XTextEdit.h>
+#include <XTerminal.h>
 
 class XMainWindow : public XWidget {
 public:
     XMainWindow(){ }
     XMainWindow(std::string theDialogName, uint theStartupWidth, uint theStartupHeight):myDialogName(theDialogName),myWidth(theStartupWidth),myHeight(theStartupHeight){ }
-    ~XMainWindow(){
-        fclose(myFp);
-    }
+    ~XMainWindow(){}
 
     void run(){
         glfwInit();
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-        //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+        //! glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 #ifdef __APPLE__
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-        // glfw window creation
-        // --------------------
+        //! glfw window creation
         window=glfwCreateWindow(myWidth, myHeight, myDialogName.c_str(), NULL, NULL);
         setWindowPointer(window);
 
@@ -72,8 +69,7 @@ public:
         glfwMakeContextCurrent(window);
         glfwSwapInterval(1);
 
-        // glad: load all OpenGL function pointers
-        // ---------------------------------------
+        //! glad: load all OpenGL function pointers
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         {
             std::cout << "Failed to initialize GLAD" << std::endl;
@@ -89,13 +85,9 @@ public:
         glfwSetWindowSizeLimits(window,0,0,GLFW_DONT_CARE,GLFW_DONT_CARE);
 
         //! Class to populate the file dialog with content.
-        myTextEdit=new XTextEdit(Window());
-        myTextEdit->init();
-        addWidget(myTextEdit);
-
-        myDirText=new XText(Window()); //! Shows current path at bottom of window.
-        myDirText->init();
-        addWidget(myDirText);
+        myTerminal=new XTerminal(Window());
+        myTerminal->init();
+        addWidget(myTerminal);
 
         setScissorWindow(Window());
         enableScissor(1);
@@ -120,22 +112,14 @@ public:
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
 
-            if(glfwGetTime()>1){ // Reset every 1000 Ms.
+            if(glfwGetTime()>1){ //! Reset every 1000 Ms.
                 glfwSetTime(0);
             }
-            // Timer for blinking mouse cursor when using text editor widgets. This function has to be done called once each project.
+            //! Timer for blinking mouse cursor when using text editor widgets. This function has to be done called once each project.
             Mouse.setTime(glfwGetTime()*1000);
 
             //! Process the terminal enter input.
-            processImput();
-
-            //! Set widget sizes.
-            myTextEdit->setSize({{0,0,0},mySize->Width(),mySize->Height()-20});
-            myDirText->setSize({{0,mySize->Size().Height()-20,0},mySize->Width(),20});
-            //! Get current working directory and display.
-            XString theDirectoryPath=processDir();
-            myDirText->drawText(theDirectoryPath,0,theDirectoryPath.size(),0,0,0);
-
+            myTerminal->setSize(mySize->Size());
             //! draw content.
             drawWidgetVec();
 
@@ -154,83 +138,7 @@ private:
     int myWidth=500, myHeight=250;
     XSize *mySize=new XSize();
 
-    XTextEdit *myTextEdit;
-    XText *myDirText;
-
-    std::string myUserName;
-
-    std::string myResult;
-    FILE *myFp;
-    char myBuffer[256];
-
-    //! Get current working directory.
-    XString processDir(){
-        char cwd[256];
-        getcwd(cwd,sizeof (cwd));
-        std::string str=cwd;
-
-        std::string totalString=" User: "+getUser()+" Path: "+str;
-        XString theXString;
-        theXString.setStringFromStdString(totalString);
-        theXString.setColorToString({0.6,0.6,0.0,0.9});
-        return theXString;
-    }
-    //! Process terminal enter input.
-    void processImput(){
-        if(myTextEdit->Command().size()!=0){ //! Has command.
-
-            //! std::cout<<"hasCommand:"<<myTextEdit->Command()<<std::endl;
-            std::string theCommand=myTextEdit->Command();
-
-            if(theCommand=="clear"){
-                command(theCommand);
-                //! This is a fast way to reset some values.
-                myTextEdit->reset();
-                return;
-            }
-            if(theCommand=="dir"){ //! Old dos command.
-                //! std::cout<<"dir found, command:"<<theCommand<<std::endl;
-                theCommand="ls";
-            }
-            if(theCommand.size()>2 && theCommand.at(0)=='c' && theCommand.at(1)=='d' && theCommand.at(2)==' '){
-                theCommand.erase(0,3);
-                //! std::cout<<"cd found, command:"<<theCommand<<std::endl;
-                chdir(theCommand.c_str());
-                theCommand.clear();
-            }
-
-            XString theXStringCommand;
-            theXStringCommand.setString(command(theCommand));
-            theXStringCommand.setColorToString({0.8,0.5,0.0,1.0});
-            myTextEdit->appendText(theXStringCommand);
-            myTextEdit->resetCommand();
-        }
-    }
-
-    std::string command(std::string cmd){
-        myResult.clear();
-        cmd.append(" 2>&1"); // Todo. Add the error channel output stream.
-        myFp = popen(cmd.c_str(), "r");
-        //! std::cout<<"theTerminal:"<<*ctermid<<std::endl;
-
-        if(myFp){
-            //! std::cout<<"stream ok."<<std::endl;
-            while(feof(myFp)==0){
-                if(fgets(myBuffer, 250, myFp)){
-                    //! std::cout<<"buffer:"<<buffer<<std::endl;
-                    myResult.append(myBuffer);
-                }
-            }
-        }
-        //! fclose(fp);
-        return myResult;
-    }
-    //! Get the user name.
-    std::string getUser(){
-        std::string theUserName=getlogin();
-        // std::cout<<"userName: "<<theUserName<<std::endl;
-        return theUserName;
-    }
+    XTerminal *myTerminal;
 };
 #endif
 

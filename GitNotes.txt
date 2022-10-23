@@ -15,9 +15,14 @@ git submodule add https://github.com/paralin/soil.git vendor/soil
 git submodule add https://github.com/JoeyDeVries/LearnOpenGL.git vendor/learnopengl
 git submodule add https://github.com/glennrp/libpng.git vendor/libpgn
 git submodule add https://github.com/grotius-cnc/OCCT.git vendor/OCCT
+git submodule add https://github.com/grotius-cnc/OCCT.git vendor/PyBind/pybind11
 
 git submodule sync
 git add .
 git commit -m "commit"
 
 git push -u origin main
+
+
+# Remove a submodule :
+git rm --cached vendor/PyBind/pybind11

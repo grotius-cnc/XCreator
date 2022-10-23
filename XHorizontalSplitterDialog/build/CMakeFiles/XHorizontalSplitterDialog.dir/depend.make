@@ -4,6 +4,7 @@
 CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o: ../../vendor/clip-1.5/clip.h
 CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/freetype/config/ftheader.h
 CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/ft2build.h
+CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/zconf.h
 CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o: ../../vendor/glad/build/include/KHR/khrplatform.h
 CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o: ../../vendor/glad/build/include/glad/glad.h
 CMakeFiles/XHorizontalSplitterDialog.dir/main.cpp.o: ../../vendor/learnopengl/includes/stb_image.h

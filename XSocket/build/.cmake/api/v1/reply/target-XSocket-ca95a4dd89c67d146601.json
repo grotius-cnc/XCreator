@@ -27,19 +27,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 21,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 81,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 22,
+				"line" : 82,
 				"parent" : 0
 			},
 			{
@@ -63,7 +57,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 27,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
@@ -91,9 +85,15 @@
 				"parent" : 0
 			},
 			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 57,
+				"line" : 58,
 				"parent" : 0
 			}
 		]
@@ -560,7 +560,8 @@
 			[
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -585,6 +586,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "XClient.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "XChatEditor.h",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -15,6 +15,7 @@ set(SOURCES
 # main.cpp is only used to tell cmake it has to be compiled for c++ language.
     "${XCREATOR_DIR}/main.cpp"
     "${XCREATOR_DIR}/XMainWindow.h"
+    "${XCREATOR_DIR}/XTerminal.h"
     )
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE "${SRC_DIR}/")

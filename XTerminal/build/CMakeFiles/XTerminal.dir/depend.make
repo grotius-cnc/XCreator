@@ -38,6 +38,7 @@ CMakeFiles/XTerminal.dir/main.cpp.o: ../../vendor/xcreator/include/XTreeView.h
 CMakeFiles/XTerminal.dir/main.cpp.o: ../../vendor/xcreator/include/XTriangle.h
 CMakeFiles/XTerminal.dir/main.cpp.o: ../../vendor/xcreator/include/XWidget.h
 CMakeFiles/XTerminal.dir/main.cpp.o: ../../vendor/xcreator/include/XWindow.h
+CMakeFiles/XTerminal.dir/main.cpp.o: ../XTerminal.h
 CMakeFiles/XTerminal.dir/main.cpp.o: ../XMainWindow.h
 CMakeFiles/XTerminal.dir/main.cpp.o: ../main.cpp
 

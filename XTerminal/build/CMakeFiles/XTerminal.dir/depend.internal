@@ -39,5 +39,6 @@ CMakeFiles/XTerminal.dir/main.cpp.o
  ../../vendor/xcreator/include/XTriangle.h
  ../../vendor/xcreator/include/XWidget.h
  ../../vendor/xcreator/include/XWindow.h
+ ../XTerminal.h
  /home/user/XCreator/XTerminal/XMainWindow.h
  /home/user/XCreator/XTerminal/main.cpp

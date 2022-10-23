@@ -17,6 +17,8 @@ string
 ../../vendor/freetype-2.12.1/include/freetype/config/ftheader.h
 
 ../../vendor/freetype-2.12.1/include/ft2build.h
+zconf.h
+-
 freetype/config/ftheader.h
 -
 
@@ -512,6 +514,24 @@ iostream
 XMouse.h
 -
 XKey.h
+-
+
+../../vendor/zlib/build/zconf.h
+stddef.h
+-
+windows.h
+-
+limits.h
+-
+sys/types.h
+-
+stdarg.h
+-
+stddef.h
+-
+unistd.h
+-
+unixio.h
 -
 
 /home/user/XCreator/XTextEditorDialog/XMainWindow.h

@@ -534,6 +534,30 @@ XMouse.h
 XKey.h
 -
 
+../XTerminal.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+XWidget.h
+-
+XButton.h
+-
+XImage.h
+-
+XWindow.h
+-
+XMouse.h
+-
+XKey.h
+-
+XTemplate.h
+-
+XScissor.h
+-
+XTextEdit.h
+-
+
 /home/user/XCreator/XTerminal/XMainWindow.h
 glad/glad.h
 -
@@ -556,6 +580,8 @@ XTemplate.h
 XScissor.h
 -
 XTextEdit.h
+-
+XTerminal.h
 -
 
 /home/user/XCreator/XTerminal/main.cpp
