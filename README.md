@@ -39,9 +39,14 @@ Ready to go ImageButtons that will pop up different dialogs like [FileOpen, File
 
 ![XTextEditor](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XTinyDialogs/XTinyDialogs.jpg)
 
+Terminal :
+
+![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XTerminal/XTerminal.jpg)
+
 Splitter layout : 
 
 ![XFileOpenDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XHorizontalSplitterDialog/XHorizontalSplitterLayout.jpg)
+
 
 This project is tested on:
 
