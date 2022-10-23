@@ -1,0 +1,3 @@
+/home/user/XCreator/XTerminal/build/CMakeFiles/rebuild_cache.dir
+/home/user/XCreator/XTerminal/build/CMakeFiles/edit_cache.dir
+/home/user/XCreator/XTerminal/build/CMakeFiles/XTerminal.dir

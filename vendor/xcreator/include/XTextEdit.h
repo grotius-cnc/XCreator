@@ -237,12 +237,13 @@ public:
             myEditor->setSize({{mySize->Origin().X()+myIndexWidth+mySpacerWidth,
                                 mySize->Origin().Y(),
                                 mySize->Origin().Z()},
-                                mySize->Width()-(myIndexWidth+mySpacerWidth),mySize->Height()});
+                               mySize->Width()-(myIndexWidth+mySpacerWidth),mySize->Height()});
             if(myModeEdit){
                 myEditor->setRelativeOriginOffset(mySize->RelativeOriginOffset());
                 myEditor->setRelativeSizeOffset(mySize->RelativeSizeOffset());
             }
-            myString.setColorToString(myTextColor->Color());
+            //! fuck.
+            // myString.setColorToString(myTextColor->Color());
 
 
             if(myEditor->Event(XEventEnum::Hovered) && XPip().getPipFromMousePos(ParentScissorSize()) && !Mouse.isPressedLeftButton()){
@@ -296,6 +297,13 @@ public:
         //! Restore the scissor size.
         restoreScissorState();
     }
+    //! Used for terminal implementation.
+    std::string Command(){
+        return myCommand;
+    }
+    void resetCommand(){
+        myCommand="";
+    }
     //! Non virtual functions.
     //! Load textfile.
     void loadFile(std::string theFileName){
@@ -314,6 +322,11 @@ public:
     //! Set one character.
     void setCharInText(uint thePosition, XChar theChar){
         myString.at(thePosition).setChar(theChar);
+    }
+    //! Append
+    void appendText(XString theText){
+        myString.insert(myString.size(),theText);
+        myCursorCount+=theText.size();
     }
     //! Clear text.
     void newFile(){
@@ -343,8 +356,19 @@ public:
     void useGlScissor(bool theValue){
         myUseGlScissor=theValue;
     }
+    //! Enable or disable editing text.
     void setModeEdit(bool theStatus){
         myModeEdit=theStatus;
+    }
+    //! Reset some values to init stage.
+    void reset(){
+        myCursorCount=0;
+        myString.clear();
+        myCommand.clear();
+        Key.resetScanCode();
+        Key.resetKey();
+        //! Set text position to zero.
+        newX=0, newY=0;
     }
 private:
     // XKeyWord *myKeyWord;
@@ -376,6 +400,7 @@ private:
     bool myUseGlScissor=0;
     bool myModeEdit=0;
     XCursor *myCursorIcon;
+    std::string myCommand;
 
     //! Process the numbers for the line number index text.
     void processIndexText(){
@@ -441,6 +466,7 @@ private:
                 return  theLineCount;
             }
         }
+        //! std::cout<<"cursor linecount:"<<theLineCount<<std::endl;
         return theLineCount;
     }
     //! Get the top line of the viewer.
@@ -582,6 +608,33 @@ private:
         }
         return theCharNr;
     }
+    std::string getStringFromLineNr(uint theLineNr){
+        std::string theString;
+        uint theLineCount=0;
+        uint theCharCount=0;
+        for(uint i=0; i<myString.size(); i++){
+            theCharCount++;
+            if(myString.at(i).Char()==XChar('\n').Char()){
+                theLineCount++;
+            }
+            if(theLineCount==theLineNr && myString.at(i).Char()!='\n'){
+                //! std::cout<<"theCursorIsAtLine:"<<theLineCount<<std::endl;
+                theString.push_back(myString.at(i).Char());
+            }
+            if(theLineCount>theLineNr){ //! Shorten the algoritme if possible.
+                break;
+            }
+        }
+        //! std::cout<<"theCursorIsAtLine:"<<theLineCount<<std::endl;
+        return theString;
+    }
+    std::string getLineContentAtCursor(){
+        return getStringFromLineNr(getCurrentCursorLineNr());
+    }
+    std::string getPreviousLineContentAtCursor(){
+        int nr=getCurrentCursorLineNr()-1;
+        return getStringFromLineNr(nr);
+    }
     //! Process keyboard events.
     void KeyboardEvents(){
         //! Process key events for the correct widget.
@@ -619,6 +672,9 @@ private:
                 myString.insert(myCursorCount,XChar('\n'));
                 myCursorCount++;
                 Key.resetScanCode();
+                //! If this is a Terminal implementation, it reads the previous line in as a command.
+                myCommand=getPreviousLineContentAtCursor();
+                //! std::cout<<"myCommand:"<<myCommand<<std::endl;
             }
             if(Key.isGlfwBackSpaceKey()){
                 if(myCursorCount>0){
@@ -639,7 +695,7 @@ private:
                 Key.resetScanCode();
             }
             if(Key.Char()!=-1){
-                myString.insert(myCursorCount,XChar(Key.Char(),{0.0,0.0,0.0,0.9}));
+                myString.insert(myCursorCount,XChar(Key.Char(),myTextColor->Color()));
                 myCursorCount++;
                 Key.resetScanCode();
                 Key.setChar(-1);

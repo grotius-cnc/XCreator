@@ -56,6 +56,7 @@ CMakeFiles/XOpenCascadeTexture.dir/XConnection.cpp.o: /usr/local/include/opencas
 
 CMakeFiles/XOpenCascadeTexture.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/freetype/config/ftheader.h
 CMakeFiles/XOpenCascadeTexture.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/ft2build.h
+CMakeFiles/XOpenCascadeTexture.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/zconf.h
 CMakeFiles/XOpenCascadeTexture.dir/main.cpp.o: ../../vendor/glad/build/include/KHR/khrplatform.h
 CMakeFiles/XOpenCascadeTexture.dir/main.cpp.o: ../../vendor/glad/build/include/glad/glad.h
 CMakeFiles/XOpenCascadeTexture.dir/main.cpp.o: ../../vendor/learnopengl/includes/stb_image.h

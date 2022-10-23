@@ -70,10 +70,10 @@ version_info := 24:3:18
 #
 PKG_CONFIG                 := /usr/bin/pkg-config
 PKGCONFIG_REQUIRES         := 
-PKGCONFIG_REQUIRES_PRIVATE := zlib, libpng, libbrotlidec
+PKGCONFIG_REQUIRES_PRIVATE := zlib, bzip2, libpng, harfbuzz >= 2.0.0, libbrotlidec
 PKGCONFIG_LIBS             := -L${libdir} -lfreetype
 PKGCONFIG_LIBS_PRIVATE     := 
-LIBSSTATIC_CONFIG          := -lfreetype -lz -lpng16 -lm -lz -lm -lz -lbrotlidec -lbrotlicommon
+LIBSSTATIC_CONFIG          := -lfreetype -lz -L/usr/local/lib -lbz2 -lpng16 -lm -lz -lm -lz -lharfbuzz -lm -lglib-2.0 -pthread -lpcre -pthread -lfreetype -lpng16 -lm -lz -lm -lz -lbrotlidec -lbrotlicommon -lgraphite2 -lbrotlidec -lbrotlicommon
 build_libtool_libs         := 
 ft_version                 := 24.3.18
 

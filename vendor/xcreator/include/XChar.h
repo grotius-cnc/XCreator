@@ -83,6 +83,10 @@ public:
             myString.push_back(theString.at(i).Char());
         }
     }
+    //! Typedef XString.
+    std::vector<XChar> String(){
+        return myString;
+    }
     uint getLineCount(XString theString){
         uint theLineCount=0;
         for(uint i=0; i<theString.size(); i++){
@@ -153,6 +157,17 @@ public:
             myString.push_back(XChar(str.at(i)));
         }
     }
+    void insert(uint thePosition, XString theStringToInsert){
+
+        std::vector<XChar> temp=theStringToInsert.String();
+
+        std::vector<XChar> str=this->String();
+        str.insert(str.begin()+thePosition,temp.begin(),temp.end());
+        myString.clear();
+        for(uint i=0; i<str.size(); i++){
+            myString.push_back(XChar(str.at(i)));
+        }
+    }
     void insert(uint thePosition, std::string theStringToInsert, XColor theColor){
         // std::cout<<"thePosition:"<<thePosition<<std::endl;
         std::string str=this->toStdString();
@@ -206,8 +221,7 @@ public:
 private:
     std::vector<XChar> myString;
 };
-
-#endif // XCHAR_H
+#endif
 
 
 

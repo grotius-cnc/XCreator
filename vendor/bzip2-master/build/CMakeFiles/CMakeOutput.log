@@ -1,0 +1,1034 @@
+The system is: Linux - 5.10.0-18-amd64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/3.18.4/CompilerIdC/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_efb63/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_efb63.dir/build.make CMakeFiles/cmTC_efb63.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.18/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 10.2.1-6' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-Km9U7s/gcc-10-10.2.1/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-Km9U7s/gcc-10-10.2.1/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.1 20210110 (Debian 10.2.1-6) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.18/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -o /tmp/ccDoQdmW.s
+GNU C17 (Debian 10.2.1-6) version 10.2.1 20210110 (x86_64-linux-gnu)
+	compiled by GNU C version 10.2.1 20210110, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.23-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/10/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C17 (Debian 10.2.1-6) version 10.2.1 20210110 (x86_64-linux-gnu)
+	compiled by GNU C version 10.2.1 20210110, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.0, isl version isl-0.23-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 1f803793fa2e3418c492b25e7d3eac2f
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o /tmp/ccDoQdmW.s
+GNU assembler version 2.35.2 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.35.2
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_efb63
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efb63.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o -o cmTC_efb63 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 10.2.1-6' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-Km9U7s/gcc-10-10.2.1/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-Km9U7s/gcc-10-10.2.1/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 10.2.1 20210110 (Debian 10.2.1-6) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efb63' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpR5IBn.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_efb63 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efb63' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/10/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/10/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_efb63/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_efb63.dir/build.make CMakeFiles/cmTC_efb63.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.18/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 10.2.1-6' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-Km9U7s/gcc-10-10.2.1/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-Km9U7s/gcc-10-10.2.1/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 10.2.1 20210110 (Debian 10.2.1-6) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.18/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -o /tmp/ccDoQdmW.s]
+  ignore line: [GNU C17 (Debian 10.2.1-6) version 10.2.1 20210110 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.2.1 20210110  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.23-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (Debian 10.2.1-6) version 10.2.1 20210110 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 10.2.1 20210110  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.0  isl version isl-0.23-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 1f803793fa2e3418c492b25e7d3eac2f]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o /tmp/ccDoQdmW.s]
+  ignore line: [GNU assembler version 2.35.2 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.35.2]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_efb63]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efb63.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o -o cmTC_efb63 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 10.2.1-6' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-Km9U7s/gcc-10-10.2.1/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-Km9U7s/gcc-10-10.2.1/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-mutex]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 10.2.1 20210110 (Debian 10.2.1-6) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efb63' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpR5IBn.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_efb63 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccpR5IBn.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_efb63] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
+    arg [CMakeFiles/cmTC_efb63.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10] ==> [/usr/lib/gcc/x86_64-linux-gnu/10]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/10;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the include file arpa/inet.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0d625/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0d625.dir/build.make CMakeFiles/cmTC_0d625.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0d625.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0d625.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_0d625
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d625.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_0d625.dir/CheckIncludeFile.c.o -o cmTC_0d625 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file fcntl.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_fefca/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fefca.dir/build.make CMakeFiles/cmTC_fefca.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fefca.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_fefca.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_fefca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fefca.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_fefca.dir/CheckIncludeFile.c.o -o cmTC_fefca 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6c287/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6c287.dir/build.make CMakeFiles/cmTC_6c287.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6c287.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6c287.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6c287
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c287.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_6c287.dir/CheckIncludeFile.c.o -o cmTC_6c287 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file limits.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4dcb9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4dcb9.dir/build.make CMakeFiles/cmTC_4dcb9.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4dcb9.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4dcb9.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4dcb9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4dcb9.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4dcb9.dir/CheckIncludeFile.c.o -o cmTC_4dcb9 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file netdb.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_12aae/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_12aae.dir/build.make CMakeFiles/cmTC_12aae.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_12aae.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_12aae.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_12aae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12aae.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_12aae.dir/CheckIncludeFile.c.o -o cmTC_12aae 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file netinet/in.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_fe4cb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fe4cb.dir/build.make CMakeFiles/cmTC_fe4cb.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe4cb.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_fe4cb.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_fe4cb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe4cb.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_fe4cb.dir/CheckIncludeFile.c.o -o cmTC_fe4cb 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pwd.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5cc6d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5cc6d.dir/build.make CMakeFiles/cmTC_5cc6d.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5cc6d.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_5cc6d.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_5cc6d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5cc6d.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_5cc6d.dir/CheckIncludeFile.c.o -o cmTC_5cc6d 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/socket.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_50ff3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_50ff3.dir/build.make CMakeFiles/cmTC_50ff3.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_50ff3.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_50ff3.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_50ff3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50ff3.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_50ff3.dir/CheckIncludeFile.c.o -o cmTC_50ff3 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/time.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4c25a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4c25a.dir/build.make CMakeFiles/cmTC_4c25a.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4c25a.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4c25a.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4c25a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c25a.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4c25a.dir/CheckIncludeFile.c.o -o cmTC_4c25a 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file syslog.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6b7e2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6b7e2.dir/build.make CMakeFiles/cmTC_6b7e2.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6b7e2.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6b7e2.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6b7e2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b7e2.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_6b7e2.dir/CheckIncludeFile.c.o -o cmTC_6b7e2 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file time.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4c752/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4c752.dir/build.make CMakeFiles/cmTC_4c752.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4c752.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4c752.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4c752
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c752.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4c752.dir/CheckIncludeFile.c.o -o cmTC_4c752 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file unistd.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4e4b7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4e4b7.dir/build.make CMakeFiles/cmTC_4e4b7.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4e4b7.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4e4b7.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4e4b7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e4b7.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4e4b7.dir/CheckIncludeFile.c.o -o cmTC_4e4b7 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_40a6c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_40a6c.dir/build.make CMakeFiles/cmTC_40a6c.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_40a6c.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_40a6c.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_40a6c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40a6c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_40a6c.dir/CheckIncludeFile.c.o -o cmTC_40a6c 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_38e92/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_38e92.dir/build.make CMakeFiles/cmTC_38e92.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_38e92.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_38e92.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_38e92
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38e92.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_38e92.dir/CheckIncludeFile.c.o -o cmTC_38e92 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c47fc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c47fc.dir/build.make CMakeFiles/cmTC_c47fc.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c47fc.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c47fc.dir/CheckIncludeFile.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_c47fc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c47fc.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c47fc.dir/CheckIncludeFile.c.o -o cmTC_c47fc 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of ssize_t passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4091a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4091a.dir/build.make CMakeFiles/cmTC_4091a.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4091a.dir/SIZEOF_SSIZE_T.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4091a.dir/SIZEOF_SSIZE_T.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CheckTypeSize/SIZEOF_SSIZE_T.c
+Linking C executable cmTC_4091a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4091a.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_4091a.dir/SIZEOF_SSIZE_T.c.o -o cmTC_4091a 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_STRUCT_TM_TM_GMTOFF succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7fb7a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7fb7a.dir/build.make CMakeFiles/cmTC_7fb7a.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7fb7a.dir/src.c.o
+/usr/bin/cc   -DHAVE_STRUCT_TM_TM_GMTOFF -o CMakeFiles/cmTC_7fb7a.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_7fb7a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7fb7a.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_STRUCT_TM_TM_GMTOFF CMakeFiles/cmTC_7fb7a.dir/src.c.o -o cmTC_7fb7a 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+#include <time.h>
+
+int main()
+{
+  (void)sizeof(((struct tm *)0)->tm_gmtoff);
+  return 0;
+}
+
+Determining if the function _Exit exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_adb2a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_adb2a.dir/build.make CMakeFiles/cmTC_adb2a.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_adb2a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=_Exit -o CMakeFiles/cmTC_adb2a.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘_Exit’; expected ‘void(int)’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.18/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^~~~~~~~~~~~~~~~~~~~~
+/usr/share/cmake-3.18/Modules/CheckFunctionExists.c:1:1: note: ‘_Exit’ is declared in header ‘<stdlib.h>’
+  +++ |+#include <stdlib.h>
+    1 | #ifdef CHECK_FUNCTION_EXISTS
+Linking C executable cmTC_adb2a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_adb2a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=_Exit CMakeFiles/cmTC_adb2a.dir/CheckFunctionExists.c.o -o cmTC_adb2a 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function accept4 exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_93ccd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_93ccd.dir/build.make CMakeFiles/cmTC_93ccd.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_93ccd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=accept4 -o CMakeFiles/cmTC_93ccd.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_93ccd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93ccd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=accept4 CMakeFiles/cmTC_93ccd.dir/CheckFunctionExists.c.o -o cmTC_93ccd 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function mkostemp exists passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_71bae/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_71bae.dir/build.make CMakeFiles/cmTC_71bae.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_71bae.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=mkostemp -o CMakeFiles/cmTC_71bae.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_71bae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71bae.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=mkostemp CMakeFiles/cmTC_71bae.dir/CheckFunctionExists.c.o -o cmTC_71bae 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the initgroups exist passed with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_72190/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_72190.dir/build.make CMakeFiles/cmTC_72190.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_72190.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_72190.dir/CheckSymbolExists.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_72190
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72190.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_72190.dir/CheckSymbolExists.c.o -o cmTC_72190 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+File /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <grp.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef initgroups
+  return ((int*)(&initgroups))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test C_FLAG__Wall succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_275f7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_275f7.dir/build.make CMakeFiles/cmTC_275f7.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_275f7.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wall   -Wall -o CMakeFiles/cmTC_275f7.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_275f7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_275f7.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wall CMakeFiles/cmTC_275f7.dir/src.c.o -o cmTC_275f7 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wextra succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c948c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c948c.dir/build.make CMakeFiles/cmTC_c948c.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c948c.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wextra   -Wextra -o CMakeFiles/cmTC_c948c.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c948c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c948c.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wextra CMakeFiles/cmTC_c948c.dir/src.c.o -o cmTC_c948c 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wmissing_prototypes succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_05306/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_05306.dir/build.make CMakeFiles/cmTC_05306.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_05306.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wmissing_prototypes   -Wmissing-prototypes -o CMakeFiles/cmTC_05306.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_05306
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05306.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wmissing_prototypes CMakeFiles/cmTC_05306.dir/src.c.o -o cmTC_05306 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wstrict_prototypes succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f1892/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f1892.dir/build.make CMakeFiles/cmTC_f1892.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f1892.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wstrict_prototypes   -Wstrict-prototypes -o CMakeFiles/cmTC_f1892.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f1892
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1892.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wstrict_prototypes CMakeFiles/cmTC_f1892.dir/src.c.o -o cmTC_f1892 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wmissing_declarations succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_1b700/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1b700.dir/build.make CMakeFiles/cmTC_1b700.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1b700.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wmissing_declarations   -Wmissing-declarations -o CMakeFiles/cmTC_1b700.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1b700
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b700.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wmissing_declarations CMakeFiles/cmTC_1b700.dir/src.c.o -o cmTC_1b700 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wpointer_arith succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c0e33/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c0e33.dir/build.make CMakeFiles/cmTC_c0e33.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c0e33.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wpointer_arith   -Wpointer-arith -o CMakeFiles/cmTC_c0e33.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c0e33
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0e33.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wpointer_arith CMakeFiles/cmTC_c0e33.dir/src.c.o -o cmTC_c0e33 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wdeclaration_after_statement succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_aeaa8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_aeaa8.dir/build.make CMakeFiles/cmTC_aeaa8.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aeaa8.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wdeclaration_after_statement   -Wdeclaration-after-statement -o CMakeFiles/cmTC_aeaa8.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_aeaa8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aeaa8.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wdeclaration_after_statement CMakeFiles/cmTC_aeaa8.dir/src.c.o -o cmTC_aeaa8 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wformat_security succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_b69a1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b69a1.dir/build.make CMakeFiles/cmTC_b69a1.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b69a1.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wformat_security   -Wformat-security -o CMakeFiles/cmTC_b69a1.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: '-Wformat-security' ignored without '-Wformat' [-Wformat-security]
+Linking C executable cmTC_b69a1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b69a1.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wformat_security CMakeFiles/cmTC_b69a1.dir/src.c.o -o cmTC_b69a1 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wwrite_strings succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_9102a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9102a.dir/build.make CMakeFiles/cmTC_9102a.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9102a.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wwrite_strings   -Wwrite-strings -o CMakeFiles/cmTC_9102a.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9102a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9102a.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wwrite_strings CMakeFiles/cmTC_9102a.dir/src.c.o -o cmTC_9102a 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wshadow succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_430eb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_430eb.dir/build.make CMakeFiles/cmTC_430eb.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_430eb.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wshadow   -Wshadow -o CMakeFiles/cmTC_430eb.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_430eb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_430eb.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wshadow CMakeFiles/cmTC_430eb.dir/src.c.o -o cmTC_430eb 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Winline succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_ab2af/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ab2af.dir/build.make CMakeFiles/cmTC_ab2af.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ab2af.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Winline   -Winline -o CMakeFiles/cmTC_ab2af.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ab2af
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab2af.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Winline CMakeFiles/cmTC_ab2af.dir/src.c.o -o cmTC_ab2af 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wnested_externs succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8600b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8600b.dir/build.make CMakeFiles/cmTC_8600b.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8600b.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wnested_externs   -Wnested-externs -o CMakeFiles/cmTC_8600b.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8600b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8600b.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wnested_externs CMakeFiles/cmTC_8600b.dir/src.c.o -o cmTC_8600b 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wfloat_equal succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_2df7b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2df7b.dir/build.make CMakeFiles/cmTC_2df7b.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2df7b.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wfloat_equal   -Wfloat-equal -o CMakeFiles/cmTC_2df7b.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2df7b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2df7b.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wfloat_equal CMakeFiles/cmTC_2df7b.dir/src.c.o -o cmTC_2df7b 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wundef succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5fe7a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5fe7a.dir/build.make CMakeFiles/cmTC_5fe7a.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5fe7a.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wundef   -Wundef -o CMakeFiles/cmTC_5fe7a.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5fe7a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fe7a.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wundef CMakeFiles/cmTC_5fe7a.dir/src.c.o -o cmTC_5fe7a 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wendif_labels succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8aba0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8aba0.dir/build.make CMakeFiles/cmTC_8aba0.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8aba0.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wendif_labels   -Wendif-labels -o CMakeFiles/cmTC_8aba0.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8aba0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8aba0.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wendif_labels CMakeFiles/cmTC_8aba0.dir/src.c.o -o cmTC_8aba0 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wempty_body succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_96362/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_96362.dir/build.make CMakeFiles/cmTC_96362.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_96362.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wempty_body   -Wempty-body -o CMakeFiles/cmTC_96362.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_96362
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96362.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wempty_body CMakeFiles/cmTC_96362.dir/src.c.o -o cmTC_96362 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wcast_align succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_80f19/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_80f19.dir/build.make CMakeFiles/cmTC_80f19.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_80f19.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wcast_align   -Wcast-align -o CMakeFiles/cmTC_80f19.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_80f19
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80f19.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wcast_align CMakeFiles/cmTC_80f19.dir/src.c.o -o cmTC_80f19 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wclobbered succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0e8e7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0e8e7.dir/build.make CMakeFiles/cmTC_0e8e7.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0e8e7.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wclobbered   -Wclobbered -o CMakeFiles/cmTC_0e8e7.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0e8e7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e8e7.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wclobbered CMakeFiles/cmTC_0e8e7.dir/src.c.o -o cmTC_0e8e7 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wvla succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c5293/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c5293.dir/build.make CMakeFiles/cmTC_c5293.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c5293.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wvla   -Wvla -o CMakeFiles/cmTC_c5293.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c5293
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5293.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wvla CMakeFiles/cmTC_c5293.dir/src.c.o -o cmTC_c5293 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wpragmas succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_27669/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_27669.dir/build.make CMakeFiles/cmTC_27669.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_27669.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wpragmas   -Wpragmas -o CMakeFiles/cmTC_27669.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_27669
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_27669.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wpragmas CMakeFiles/cmTC_27669.dir/src.c.o -o cmTC_27669 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wunreachable_code succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_780a7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_780a7.dir/build.make CMakeFiles/cmTC_780a7.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_780a7.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wunreachable_code   -Wunreachable-code -o CMakeFiles/cmTC_780a7.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_780a7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_780a7.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wunreachable_code CMakeFiles/cmTC_780a7.dir/src.c.o -o cmTC_780a7 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Waddress succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c02cb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c02cb.dir/build.make CMakeFiles/cmTC_c02cb.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c02cb.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Waddress   -Waddress -o CMakeFiles/cmTC_c02cb.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c02cb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c02cb.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Waddress CMakeFiles/cmTC_c02cb.dir/src.c.o -o cmTC_c02cb 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wattributes succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6806f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6806f.dir/build.make CMakeFiles/cmTC_6806f.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6806f.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wattributes   -Wattributes -o CMakeFiles/cmTC_6806f.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_6806f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6806f.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wattributes CMakeFiles/cmTC_6806f.dir/src.c.o -o cmTC_6806f 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wdiv_by_zero succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5ad1e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5ad1e.dir/build.make CMakeFiles/cmTC_5ad1e.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5ad1e.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wdiv_by_zero   -Wdiv-by-zero -o CMakeFiles/cmTC_5ad1e.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5ad1e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ad1e.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wdiv_by_zero CMakeFiles/cmTC_5ad1e.dir/src.c.o -o cmTC_5ad1e 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wconversion succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_60bae/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_60bae.dir/build.make CMakeFiles/cmTC_60bae.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_60bae.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wconversion   -Wconversion -o CMakeFiles/cmTC_60bae.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_60bae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60bae.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wconversion CMakeFiles/cmTC_60bae.dir/src.c.o -o cmTC_60bae 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wformat_nonliteral succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_07fe1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_07fe1.dir/build.make CMakeFiles/cmTC_07fe1.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_07fe1.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wformat_nonliteral   -Wformat-nonliteral -o CMakeFiles/cmTC_07fe1.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: '-Wformat-nonliteral' ignored without '-Wformat' [-Wformat-nonliteral]
+Linking C executable cmTC_07fe1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07fe1.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wformat_nonliteral CMakeFiles/cmTC_07fe1.dir/src.c.o -o cmTC_07fe1 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wmissing_field_initializers succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_eecee/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_eecee.dir/build.make CMakeFiles/cmTC_eecee.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eecee.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wmissing_field_initializers   -Wmissing-field-initializers -o CMakeFiles/cmTC_eecee.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_eecee
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eecee.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wmissing_field_initializers CMakeFiles/cmTC_eecee.dir/src.c.o -o cmTC_eecee 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wmissing_noreturn succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a50ef/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a50ef.dir/build.make CMakeFiles/cmTC_a50ef.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a50ef.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wmissing_noreturn   -Wmissing-noreturn -o CMakeFiles/cmTC_a50ef.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a50ef
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a50ef.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wmissing_noreturn CMakeFiles/cmTC_a50ef.dir/src.c.o -o cmTC_a50ef 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wsign_conversion succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_e49f8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e49f8.dir/build.make CMakeFiles/cmTC_e49f8.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e49f8.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wsign_conversion   -Wsign-conversion -o CMakeFiles/cmTC_e49f8.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e49f8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e49f8.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wsign_conversion CMakeFiles/cmTC_e49f8.dir/src.c.o -o cmTC_e49f8 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wunused_macros succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_50cfc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_50cfc.dir/build.make CMakeFiles/cmTC_50cfc.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_50cfc.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wunused_macros   -Wunused-macros -o CMakeFiles/cmTC_50cfc.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_50cfc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50cfc.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wunused_macros CMakeFiles/cmTC_50cfc.dir/src.c.o -o cmTC_50cfc 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wunused_parameter succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_16dec/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_16dec.dir/build.make CMakeFiles/cmTC_16dec.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_16dec.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wunused_parameter   -Wunused-parameter -o CMakeFiles/cmTC_16dec.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_16dec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16dec.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wunused_parameter CMakeFiles/cmTC_16dec.dir/src.c.o -o cmTC_16dec 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wredundant_decls succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d4f79/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d4f79.dir/build.make CMakeFiles/cmTC_d4f79.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d4f79.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wredundant_decls   -Wredundant-decls -o CMakeFiles/cmTC_d4f79.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d4f79
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4f79.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wredundant_decls CMakeFiles/cmTC_d4f79.dir/src.c.o -o cmTC_d4f79 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_FLAG__Wno_format_nonliteral succeeded with the following output:
+Change Dir: /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_3ece0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3ece0.dir/build.make CMakeFiles/cmTC_3ece0.dir/build
+gmake[1]: Entering directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ece0.dir/src.c.o
+/usr/bin/cc   -DC_FLAG__Wno_format_nonliteral   -Wno-format-nonliteral -o CMakeFiles/cmTC_3ece0.dir/src.c.o -c /home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_3ece0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ece0.dir/link.txt --verbose=1
+/usr/bin/cc  -DC_FLAG__Wno_format_nonliteral CMakeFiles/cmTC_3ece0.dir/src.c.o -o cmTC_3ece0 
+gmake[1]: Leaving directory '/home/user/XCreator/vendor/bzip2-master/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }

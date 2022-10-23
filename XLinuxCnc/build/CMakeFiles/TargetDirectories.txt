@@ -1,0 +1,3 @@
+/home/user/XCreator/XLinuxCnc/build/CMakeFiles/edit_cache.dir
+/home/user/XCreator/XLinuxCnc/build/CMakeFiles/rebuild_cache.dir
+/home/user/XCreator/XLinuxCnc/build/CMakeFiles/XLinuxCnc.dir

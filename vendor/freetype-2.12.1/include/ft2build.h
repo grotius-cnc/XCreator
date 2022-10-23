@@ -34,6 +34,7 @@
 #ifndef FT2BUILD_H_
 #define FT2BUILD_H_
 
+#include <zconf.h>
 #include <freetype/config/ftheader.h>
 
 #endif /* FT2BUILD_H_ */

@@ -12,7 +12,7 @@
 #include <XScissor.h>
 // #include <XKeyWord.h>
 // #include <clip.h> // https://github.com/dacap/clip/
-
+//! To be reviewed.
 class XLineEdit : public XWidget  {
 public:
     //! Empty constructor, set the GLFWwindow pointer afterwards.

@@ -9,7 +9,27 @@
 ../../vendor/freetype-2.12.1/include/freetype/config/ftheader.h
 
 ../../vendor/freetype-2.12.1/include/ft2build.h
+zconf.h
+-
 freetype/config/ftheader.h
+-
+
+../../vendor/freetype-2.12.1/include/zconf.h
+stddef.h
+-
+windows.h
+-
+limits.h
+-
+sys/types.h
+-
+stdarg.h
+-
+stddef.h
+-
+unistd.h
+-
+unixio.h
 -
 
 ../../vendor/glad/build/include/KHR/khrplatform.h
@@ -454,26 +474,6 @@ AIS_ViewController.hxx
 V3d_View.hxx
 -
 SOIL/SOIL.h
--
-
-/home/user/XCreator/XOpenCascadeTexture/XConnection.cpp
-XConnection.h
-/home/user/XCreator/XOpenCascadeTexture/XConnection.h
-GLFW/glfw3native.h
--
-
-/home/user/XCreator/XOpenCascadeTexture/XConnection.h
-glad/glad.h
--
-GLFW/glfw3.h
--
-Aspect_DisplayConnection.hxx
--
-X11/X.h
--
-X11/Xlib.h
--
-GL/glx.h
 -
 
 /home/user/XCreator/XOpenCascadeTexture/XMainWindow.h

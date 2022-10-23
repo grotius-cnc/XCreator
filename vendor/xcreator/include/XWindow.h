@@ -47,7 +47,7 @@ static void CharacterCallback(GLFWwindow* window, uint codepoint)
     Key.setChar(codepoint);
 
     // std::cout<<"Window:"<<window<<std::endl;
-    std::cout<<(unsigned char)codepoint<<std::endl;
+    // std::cout<<(unsigned char)codepoint<<std::endl;
 }
 
 static void MousePosCallBack(GLFWwindow* window, double theXPos, double theYPos){
@@ -70,7 +70,7 @@ static void ScrollCallBack(GLFWwindow* window, double theX, double theY){
 
 static void WindowCloseCallBack(GLFWwindow* window){
 
-     std::cout<<"CLose callback."<<std::endl;
+    // std::cout<<"CLose callback."<<std::endl;
     // std::cout<<"MouseScroll x:"<<theX<<" y:"<<theY<<std::endl;
 }
 

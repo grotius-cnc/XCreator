@@ -1,0 +1,1 @@
+/usr/bin/cc -O2 -g   CMakeFiles/bzip2recover.dir/bzip2recover.c.o CMakeFiles/bz2_ObjLib.dir/blocksort.c.o CMakeFiles/bz2_ObjLib.dir/huffman.c.o CMakeFiles/bz2_ObjLib.dir/crctable.c.o CMakeFiles/bz2_ObjLib.dir/randtable.c.o CMakeFiles/bz2_ObjLib.dir/compress.c.o CMakeFiles/bz2_ObjLib.dir/decompress.c.o CMakeFiles/bz2_ObjLib.dir/bzlib.c.o -o bzip2recover 

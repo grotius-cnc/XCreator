@@ -21,13 +21,13 @@ BROTLIDEC_INCLUDE_DIRS:PATH=/usr/include
 BROTLIDEC_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libbrotlidec.so
 
 //Path to a file.
-BZIP2_INCLUDE_DIR:PATH=/usr/include
+BZIP2_INCLUDE_DIR:PATH=/usr/local/include
 
 //Path to a library.
 BZIP2_LIBRARY_DEBUG:FILEPATH=BZIP2_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
-BZIP2_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libbz2.so
+BZIP2_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libbz2.so
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -47,11 +47,11 @@ CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-12
+CMAKE_C_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-10
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-12
+CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-10
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -88,9 +88,6 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Enable/Disable output of compile commands during generation.
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
-
-//Value Computed by CMake.
-CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/user/XCreator/vendor/freetype-2.12.1/build/CMakeFiles/pkgRedirects
 
 //User executables (bin)
 CMAKE_INSTALL_BINDIR:PATH=bin
@@ -299,13 +296,10 @@ FT_REQUIRE_PNG:BOOL=OFF
 FT_REQUIRE_ZLIB:BOOL=OFF
 
 //Path to a file.
-HarfBuzz_INCLUDE_DIR:PATH=HarfBuzz_INCLUDE_DIR-NOTFOUND
+HarfBuzz_INCLUDE_DIR:PATH=/usr/include/harfbuzz
 
 //Path to a library.
-HarfBuzz_LIBRARY:FILEPATH=HarfBuzz_LIBRARY-NOTFOUND
-
-//Arguments to supply to pkg-config
-PKG_CONFIG_ARGN:STRING=
+HarfBuzz_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libharfbuzz.so
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
@@ -331,17 +325,20 @@ ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 //Value Computed by CMake
 freetype_BINARY_DIR:STATIC=/home/user/XCreator/vendor/freetype-2.12.1/build
 
-//Value Computed by CMake
-freetype_IS_TOP_LEVEL:STATIC=ON
-
 //Dependencies for the target
-freetype_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libbz2.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libbrotlidec.so;
+freetype_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/local/lib/libbz2.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libharfbuzz.so;general;/usr/lib/x86_64-linux-gnu/libbrotlidec.so;
 
 //Value Computed by CMake
 freetype_SOURCE_DIR:STATIC=/home/user/XCreator/vendor/freetype-2.12.1
 
 //Path to a library.
 pkgcfg_lib_PC_BROTLIDEC_brotlidec:FILEPATH=/usr/lib/x86_64-linux-gnu/libbrotlidec.so
+
+//Path to a library.
+pkgcfg_lib_PC_BZIP2_bz2:FILEPATH=/usr/local/lib/libbz2.so
+
+//Path to a library.
+pkgcfg_lib_PC_HARFBUZZ_harfbuzz:FILEPATH=/usr/lib/x86_64-linux-gnu/libharfbuzz.so
 
 
 ########################
@@ -369,9 +366,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/user/XCreator/vendor/freetype-2.12.1/build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=24
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=18
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=4
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -488,7 +485,7 @@ CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.24
+CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.18
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -532,9 +529,11 @@ CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CPACK_SOURCE_ZIP
 CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //Details about finding BZip2
-FIND_PACKAGE_MESSAGE_DETAILS_BZip2:INTERNAL=[/usr/lib/x86_64-linux-gnu/libbz2.so][/usr/include][v1.0.8()]
+FIND_PACKAGE_MESSAGE_DETAILS_BZip2:INTERNAL=[/usr/local/lib/libbz2.so][/usr/local/include][v1.1.0()]
 //Details about finding BrotliDec
 FIND_PACKAGE_MESSAGE_DETAILS_BrotliDec:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libbrotlidec.so][v1.0.9()]
+//Details about finding HarfBuzz
+FIND_PACKAGE_MESSAGE_DETAILS_HarfBuzz:INTERNAL=[/usr/include/harfbuzz][/usr/lib/x86_64-linux-gnu/libharfbuzz.so][ON][v2.7.4(2.0.0)]
 //Details about finding PNG
 FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpng.so][/usr/include][v1.6.37()]
 //Details about finding PkgConfig
@@ -545,17 +544,21 @@ FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/
 HAVE_FCNTL_H:INTERNAL=1
 //Have include unistd.h
 HAVE_UNISTD_H:INTERNAL=1
+//ADVANCED property for variable: HarfBuzz_INCLUDE_DIR
+HarfBuzz_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: HarfBuzz_LIBRARY
+HarfBuzz_LIBRARY-ADVANCED:INTERNAL=1
 PC_BROTLIDEC_CFLAGS:INTERNAL=
 PC_BROTLIDEC_CFLAGS_I:INTERNAL=
 PC_BROTLIDEC_CFLAGS_OTHER:INTERNAL=
 PC_BROTLIDEC_FOUND:INTERNAL=1
 PC_BROTLIDEC_INCLUDEDIR:INTERNAL=/usr/include
 PC_BROTLIDEC_INCLUDE_DIRS:INTERNAL=
-PC_BROTLIDEC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lbrotlidec
+PC_BROTLIDEC_LDFLAGS:INTERNAL=-lbrotlidec
 PC_BROTLIDEC_LDFLAGS_OTHER:INTERNAL=
 PC_BROTLIDEC_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 PC_BROTLIDEC_LIBRARIES:INTERNAL=brotlidec
-PC_BROTLIDEC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_BROTLIDEC_LIBRARY_DIRS:INTERNAL=
 PC_BROTLIDEC_LIBS:INTERNAL=
 PC_BROTLIDEC_LIBS_L:INTERNAL=
 PC_BROTLIDEC_LIBS_OTHER:INTERNAL=
@@ -566,11 +569,11 @@ PC_BROTLIDEC_STATIC_CFLAGS:INTERNAL=
 PC_BROTLIDEC_STATIC_CFLAGS_I:INTERNAL=
 PC_BROTLIDEC_STATIC_CFLAGS_OTHER:INTERNAL=
 PC_BROTLIDEC_STATIC_INCLUDE_DIRS:INTERNAL=
-PC_BROTLIDEC_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lbrotlidec;-lbrotlicommon
+PC_BROTLIDEC_STATIC_LDFLAGS:INTERNAL=-lbrotlidec;-lbrotlicommon
 PC_BROTLIDEC_STATIC_LDFLAGS_OTHER:INTERNAL=
 PC_BROTLIDEC_STATIC_LIBDIR:INTERNAL=
 PC_BROTLIDEC_STATIC_LIBRARIES:INTERNAL=brotlidec;brotlicommon
-PC_BROTLIDEC_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_BROTLIDEC_STATIC_LIBRARY_DIRS:INTERNAL=
 PC_BROTLIDEC_STATIC_LIBS:INTERNAL=
 PC_BROTLIDEC_STATIC_LIBS_L:INTERNAL=
 PC_BROTLIDEC_STATIC_LIBS_OTHER:INTERNAL=
@@ -580,58 +583,76 @@ PC_BROTLIDEC_libbrotlidec_INCLUDEDIR:INTERNAL=
 PC_BROTLIDEC_libbrotlidec_LIBDIR:INTERNAL=
 PC_BROTLIDEC_libbrotlidec_PREFIX:INTERNAL=
 PC_BROTLIDEC_libbrotlidec_VERSION:INTERNAL=
-PC_BZIP2_CFLAGS:INTERNAL=
+PC_BZIP2_CFLAGS:INTERNAL=-I/usr/local/include
 PC_BZIP2_CFLAGS_I:INTERNAL=
 PC_BZIP2_CFLAGS_OTHER:INTERNAL=
-PC_BZIP2_FOUND:INTERNAL=
-PC_BZIP2_INCLUDEDIR:INTERNAL=
-PC_BZIP2_LIBDIR:INTERNAL=
+PC_BZIP2_FOUND:INTERNAL=1
+PC_BZIP2_INCLUDEDIR:INTERNAL=/usr/local/include
+PC_BZIP2_INCLUDE_DIRS:INTERNAL=/usr/local/include
+PC_BZIP2_LDFLAGS:INTERNAL=-L/usr/local/lib;-lbz2
+PC_BZIP2_LDFLAGS_OTHER:INTERNAL=
+PC_BZIP2_LIBDIR:INTERNAL=/usr/local/lib
+PC_BZIP2_LIBRARIES:INTERNAL=bz2
+PC_BZIP2_LIBRARY_DIRS:INTERNAL=/usr/local/lib
 PC_BZIP2_LIBS:INTERNAL=
 PC_BZIP2_LIBS_L:INTERNAL=
 PC_BZIP2_LIBS_OTHER:INTERNAL=
 PC_BZIP2_LIBS_PATHS:INTERNAL=
-PC_BZIP2_MODULE_NAME:INTERNAL=
-PC_BZIP2_PREFIX:INTERNAL=
-PC_BZIP2_STATIC_CFLAGS:INTERNAL=
+PC_BZIP2_MODULE_NAME:INTERNAL=bzip2
+PC_BZIP2_PREFIX:INTERNAL=/usr/local
+PC_BZIP2_STATIC_CFLAGS:INTERNAL=-I/usr/local/include
 PC_BZIP2_STATIC_CFLAGS_I:INTERNAL=
 PC_BZIP2_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_BZIP2_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include
+PC_BZIP2_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib;-lbz2
+PC_BZIP2_STATIC_LDFLAGS_OTHER:INTERNAL=
 PC_BZIP2_STATIC_LIBDIR:INTERNAL=
+PC_BZIP2_STATIC_LIBRARIES:INTERNAL=bz2
+PC_BZIP2_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib
 PC_BZIP2_STATIC_LIBS:INTERNAL=
 PC_BZIP2_STATIC_LIBS_L:INTERNAL=
 PC_BZIP2_STATIC_LIBS_OTHER:INTERNAL=
 PC_BZIP2_STATIC_LIBS_PATHS:INTERNAL=
-PC_BZIP2_VERSION:INTERNAL=
+PC_BZIP2_VERSION:INTERNAL=1.1.0
 PC_BZIP2_bzip2_INCLUDEDIR:INTERNAL=
 PC_BZIP2_bzip2_LIBDIR:INTERNAL=
 PC_BZIP2_bzip2_PREFIX:INTERNAL=
 PC_BZIP2_bzip2_VERSION:INTERNAL=
-PC_HARFBUZZ_CFLAGS:INTERNAL=
+PC_HARFBUZZ_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include;-I/usr/include/freetype2;-I/usr/include/libpng16
 PC_HARFBUZZ_CFLAGS_I:INTERNAL=
 PC_HARFBUZZ_CFLAGS_OTHER:INTERNAL=
-PC_HARFBUZZ_FOUND:INTERNAL=
-PC_HARFBUZZ_INCLUDEDIR:INTERNAL=
-PC_HARFBUZZ_LIBDIR:INTERNAL=
+PC_HARFBUZZ_FOUND:INTERNAL=1
+PC_HARFBUZZ_INCLUDEDIR:INTERNAL=/usr/include
+PC_HARFBUZZ_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include;/usr/include/freetype2;/usr/include/libpng16
+PC_HARFBUZZ_LDFLAGS:INTERNAL=-lharfbuzz
+PC_HARFBUZZ_LDFLAGS_OTHER:INTERNAL=
+PC_HARFBUZZ_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_HARFBUZZ_LIBRARIES:INTERNAL=harfbuzz
+PC_HARFBUZZ_LIBRARY_DIRS:INTERNAL=
 PC_HARFBUZZ_LIBS:INTERNAL=
 PC_HARFBUZZ_LIBS_L:INTERNAL=
 PC_HARFBUZZ_LIBS_OTHER:INTERNAL=
 PC_HARFBUZZ_LIBS_PATHS:INTERNAL=
-PC_HARFBUZZ_MODULE_NAME:INTERNAL=
-PC_HARFBUZZ_PREFIX:INTERNAL=
-PC_HARFBUZZ_STATIC_CFLAGS:INTERNAL=
+PC_HARFBUZZ_MODULE_NAME:INTERNAL=harfbuzz
+PC_HARFBUZZ_PREFIX:INTERNAL=/usr
+PC_HARFBUZZ_STATIC_CFLAGS:INTERNAL=-I/usr/include/harfbuzz;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include;-I/usr/include/freetype2;-I/usr/include/libpng16
 PC_HARFBUZZ_STATIC_CFLAGS_I:INTERNAL=
 PC_HARFBUZZ_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_HARFBUZZ_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/harfbuzz;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include;/usr/include/freetype2;/usr/include/libpng16
+PC_HARFBUZZ_STATIC_LDFLAGS:INTERNAL=-lharfbuzz;-lm;-lglib-2.0;-pthread;-lpcre;-pthread;-lfreetype;-lpng16;-lm;-lz;-lm;-lz;-lbrotlidec;-lbrotlicommon;-lgraphite2
+PC_HARFBUZZ_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
 PC_HARFBUZZ_STATIC_LIBDIR:INTERNAL=
+PC_HARFBUZZ_STATIC_LIBRARIES:INTERNAL=harfbuzz;m;glib-2.0;pcre;freetype;png16;m;z;m;z;brotlidec;brotlicommon;graphite2
+PC_HARFBUZZ_STATIC_LIBRARY_DIRS:INTERNAL=
 PC_HARFBUZZ_STATIC_LIBS:INTERNAL=
 PC_HARFBUZZ_STATIC_LIBS_L:INTERNAL=
 PC_HARFBUZZ_STATIC_LIBS_OTHER:INTERNAL=
 PC_HARFBUZZ_STATIC_LIBS_PATHS:INTERNAL=
-PC_HARFBUZZ_VERSION:INTERNAL=
+PC_HARFBUZZ_VERSION:INTERNAL=2.7.4
 PC_HARFBUZZ_harfbuzz_INCLUDEDIR:INTERNAL=
 PC_HARFBUZZ_harfbuzz_LIBDIR:INTERNAL=
 PC_HARFBUZZ_harfbuzz_PREFIX:INTERNAL=
 PC_HARFBUZZ_harfbuzz_VERSION:INTERNAL=
-//ADVANCED property for variable: PKG_CONFIG_ARGN
-PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PNG_LIBRARY_DEBUG
@@ -646,15 +667,19 @@ ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
 ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
 ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//linker supports push/pop state
-_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 __pkg_config_arguments_PC_BROTLIDEC:INTERNAL=QUIET;libbrotlidec
+__pkg_config_arguments_PC_BZIP2:INTERNAL=bzip2
+__pkg_config_arguments_PC_HARFBUZZ:INTERNAL=QUIET;harfbuzz
 __pkg_config_checked_PC_BROTLIDEC:INTERNAL=1
 __pkg_config_checked_PC_BZIP2:INTERNAL=1
 __pkg_config_checked_PC_HARFBUZZ:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_BROTLIDEC_brotlidec
 pkgcfg_lib_PC_BROTLIDEC_brotlidec-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_BZIP2_bz2
+pkgcfg_lib_PC_BZIP2_bz2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_HARFBUZZ_harfbuzz
+pkgcfg_lib_PC_HARFBUZZ_harfbuzz-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 

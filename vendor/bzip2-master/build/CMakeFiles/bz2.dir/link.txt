@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O2 -g   -shared -Wl,-soname,libbz2.so.1 -o libbz2.so.1.0.9 CMakeFiles/bz2.dir/blocksort.c.o CMakeFiles/bz2.dir/huffman.c.o CMakeFiles/bz2.dir/crctable.c.o CMakeFiles/bz2.dir/randtable.c.o CMakeFiles/bz2.dir/compress.c.o CMakeFiles/bz2.dir/decompress.c.o CMakeFiles/bz2.dir/bzlib.c.o 

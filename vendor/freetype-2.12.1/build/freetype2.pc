@@ -7,8 +7,8 @@ Name: FreeType 2
 URL: https://freetype.org
 Description: A free, high-quality, and portable font engine.
 Version: 24.3.18
-Requires:  zlib, libpng, libbrotlidec
+Requires:  zlib, bzip2, libpng, harfbuzz >= 2.0.0, libbrotlidec
 Requires.private: 
-Libs: -L${libdir} -lfreetype -lbz2
+Libs: -L${libdir} -lfreetype 
 Libs.private: 
 Cflags: -I${includedir}/freetype2
