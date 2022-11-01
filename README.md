@@ -27,6 +27,10 @@ Opencascade implementation, notice the button widget on top of the opencascade w
 
 ![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XOpenCascadeTexture/XOpenCascadeTexture.jpg)
 
+Linuxcnc capture gremlin screen, send it to a remote pc trough sockets, internet :
+
+![XDesignerDialog](https://github.com/grotius-cnc/XCreator/blob/main/XLcncClientServer/XSocketServer.jpg)
+
 OpenGl primitives :
 
 ![XDesignerDialog](https://raw.githubusercontent.com/grotius-cnc/XCreator/main/XDrawOpenGLPrimitives/XDrawOpenGLPrimitives.jpg)
