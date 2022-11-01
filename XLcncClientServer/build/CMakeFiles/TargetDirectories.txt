@@ -1,8 +1,0 @@
-/home/user/XCreator/XLcncClientServer/build/CMakeFiles/rebuild_cache.dir
-/home/user/XCreator/XLcncClientServer/build/CMakeFiles/edit_cache.dir
-/home/user/XCreator/XLcncClientServer/build/XBind/CMakeFiles/rebuild_cache.dir
-/home/user/XCreator/XLcncClientServer/build/XBind/CMakeFiles/edit_cache.dir
-/home/user/XCreator/XLcncClientServer/build/XBind/CMakeFiles/XBind.dir
-/home/user/XCreator/XLcncClientServer/build/XServer/CMakeFiles/rebuild_cache.dir
-/home/user/XCreator/XLcncClientServer/build/XServer/CMakeFiles/edit_cache.dir
-/home/user/XCreator/XLcncClientServer/build/XServer/CMakeFiles/XServer.dir
