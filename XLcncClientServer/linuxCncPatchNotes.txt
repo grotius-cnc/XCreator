@@ -10,3 +10,6 @@ The python skynet module location : ~/linuxcnc/bin/skynet.py
 
 To build linuxcnc : visit their github.
 To start linuxcnc : ~/scripts/. ./rip-environment && linuxcnc
+
+*** In the file skynet.py you have to edit your path to the libXBind.so
+	Otherwise you could consider the use a "ldconfig yourPath".

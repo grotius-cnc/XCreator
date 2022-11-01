@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -fPIC -shared -Wl,-soname,libXBind.so -o libXBind.so CMakeFiles/XBind.dir/XBind.cpp.o CMakeFiles/XBind.dir/XClient.cpp.o CMakeFiles/XBind.dir/lodepng/lodepng.cpp.o 

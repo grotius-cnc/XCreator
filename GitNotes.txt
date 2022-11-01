@@ -16,6 +16,8 @@ git submodule add https://github.com/JoeyDeVries/LearnOpenGL.git vendor/learnope
 git submodule add https://github.com/glennrp/libpng.git vendor/libpgn
 git submodule add https://github.com/grotius-cnc/OCCT.git vendor/OCCT
 git submodule add https://github.com/grotius-cnc/OCCT.git vendor/PyBind/pybind11
+git submodule add https://github.com/LinuxCNC/linuxcnc.git XLcncClientServer/linuxcnc
+
 
 git submodule sync
 git add .
