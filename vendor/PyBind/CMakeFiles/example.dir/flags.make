@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dexample_EXPORTS
 
-CXX_INCLUDES = -isystem /home/user/Downloads/pybind11_examples/01_py-list_cpp-vector/pybind11/include -isystem /usr/include/python3.9
+CXX_INCLUDES = -isystem /home/user/XCreator/vendor/PyBind/pybind11/include -isystem /usr/include/python3.9
 
 CXX_FLAGS = -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects
 

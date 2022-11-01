@@ -9,6 +9,7 @@ CMakeFiles/XTinyDialogs.dir/home/user/XCreator/vendor/tinyfiledialogs/tinyfiledi
 
 CMakeFiles/XTinyDialogs.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/freetype/config/ftheader.h
 CMakeFiles/XTinyDialogs.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/ft2build.h
+CMakeFiles/XTinyDialogs.dir/main.cpp.o: ../../vendor/freetype-2.12.1/include/zconf.h
 CMakeFiles/XTinyDialogs.dir/main.cpp.o: ../../vendor/glad/build/include/KHR/khrplatform.h
 CMakeFiles/XTinyDialogs.dir/main.cpp.o: ../../vendor/glad/build/include/glad/glad.h
 CMakeFiles/XTinyDialogs.dir/main.cpp.o: ../../vendor/learnopengl/includes/stb_image.h

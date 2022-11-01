@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/user/Downloads/pybind11_examples/01_py-list_cpp-vector/example.cpp" "/home/user/Downloads/pybind11_examples/01_py-list_cpp-vector/CMakeFiles/example.dir/example.cpp.o"
+  "/home/user/XCreator/vendor/PyBind/example.cpp" "/home/user/XCreator/vendor/PyBind/CMakeFiles/example.dir/example.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

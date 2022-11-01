@@ -42,8 +42,6 @@
 #include <fstream>
 #include <thread>
 
-std::string commonData;
-
 class XClient {
 public:
     //! Empty constructor using default port adres : 5000
@@ -133,7 +131,6 @@ private:
     int runClient(){
         while(1){
             if(myMessage==""){
-
                 /* //! Read data example.
                 memset(&myInBuffer, 0, sizeof(myInBuffer)); //! clear the buffer
                 myBytesRead += recv(clientSd, (char*)&myInBuffer, sizeof(myInBuffer), 0);

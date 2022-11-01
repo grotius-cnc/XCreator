@@ -1,0 +1,12 @@
+To grab the openGl pixels we patch the file : ~/linuxcnc/lib/python/rs274/glcanon.py
+
+			import re
+L20			import skynet # skynet is located in : ~/linuxcnc/bin
+
+ 			finally:
+L622+L653 		skynet.get_image(self)
+
+The python skynet module location : ~/linuxcnc/bin/skynet.py
+
+To build linuxcnc : visit their github.
+To start linuxcnc : ~/scripts/. ./rip-environment && linuxcnc

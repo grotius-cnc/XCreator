@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/user/Downloads/pybind11_examples/01_py-list_cpp-vector/example.cpp
+/home/user/XCreator/vendor/PyBind/example.cpp
 pybind11/pybind11.h
 -
 pybind11/stl.h

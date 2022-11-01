@@ -1,0 +1,60 @@
+This material is to show how to capture the Lcnc graphical display. 
+Transport it over internet or use local and display 
+the transferred data in a window on a remote or local pc.
+
+The detailed procedure is, i hope you don't get confused:
+
+	1. 	Copy the linuxcnc glCanon.py openGl backbuffer 
+		into a raw pixel data with the help of a
+		skynet.py file (python file=module) to keep
+		the glCanon file clean.
+	
+	2. 	Transport the raw pixel data trough a 
+		Pyhton-C++ binding class to the c++ coding side.
+	
+	3. 	From the raw pixel data, 
+		create a .png in memory vector with the lodepng lib. 
+		Then chuck the .png into packages of a fixed size. 
+		The .png holds data like width & height.
+		So we don't have to write a package header containing
+		info about image size etc.
+		
+	4. 	Transfer the packages trough the 
+		client - server internet connection, 
+		default is localhost, port 12345.
+	
+	5. 	On the remote pc, glue the packages back, 
+		decode the png back into raw image data, 
+		create opengl texture, 
+		display texture in a glfw window.
+
+BoobyTraps:
+
+	1. 	I started with using pyBind11 to send data from Python
+		to C++. This was a mistake. pyBind11 is way too slow.
+		I found out more guy's where complaining about
+		performance, it seems pyBind11 does copying etc
+		behind the scene.
+		The solution was to create our own Python-C++ binding,
+		wich perform's great.
+		
+    2.	Make usage of lodepng, instead of writing your own
+    	package headers for transferring data trough sockets.
+    	
+   		a .png image contains all image data like :
+   		width, height, buffersize etc.
+   		
+   		lodepng uses a encode and decode process to extract
+   		this image data.
+
+Performance :
+
+	1.	I think the performance is quite nice. The resulting 
+		package size is minimal. 
+
+Idea's :
+
+	1. 	You could modify this example to just use it without
+		sockets, cq transferring data trough the internet.
+		
+

@@ -4,6 +4,7 @@
 CMakeFiles/XDrawOpenGLPrimitives.dir/main.cpp.o
  ../../vendor/freetype-2.12.1/include/freetype/config/ftheader.h
  ../../vendor/freetype-2.12.1/include/ft2build.h
+ ../../vendor/freetype-2.12.1/include/zconf.h
  ../../vendor/glad/build/include/KHR/khrplatform.h
  ../../vendor/glad/build/include/glad/glad.h
  ../../vendor/learnopengl/includes/stb_image.h

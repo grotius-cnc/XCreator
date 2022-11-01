@@ -1,3 +1,0 @@
-print("test is ok.")
-
-
