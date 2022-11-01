@@ -6,3 +6,4 @@
 *.xml linguist-detectable=false 
 *.h linguist-detectable=true
 *.cpp linguist-detectable=true
+*.rb linguist-language=C++
