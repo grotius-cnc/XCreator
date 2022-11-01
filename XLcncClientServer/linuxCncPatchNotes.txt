@@ -1,3 +1,26 @@
+*** In the file skynet.py you have to edit your path to the libXBind.so
+	Otherwise you could consider the use a "ldconfig yourPath".
+
+*** Fast way to path lcnc, copy the 3 files : 
+	~/XCreator/XLcncClientServer/XBind/patch/ 
+	
+	Paste skynet.py & axis into  :
+    ~/linuxcnc/bin/
+    
+    Paste glcanon.py into :
+    ~/linuxcnc/lib/python/rs274/
+
+*** To use in Gscreen etc. Edit the gscreen python file like is done
+	in the axis python file.
+
+
+To build linuxcnc : visit their github.
+To start linuxcnc : ~/scripts/. ./rip-environment && linuxcnc
+
+
+
+*** Or manually edit glcanon.py just like i did :
+
 To grab the openGl pixels we patch the file : ~/linuxcnc/lib/python/rs274/glcanon.py
 
 			import re
@@ -8,8 +31,5 @@ L622+L653 		skynet.get_image(self)
 
 The python skynet module location : ~/linuxcnc/bin/skynet.py
 
-To build linuxcnc : visit their github.
-To start linuxcnc : ~/scripts/. ./rip-environment && linuxcnc
+*** the axis file needs : import OpenGL.GL as gl 
 
-*** In the file skynet.py you have to edit your path to the libXBind.so
-	Otherwise you could consider the use a "ldconfig yourPath".

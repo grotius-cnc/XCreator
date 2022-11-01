@@ -11,7 +11,7 @@ SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS
 include_directories("${SRC_DIR}/")
 include_directories("${SRC_DIR}/lodepng")
 
-ADD_LIBRARY(XBind SHARED
+ADD_LIBRARY(XClient SHARED
     XBind.cpp
     XClient.h
     XClient.cpp

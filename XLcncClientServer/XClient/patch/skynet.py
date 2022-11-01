@@ -1,8 +1,8 @@
+print("python module skynet cyberdyne loaded.")
+from ctypes import * # cdll
 import OpenGL.GL as gl # also added in the axis.py file.
-# import the module
-from ctypes import *
-# load the library
-lib = cdll.LoadLibrary('./build/libXBind.so')
+
+lib = cdll.LoadLibrary('/home/user/XCreator/XLcncClientServer/build/XClient/libXClient.so')
 
 # create a binding class to c++.
 class XClient(object):
@@ -14,27 +14,18 @@ class XClient(object):
         self.obj = lib.XClient_new()
 
     # define method
-    def test(self, arg):
-        print(arg)
+    def run(self):
+        lib.XClient_run(self.obj)
 
     # define method
-    def printStatus(self):
-        lib.XClient_printStatus(self.obj)
-
-    # define method
-    def testExtern(self,arg):
-        lib.XClient_test(self.obj,arg)
-
-    # define method
-    def setData(self,pixels,width,height,channels):
-        lib.XClient_setData(self.obj,pixels,width,height,channels)
+    def encodeRawToPng(self,pixels,w,h):
+        lib.XClient_encodeRawToPng(self.obj,pixels,w,h)
 
 # create a XClient class object
 f = XClient()
 
 # Create image from openGl.
 def get_image(self):
-        print("python module active.")
         """
         Read the openGl backbuffer just before bufferswap is done.
         """
@@ -42,16 +33,12 @@ def get_image(self):
         h = self.winfo_height()
         gl.glReadBuffer(gl.GL_BACK)
 
-        pixels=(gl.GLubyte * (4*w*h))(0)
-        gl.glReadPixels(0, 0, w,h, gl.GL_RGBA, gl.GL_UNSIGNED_BYTE,pixels)
+        pixels=(gl.GLbyte*(w*h*4))()
+        pixels=gl.glReadPixels(0, 0, w,h, gl.GL_RGBA, gl.GL_UNSIGNED_BYTE)
 
-        # string I want to pass to the function
-        msg = "Test message from skynet.py".encode("UTF-8")
-        # create buffer that will pass my string to cpp function
-        strBuffer = create_string_buffer(msg)
-        f.testExtern(strBuffer)
-
-        f.setData(pixels,w,h,4)
+        # 4 channel rgba input.
+        f.encodeRawToPng(pixels,w,h)
+        f.run()
 
 # Example:
 # set data types of arguments of cpp function
@@ -64,3 +51,5 @@ def get_image(self):
 # buff = create_string_buffer(s)
 # passing buff to function
 # result = lib.isNExist(buff)
+
+
