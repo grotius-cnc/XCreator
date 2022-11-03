@@ -240,7 +240,6 @@ private:
         }
         stbi_image_free(data);
     }
-
     // Create vertex & fragment shader programs that are used by the GPU when compiled. Then load the shader program.
     void drawImage(){
         glEnable(GL_BLEND);

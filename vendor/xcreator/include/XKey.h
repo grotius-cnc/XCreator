@@ -1,29 +1,6 @@
 #ifndef XKEY_H
 #define XKEY_H
 
-/*
-        Copyright (c) 2022 Skynet Cyberdyne
-
-        This software is provided 'as-is', without any express or implied
-        warranty. In no event will the authors be held liable for any damages
-        arising from the use of this software.
-
-        Permission is granted to anyone to use this software for any purpose,
-        excluding commercial applications, and to alter it and redistribute it
-        freely, subject to the following restrictions:
-
-        1. The origin of this software must not be misrepresented; you must not
-           claim that you wrote the original software. If you use this software
-           in a product, an acknowledgment in the product documentation would
-           be appreciated but is not required.
-
-        2. Altered source versions must be plainly marked as such, and must not
-           be misrepresented as being the original software.
-
-        3. This notice may not be removed or altered from any source
-           distribution.
-*/
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -34,13 +11,15 @@ class XKey {
 public:
     XKey(){ };
 
-    void setKey(GLFWwindow* theWindow, int theKey, uint theScancode, int theAction, int theMods){ 
+    void setKey(GLFWwindow* theWindow, int theKey, uint theScancode, int theAction, int theMods){
         myWindowPointer=theWindow;
+        myPreviousKey=myKey;
         myKey=theKey;
         myTempKey=theKey;
         myScancode=theScancode;
         myAction=theAction;
         myMods=theMods;
+
         //! std::cout<<"myKey:"<<myKey<<std::endl;
         //! std::cout<<"myScancode:"<<myScancode<<std::endl;
     }
@@ -155,7 +134,7 @@ public:
         return 0;
     }
     bool isGlfwControlVKey(){
-        if(myKey==86){
+        if(myKey==86 && myPreviousKey==341){
             myKey=-1;
             return 1;
         }
@@ -225,6 +204,7 @@ private:
     int myKey, myTempKey, myAction, myMods;
     int myScancode;
     int myChar=-1;
+    int myPreviousKey=0;
 };
 XKey Key;
-#endif // XKEYS_H
+#endif 

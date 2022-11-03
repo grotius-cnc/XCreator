@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtinyfd.a CMakeFiles/tinyfd.dir/tinyfiledialogs.cpp.o CMakeFiles/tinyfd.dir/tinyfd_moredialogs.cpp.o
+/usr/bin/ranlib libtinyfd.a

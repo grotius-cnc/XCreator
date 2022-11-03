@@ -1,0 +1,13 @@
+This document helps you in creating a .deb package to deploy your program.
+
+The DEBIAN directory is used by the package builder, edit the control file to your needs.
+Then the XTextEdit dir contains subdirs, this is like your local file system, where to put the files.
+
+build package, in top dir, this dir :
+
+	$ sudo dpkg-deb --build XTextEdit
+
+Install pakcage :
+
+	$ sudo dpkg -i XTextEdit.deb	
+	

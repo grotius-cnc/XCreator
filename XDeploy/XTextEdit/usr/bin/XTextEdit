@@ -1,0 +1,16 @@
+#!/bin/bash
+CWD=$PWD
+echo "starting XTextEdit"
+
+# Read the argument.
+nlines=$(wc -l < $1)
+
+path=$1
+echo $path
+
+# Start XTextEdit eventually with file load argument
+cd /usr/local/share/XTextEdit/ && ./XTextEdit $path
+
+
+
+

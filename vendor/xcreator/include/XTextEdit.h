@@ -639,61 +639,6 @@ private:
     void KeyboardEvents(){
         //! Process key events for the correct widget.
         if(XPip().getPip(Mouse.Position()->Point(),mySize->Size())){
-            if(Key.isGlfwRightKey()){
-                if(myCursorCount<myString.size()){
-                    myCursorCount++;
-                }
-            }
-            if(Key.isGlfwLeftKey()){
-                myCursorCount--;
-            }
-            if(Key.isGlfwUpKey()){
-            }
-            if(Key.isGlfwDownKey()){
-            }
-            if(Key.isGlfwPageDown()){
-                uint val=(myEditor->Size().Height()/(myFontSize+myVerticalFontSpace))-2;
-                uint theTotalYSize=(getTotalLineCount()-val)*(myFontSize+myVerticalFontSpace);
-                if(abs(newY)<theTotalYSize){
-                    newY-=val*(myFontSize+myVerticalFontSpace);
-                }
-                if(abs(newY)>theTotalYSize){
-                    newY=int(theTotalYSize*-1);
-                }
-            }
-            if(Key.isGlfwPageUp()){
-                uint val=(myEditor->Size().Height()/(myFontSize+myVerticalFontSpace))-2;
-                newY+=val*(myFontSize+myVerticalFontSpace);
-                if(newY>0){
-                    newY=0;
-                }
-            }
-            if(Key.isGlfwEnterKey()){
-                myString.insert(myCursorCount,XChar('\n'));
-                myCursorCount++;
-                Key.resetScanCode();
-                //! If this is a Terminal implementation, it reads the previous line in as a command.
-                myCommand=getPreviousLineContentAtCursor();
-                //! std::cout<<"myCommand:"<<myCommand<<std::endl;
-            }
-            if(Key.isGlfwBackSpaceKey()){
-                if(myCursorCount>0){
-                    myString.erase(myCursorCount);
-                    myCursorCount--;
-                }
-                Key.resetScanCode();
-            }
-            if(Key.isGlfwTabKey()){
-                myString.insert(myCursorCount,XChar(' '));
-                myCursorCount++;
-                myString.insert(myCursorCount,XChar(' '));
-                myCursorCount++;
-                myString.insert(myCursorCount,XChar(' '));
-                myCursorCount++;
-                myString.insert(myCursorCount,XChar(' '));
-                myCursorCount++;
-                Key.resetScanCode();
-            }
             if(Key.Char()!=-1){
                 myString.insert(myCursorCount,XChar(Key.Char(),myTextColor->Color()));
                 myCursorCount++;
@@ -701,50 +646,117 @@ private:
                 Key.setChar(-1);
                 //! Set no selection at a left press.
                 mySelectionEndCharNr=mySelectionStartCharNr;
-            }
-            if(Key.isGlfwControlAKey()){
-                clip::set_text(myString.toStdString());
-                mySelectionStartCharNr=0;
-                mySelectionEndCharNr=myString.size();
-
-            }
-            if(Key.isGlfwControlCKey()){
-                clip::set_text(getSelectedText());
-            }
-            if(Key.isGlfwControlVKey()){
-                std::string value;
-                clip::get_text(value);
-
-                myString.insert(myCursorCount,value);
-                myCursorCount+=value.size();
-            }
-            if(Key.isGlfwControlXKey()){
-                //! Copy selected text to clip.
-                clip::set_text(getSelectedText());
-                //! Remove the selexted text from the myText.
-                XString theResult;
-                uint start=mySelectionStartCharNr;
-                uint end=mySelectionEndCharNr;
-                if(start>end){
-                    uint temp=start;
-                    start=end;
-                    end=temp;
-                }
-                for(uint i=0; i<myString.size(); i++){
-                    if(i>=start && i<end){
-                        //! Do nothing with the selection.
-                    } else {
-                        theResult.push_back(myString.at(i));
+                return;
+            } else {
+                if(Key.isGlfwRightKey()){
+                    if(myCursorCount<myString.size()){
+                        myCursorCount++;
                     }
                 }
-                myString=theResult;
 
-                // Update cursorposition. The cursorcount is a uint and does not like a negative value.
-                int ensurePosCursorCountValue=myCursorCount-(end-start);
-                if(ensurePosCursorCountValue<0){ensurePosCursorCountValue=0;}
-                myCursorCount=ensurePosCursorCountValue;
+                if(Key.isGlfwLeftKey()){
+                    myCursorCount--;
+                }
+                if(Key.isGlfwUpKey()){
+                }
+                if(Key.isGlfwDownKey()){
+                }
+                if(Key.isGlfwPageDown()){
+                    uint val=(myEditor->Size().Height()/(myFontSize+myVerticalFontSpace))-2;
+                    uint theTotalYSize=(getTotalLineCount()-val)*(myFontSize+myVerticalFontSpace);
+                    if(abs(newY)<theTotalYSize){
+                        newY-=val*(myFontSize+myVerticalFontSpace);
+                    }
+                    if(abs(newY)>theTotalYSize){
+                        newY=int(theTotalYSize*-1);
+                    }
+                }
+                if(Key.isGlfwPageUp()){
+                    uint val=(myEditor->Size().Height()/(myFontSize+myVerticalFontSpace))-2;
+                    newY+=val*(myFontSize+myVerticalFontSpace);
+                    if(newY>0){
+                        newY=0;
+                    }
+                }
+                if(Key.isGlfwEnterKey()){
+                    myString.insert(myCursorCount,XChar('\n'));
+                    myCursorCount++;
+                    Key.resetScanCode();
+                    //! If this is a Terminal implementation, it reads the previous line in as a command.
+                    myCommand=getPreviousLineContentAtCursor();
+                    //! std::cout<<"myCommand:"<<myCommand<<std::endl;
+                }
+                if(Key.isGlfwBackSpaceKey()){
+                    if(myCursorCount>0){
+                        myString.erase(myCursorCount);
+                        myCursorCount--;
+                    }
+                    Key.resetScanCode();
+                }
+                if(Key.isGlfwTabKey()){
+                    myString.insert(myCursorCount,XChar(' '));
+                    myCursorCount++;
+                    myString.insert(myCursorCount,XChar(' '));
+                    myCursorCount++;
+                    myString.insert(myCursorCount,XChar(' '));
+                    myCursorCount++;
+                    myString.insert(myCursorCount,XChar(' '));
+                    myCursorCount++;
+                    Key.resetScanCode();
+                }
+                if(Key.isGlfwControlAKey()){
+                    clip::set_text(myString.toStdString());
+                    mySelectionStartCharNr=0;
+                    mySelectionEndCharNr=myString.size();
+
+                }
+                if(Key.isGlfwControlCKey()){
+                    clip::set_text(getSelectedText());
+                }
+                if(Key.isGlfwControlVKey()){
+                    std::string value;
+                    clip::get_text(value);
+
+                    myString.insert(myCursorCount,value);
+                    myCursorCount+=value.size();
+                }
+                if(Key.isGlfwControlXKey()){
+                    ControlX(true);
+                }
+                if(Key.isGlfwDeleteKey()){
+                    ControlX(false);
+                }
             }
         }
+    }
+    //! Cut a chunk of selected text. For delete copyToMemory=false. To hold in memory system wide copyToMemory=true.
+    void ControlX(bool copyToMemory){
+        if(copyToMemory){
+            //! Copy selected text to clip.
+            clip::set_text(getSelectedText());
+        }
+        //! Remove the selexted text from the myText.
+        XString theResult;
+        uint start=mySelectionStartCharNr;
+        uint end=mySelectionEndCharNr;
+        if(start>end){
+            uint temp=start;
+            start=end;
+            end=temp;
+        }
+        for(uint i=0; i<myString.size(); i++){
+            if(i>=start && i<end){
+                //! Do nothing with the selection.
+            } else {
+                theResult.push_back(myString.at(i));
+            }
+        }
+        myString=theResult;
+
+        // Update cursorposition. The cursorcount is a uint and does not like a negative value.
+        int ensurePosCursorCountValue=myCursorCount-(end-start);
+        if(ensurePosCursorCountValue<0){ensurePosCursorCountValue=0;}
+        myCursorCount=ensurePosCursorCountValue;
     }
     //! Process mouse events.
     void MouseEvents(){

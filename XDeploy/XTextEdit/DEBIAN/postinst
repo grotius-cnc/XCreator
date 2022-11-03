@@ -1,0 +1,10 @@
+#!/bin/bash
+# This is a post install script.
+
+echo "installation complete!, check menu starter."
+
+
+
+
+
+

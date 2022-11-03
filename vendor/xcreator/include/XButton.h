@@ -121,6 +121,7 @@ public:
     void setColor(XColorType theColorType, XColor theColor){
         if(theColorType==XColorType::BackgroundColor){
             myBackgroundColor->setColor(theColor);
+             myAnimate->setAnimationColorsStageOne(myBackgroundColor->Color(),myHoverColor->Color());
         }
         if(theColorType==XColorType::BorderColor){
             myBorderColor->setColor(theColor);
@@ -282,10 +283,11 @@ private:
     void setCenterText(){
         if(myCenterButtonTextX){
             myTextWidth=myText->StringWidth(myString->toStdString());  // Converse to pixelsize, see XText.h for more info.
-            myTextShiftX=((myBackground->Size().Width()-myTextWidth)/2);
+            uint correction=4;
+            myTextShiftX=((mySize->Size().Width()-myTextWidth)/2+correction);
         }
         if(myCenterButtonTextY){
-            myTextShiftY=((myBackground->Size().Height()-(myFontSize+myVerticalFontSpace))/2);
+            myTextShiftY=((mySize->Size().Height()-(myFontSize+myVerticalFontSpace))/2);
         }
     }
 

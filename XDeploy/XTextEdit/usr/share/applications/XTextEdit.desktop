@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=XTextEditor
+Version=1.0
+Exec=XTextEdit %F
+Type=Application
+Categories=Office;
+Comment="Text editor"
+Terminal=false
+Icon=libreoffice-document-new
+Path=/usr/bin/

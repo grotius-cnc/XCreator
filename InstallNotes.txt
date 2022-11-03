@@ -35,6 +35,10 @@ To clone this repository including installing the submodules :
 	cd XCreator
 	./setup
 	
+To build the whole XCreator project, ensure at least a few vendor libs are compiled or present :
+
+	cd ~/build && cmake .. && make		
+	
 To build a single XCreator program :
 
 	cd /XCreator/XDesignerDialog/build/

@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Rescan project to ensure the copy is done.
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/fonts DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/fonts DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(LIB_DIR "${SRC_DIR}/../vendor")
@@ -15,13 +15,13 @@ set(SOURCES
     # main.cpp is only used to tell cmake it has to be compiled for c++ language.
     "${XCREATOR_DIR}/main.cpp"
     "${XCREATOR_DIR}/XMainWindow.h"
-    "${XCREATOR_DIR}/XOpenGLArc.h"
-    "${XCREATOR_DIR}/XOpenGLCircle.h"
-    "${XCREATOR_DIR}/XOpenGLLine.h"
-    "${XCREATOR_DIR}/XOpenGLPoint.h"
-    "${XCREATOR_DIR}/XOpenGLSpline.h"
-    "${XCREATOR_DIR}/XOpenGL3PSurface.h"
-    "${XCREATOR_DIR}/XOpenGL4PSurface.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XOpenGLArc.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XOpenGLCircle.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XOpenGLLine.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XOpenGLPoint.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XOpenGLSpline.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XOpenGL3PSurface.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XOpenGL4PSurface.h"
 
     # To show the splinelib files wich i converted to header only.
     # "${LIB_DIR}/splinelib/spline.h"

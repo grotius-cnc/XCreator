@@ -1,29 +1,6 @@
 #ifndef XMAINWINDOW_H
 #define XMAINWINDOW_H
 
-/*
-        Copyright (c) 2022 Skynet Cyberdyne
-
-        This software is provided 'as-is', without any express or implied
-        warranty. In no event will the authors be held liable for any damages
-        arising from the use of this software.
-
-        Permission is granted to anyone to use this software for any purpose,
-        excluding commercial applications, and to alter it and redistribute it
-        freely, subject to the following restrictions:
-
-        1. The origin of this software must not be misrepresented; you must not
-           claim that you wrote the original software. If you use this software
-           in a product, an acknowledgment in the product documentation would
-           be appreciated but is not required.
-
-        2. Altered source versions must be plainly marked as such, and must not
-           be misrepresented as being the original software.
-
-        3. This notice may not be removed or altered from any source
-           distribution.
-*/
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -39,10 +16,11 @@
 #include <XImageButtonFileOpen.h>
 #include <XImageButtonMessage.h>
 #include <XImageButtonInputBox.h>
-#include <XImageButtonSaveFile.h>
 #include <XImageButtonColor.h>
 #include <XImageButtonCheckList.h>
 #include <XImageButtonArray.h>
+#include <XImageButtonFileOpen.h>
+#include <XImageButtonFileSave.h>
 
 class XMainWindow : public XWidget {
 public:
@@ -95,39 +73,39 @@ public:
         float x=0;
         //! Class to populate the file dialog with content.
         myFileOpenButton=new XImageButtonFileOpen (Window());
-        myFileOpenButton->setSize({{x,0,0},20,20});
+        myFileOpenButton->setSize({{x,0,0},32,32});
         addWidget(myFileOpenButton);
-        x+=20;
+        x+=50;
 
         myMessageButton=new XImageButtonMessage(Window());
-        myMessageButton->setSize({{x,0,0},20,20});
+        myMessageButton->setSize({{x,0,0},32,32});
         addWidget(myMessageButton);
-        x+=20;
+        x+=50;
 
         myInputBoxButton=new XImageButtonInputBox(Window());
-        myInputBoxButton->setSize({{x,0,0},20,20});
+        myInputBoxButton->setSize({{x,0,0},32,32});
         addWidget(myInputBoxButton);
-        x+=20;
+        x+=50;
 
-        mySaveFileButton=new XImageButtonSaveFile(Window());
-        mySaveFileButton->setSize({{x,0,0},20,20});
-        addWidget(mySaveFileButton);
-        x+=20;
+        myFileSaveButton=new XImageButtonFileSave(Window());
+        myFileSaveButton->setSize({{x,0,0},32,32});
+        addWidget(myFileSaveButton);
+        x+=50;
 
         myColorButton=new XImageButtonColor(Window());
-        myColorButton->setSize({{x,0,0},20,20});
+        myColorButton->setSize({{x,0,0},32,32});
         addWidget(myColorButton);
-        x+=20;
+        x+=50;
 
         myCheckListButton=new XImageButtonCheckList(Window());
-        myCheckListButton->setSize({{x,0,0},20,20});
+        myCheckListButton->setSize({{x,0,0},32,32});
         addWidget(myCheckListButton);
-        x+=20;
+        x+=50;
 
         myArrayButton=new XImageButtonArray(Window());
-        myArrayButton->setSize({{x,0,0},20,20});
+        myArrayButton->setSize({{x,0,0},32,32});
         addWidget(myArrayButton);
-        x+=20;
+        x+=50;
 
         setScissorWindow(Window());
         enableScissor(1);
@@ -146,6 +124,7 @@ public:
 
             glViewport(0, 0, myWidth, myHeight);
             glClear(GL_COLOR_BUFFER_BIT);
+            glClearColor(0.2,0.2,0.2,1.0);
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             glOrtho(0, myWidth, myHeight, 0, -10000, 10000);
@@ -170,8 +149,8 @@ public:
                 std::cout<<"theInput result:"<<myInputBoxButton->Result()<<std::endl;
             }
             //! This request will automaticly run the save file dialog.
-            if(mySaveFileButton->isPressed()){
-                std::cout<<"theInput result:"<<mySaveFileButton->Result()<<std::endl;
+            if(myFileSaveButton->isPressed()){
+                std::cout<<"theInput result:"<<myFileSaveButton->Result()<<std::endl;
             }
             //! This request will automaticly run color dialog.
             if(myColorButton->isPressed()){
@@ -180,6 +159,7 @@ public:
                             " g:"<<myColorButton->Result_Rgb().at(1)<<
                             " b:"<<myColorButton->Result_Rgb().at(2)<<std::endl;
             }
+
             //! This request will automaticly run the checklist dialog.
             if(myCheckListButton->isPressed()){
                 std::cout<<"theInput result:"<<myCheckListButton->Result()<<std::endl;
@@ -188,7 +168,6 @@ public:
             if(myArrayButton->isPressed()){
                 std::cout<<"theInput result:"<<myArrayButton->Result()<<std::endl;
             }
-
 
             //! draw content.
             drawWidgetVec();
@@ -212,7 +191,7 @@ private:
     XImageButtonFileOpen *myFileOpenButton;
     XImageButtonMessage *myMessageButton;
     XImageButtonInputBox *myInputBoxButton;
-    XImageButtonSaveFile *mySaveFileButton;
+    XImageButtonFileSave *myFileSaveButton;
     XImageButtonColor *myColorButton;
     XImageButtonCheckList *myCheckListButton;
     XImageButtonArray *myArrayButton;

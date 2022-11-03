@@ -1,0 +1,15 @@
+Package: xtextedit
+Version: 1.0.0
+Priority: optional
+Architecture: amd64
+Essential: no
+Installed-Size: 2.4Mib
+Maintainer: Skynet
+Depends: libfreetype-dev
+Suggests: 
+Breaks:
+Provides: 
+Section: devel
+Homepage: https://github.com/grotius-cnc/
+Description: Text editor
+	build package, in top dir : $ sudo dpkg-deb --build XTextEdit

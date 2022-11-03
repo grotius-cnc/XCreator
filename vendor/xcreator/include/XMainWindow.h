@@ -1,29 +1,6 @@
 #ifndef XMAINWINDOW_H
 #define XMAINWINDOW_H
 
-/*
-        Copyright (c) 2022 Skynet Cyberdyne
-
-        This software is provided 'as-is', without any express or implied
-        warranty. In no event will the authors be held liable for any damages
-        arising from the use of this software.
-
-        Permission is granted to anyone to use this software for any purpose,
-        excluding commercial applications, and to alter it and redistribute it
-        freely, subject to the following restrictions:
-
-        1. The origin of this software must not be misrepresented; you must not
-           claim that you wrote the original software. If you use this software
-           in a product, an acknowledgment in the product documentation would
-           be appreciated but is not required.
-
-        2. Altered source versions must be plainly marked as such, and must not
-           be misrepresented as being the original software.
-
-        3. This notice may not be removed or altered from any source
-           distribution.
-*/
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -46,14 +23,13 @@ public:
         glfwInit();
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-        //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+        //! glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 #ifdef __APPLE__
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-        // glfw window creation
-        // --------------------
+        //! glfw window creation
         window=glfwCreateWindow(myWidth, myHeight, myDialogName.c_str(), NULL, NULL);
         setWindowPointer(window);
 
@@ -68,8 +44,7 @@ public:
         glfwMakeContextCurrent(window);
         glfwSwapInterval(1);
 
-        // glad: load all OpenGL function pointers
-        // ---------------------------------------
+        //! glad: load all OpenGL function pointers
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         {
             std::cout << "Failed to initialize GLAD" << std::endl;
@@ -112,10 +87,10 @@ public:
             glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
 
-            if(glfwGetTime()>1){ // Reset every 1000 Ms.
+            if(glfwGetTime()>1){ //! Reset every 1000 Ms.
                 glfwSetTime(0);
             }
-            // Timer for blinking mouse cursor when using text editor widgets. This function has to be done called once each project.
+            //! Timer for blinking mouse cursor when using text editor widgets. This function has to be done called once each project.
             Mouse.setTime(glfwGetTime()*1000);
 
             //! Set the size of the child widget.
@@ -136,17 +111,14 @@ public:
 private:
     GLFWwindow* window;
     std::string myDialogName="XMainWindow";
-    int myWidth=0, myHeight=0;
+    int myWidth=500, myHeight=250;
     XSize *mySize=new XSize();
 
     //! XButton *myButton = new XButton(myWindow); does not work because myWindow has not been initialised at this stage.
     XButton *myContent;
-
-    bool myInit=0, myInit1=0;
-    bool myTrigger=0;
 };
 
-#endif // XMAINWINDOW_H
+#endif 
 
 
 

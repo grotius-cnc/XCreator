@@ -55,6 +55,13 @@ public:
         myBackground->setWindow(this->Window());
         myIcon=new XIcon(Window(),theImagePath,{{0,0,0},15,15});
     }
+    //! To initialize afterwards when using a empty constructor.
+    void initImageButton(XWindow *theWindow, std::string theImagePath, float theWidth, float theHeight){
+        this->setWindow(theWindow);
+        myBorder->setWindow(this->Window());
+        myBackground->setWindow(this->Window());
+        myIcon=new XIcon(Window(),theImagePath,{{0,0,0},theWidth,theHeight});
+    }
     //! Set the size of this widget. Size also handles the mouse & key events.
     void setSize(XSize theSize){
         mySize->setSize(theSize);
@@ -139,6 +146,9 @@ public:
         }
         return {0,0,0,0};
     }
+    bool isHovered(){
+        return myIsHovered;
+    }
     //! If this widget is subclassed, use the IsPressedPrivate to avoid duplicate name clashes.
     bool isPressed(){
         return isPressedPrivate();
@@ -150,17 +160,17 @@ public:
     }
     //! draw this widget. Eventually use xyz offsets, for example while dragging a widget.
     void draw(){
-        myBorder->setSize(mySize->Size());
-        myBorder->setRelativeOriginOffset(mySize->RelativeOriginOffset());
-        myBorder->setRelativeSizeOffset(mySize->RelativeSizeOffset());
-        myBorder->setColor(XColorType::BorderColor,myBackgroundColor->Color());
-        myBorder->draw();
+//        myBorder->setSize(mySize->Size());
+//        myBorder->setRelativeOriginOffset(mySize->RelativeOriginOffset());
+//        myBorder->setRelativeSizeOffset(mySize->RelativeSizeOffset());
+//        myBorder->setColor(XColorType::BorderColor,myBackgroundColor->Color());
+//        myBorder->draw();
 
         myBackground->setSize(mySize->Size().MarginSize(myBorderSize));
-        myBackground->setRelativeOriginOffset(mySize->RelativeOriginOffset());
-        myBackground->setRelativeSizeOffset(mySize->RelativeSizeOffset());
-        myBackground->setColor(XColorType::BackgroundColor,myBackgroundColor->Color());
-        myBackground->draw();
+//        myBackground->setRelativeOriginOffset(mySize->RelativeOriginOffset());
+//        myBackground->setRelativeSizeOffset(mySize->RelativeSizeOffset());
+//        myBackground->setColor(XColorType::BackgroundColor,myBackgroundColor->Color());
+//        myBackground->draw();
 
         myIcon->setSize(mySize->Size().MarginSize(myBorderSize));
         myIcon->setRelativeOriginOffset(mySize->RelativeOriginOffset());
@@ -171,6 +181,11 @@ public:
         }
         myBackground->Event(XEventEnum::ReleasedLeft);
 
+        if(myBackground->Event(XEventEnum::Hovered)){
+            myIsHovered=true;
+        } else {
+            myIsHovered=false;
+        }
 
         //! draw content.
         for(uint i=0; i<WidgetVec().size(); i++){
@@ -194,6 +209,7 @@ private:
     std::string myImagePath;
     XIcon *myIcon;
     bool myIsPressed=0;
+    bool myIsHovered=0;
 };
 #endif
 

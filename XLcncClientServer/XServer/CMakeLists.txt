@@ -41,8 +41,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE "${XCREATOR_DIR}/")
 #add_library(zlib SHARED IMPORTED)
 #set_target_properties(zlib PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/zlib/build/libz.so)
 
-#add_library(freetypes SHARED IMPORTED)
-#set_target_properties(freetypes PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/freetype-2.12.1/build/libfreetype.a)
+add_library(freetypes SHARED IMPORTED)
+set_target_properties(freetypes PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/freetype-2.12.1/build/libfreetype.a)
 
 add_library(glfw3 SHARED IMPORTED)
 set_target_properties(glfw3 PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/glfw-3.3.7/build/src/libglfw3.a)

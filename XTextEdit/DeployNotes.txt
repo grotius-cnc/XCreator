@@ -1,0 +1,2 @@
+The ../XDeploy directory is a sample how to create a .deb installer for this project.
+It installs this project including a desktop launcher.

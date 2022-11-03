@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Rescan project to ensure the copy is done.
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/fonts DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/fonts DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(LIB_DIR "${SRC_DIR}/../vendor")
@@ -16,13 +16,13 @@ set(SOURCES
     "${XCREATOR_DIR}/main.cpp"
     "${XCREATOR_DIR}/XMainWindow.h"
     "${XCREATOR_DIR}/XMainWindow.h"
-    "${XCREATOR_DIR}/XImageButtonFileOpen.h"
-    "${XCREATOR_DIR}/XImageButtonMessage.h"
-    "${XCREATOR_DIR}/XImageButtonSaveFile.h"
-    "${XCREATOR_DIR}/XImageButtonInputBox.h"
-    "${XCREATOR_DIR}/XImageButtonColor.h"
-    "${XCREATOR_DIR}/XImageButtonCheckList.h"
-    "${XCREATOR_DIR}/XImageButtonArray.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XImageButtonFileOpen.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XImageButtonMessage.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XImageButtonFileOpen.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XImageButtonInputBox.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XImageButtonColor.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XImageButtonCheckList.h"
+    "${XCREATOR_DIR}/../vendor/xcreator/include/XImageButtonArray.h"
     "${XCREATOR_DIR}/../vendor/tinyfiledialogs/tinyfiledialogs.h"
     "${XCREATOR_DIR}/../vendor/tinyfiledialogs/tinyfiledialogs.cpp"
     "${XCREATOR_DIR}/../vendor/tinyfiledialogs/tinyfd_moredialogs.h"
@@ -61,6 +61,10 @@ set_target_properties(soil PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/soil/build/li
 add_library(clip SHARED IMPORTED)
 set_target_properties(clip PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/clip-1.5/build/libclip.a)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE soil glfw3 GLU clip xcb X11 GL glad Xrandr pthread Xi dl Xcursor freetype png)
+# TinyFileDialogs
+add_library(tinyfd SHARED IMPORTED)
+set_target_properties(tinyfd PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/tinyfiledialogs/build/libtinyfd.a)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE soil glfw3 GLU clip xcb X11 GL glad Xrandr pthread Xi dl Xcursor freetype png tinyfd)
 
 
