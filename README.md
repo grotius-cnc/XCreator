@@ -5,8 +5,15 @@ by Skynet Cyberdyne 2022.
 To clone this repository including installing the submodules and automated install script :
 
     git clone --recurse-submodules https://github.com/grotius-cnc/XCreator.git XCreator
+
+    1. Build the vendors you need in the ~/vendor dir.
     
-    To build the examples, visit the project build dir : ~/build/cmake .. && make
+    To build the examples: 
+    cd XCreator
+    mkdir build 
+    cd build
+    cmake .. 
+    make
 
 To start a new project :
 
@@ -76,6 +83,7 @@ Project editor hints:
 You can edit this project in Qt designer if you like to do so. 
 Just open one of the CMakeList.txt files as project in Qt.
 Qt will create a CMakeList.txt.user file... 
+
 
 
 
