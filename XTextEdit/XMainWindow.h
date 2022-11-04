@@ -17,6 +17,7 @@
 #include <XTextEdit.h>
 #include <XImageButtonFileOpen.h>
 #include <XImageButtonFileSave.h>
+#include <XImageButtonColor.h>
 #include <tinyfiledialogs.h>
 
 class XMainWindow : public XWidget {
@@ -75,25 +76,59 @@ public:
 
         myCursorIcon=new XCursor(Window());
 
+        float x=0;
+        myNewDocument=new XImageButton(Window(),"icons/x-office-document-template.png");
+        myNewDocument->setSize({{x,0,0},32,32});
+        addWidget(myNewDocument);
+        x+=32;
         myFileOpenButton=new XImageButtonFileOpen(Window());
-        myFileOpenButton->setSize({{0,0,0},32,32});
+        myFileOpenButton->setSize({{x,0,0},32,32});
         addWidget(myFileOpenButton);
-
+        x+=32;
         myFileSaveAsButton=new XImageButtonFileSave(Window());
-        myFileSaveAsButton->setSize({{32,0,0},32,32});
+        myFileSaveAsButton->setSize({{x,0,0},32,32});
         addWidget(myFileSaveAsButton);
-
+        x+=32;
         myFileSaveButton=new XImageButton(Window(),"icons/document-save.png");
-        myFileSaveButton->setSize({{64,0,0},32,32});
+        myFileSaveButton->setSize({{x,0,0},32,32});
         addWidget(myFileSaveButton);
+        x+=32;
+        myZoomIn=new XImageButton(Window(),"icons/zoom-in.png");
+        myZoomIn->setSize({{x,0,0},32,32});
+        addWidget(myZoomIn);
+        x+=32;
+        myZoomOut=new XImageButton(Window(),"icons/zoom-out.png");
+        myZoomOut->setSize({{x,0,0},32,32});
+        addWidget(myZoomOut);
+        x+=32;
+        myUndo=new XImageButton(Window(),"icons/edit-redo-rtl.png");
+        myUndo->setSize({{x,0,0},32,32});
+        addWidget(myUndo);
+        x+=32;
+        myRedo=new XImageButton(Window(),"icons/edit-redo.png");
+        myRedo->setSize({{x,0,0},32,32});
+        addWidget(myRedo);
+        x+=32;
+        myColorButton=new XImageButtonColor(Window());
+        myColorButton->setSize({{x,0,0},32,25});
+        addWidget(myColorButton);
+        //x+=32;
+        myColorFrame=new XFrame(Window());
+        myColorFrame->setSize({{x,25,0},32,7});
+        myColorFrame->setColor(XColorType::BackgroundColor,{myTextColor.at(0),myTextColor.at(1),myTextColor.at(2),myTextColor.at(3)});
+        myColorFrame->setColor(XColorType::BorderColor,{0.0,0.0,0.0,0.0});
+        addWidget(myColorFrame);
+        x+=32;
 
-        myTextEdit=new XTextEdit(Window());
+        myTextEdit=new XTextEdit(Window(),15,5,true);
         myTextEdit->setSize({{0,32,0},500,250-32});
+        myTextEdit->setColor(XColorType::BackgroundColor,{0.212,0.212,0.212,0.9});
+        myTextEdit->setColor(XColorType::TextColor,{0.961,0.871,0.702,1.0});
         myTextEdit->init();
         addWidget(myTextEdit);
 
         if(myFile.size()>0){
-            myTextEdit->loadFile(myFile);
+            myTextEdit->loadFile(myFile,{myTextColor.at(0),myTextColor.at(1),myTextColor.at(2),myTextColor.at(3)});
         }
 
         setScissorWindow(Window());
@@ -113,6 +148,7 @@ public:
 
             glViewport(0, 0, myWidth, myHeight);
             glClear(GL_COLOR_BUFFER_BIT);
+            glClearColor(0.4,0.4,0.4,0.9);
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             glOrtho(0, myWidth, myHeight, 0, -10000, 10000);
@@ -128,9 +164,17 @@ public:
             //! Events.
             myTextEdit->setSize({{0,32,0},mySize->Width(),mySize->Height()-32});
 
+            if(myNewDocument->isHovered()){
+                myCursorIcon->setArrowCursor();
+            }
+            if(myNewDocument->isPressed()){
+                myFile="newDocument.txt";
+                myTextEdit->reset();
+                myTextEdit->saveFile(myFile);
+            }
             if(myFileOpenButton->isPressed()){
                 myFile=myFileOpenButton->Result();
-                myTextEdit->loadFile(myFile);
+                myTextEdit->loadFile(myFile,{myTextColor.at(0),myTextColor.at(1),myTextColor.at(2),myTextColor.at(3)});
             }
             if(myFileOpenButton->isHovered()){
                 myCursorIcon->setArrowCursor();
@@ -159,7 +203,39 @@ public:
                                 0);
                 }
             }
+            if(myUndo->isHovered()){
+                myCursorIcon->setArrowCursor();
+            }
+            if(myUndo->isPressed()){
+                myTextEdit->Undo();
 
+            }
+            if(myRedo->isHovered()){
+                myCursorIcon->setArrowCursor();
+            }
+            if(myRedo->isPressed()){
+                myTextEdit->Redo();
+            }
+            if(myZoomIn->isHovered()){
+                myCursorIcon->setArrowCursor();
+            }
+            if(myZoomIn->isPressed()){
+                myTextEdit->zoomIn();
+            }
+            if(myZoomOut->isHovered()){
+                myCursorIcon->setArrowCursor();
+            }
+            if(myZoomOut->isPressed()){
+                myTextEdit->zoomOut();
+            }
+            if(myColorButton->isHovered()){
+                myCursorIcon->setCrosshairCursor();
+            }
+            if(myColorButton->isPressed()){
+                myTextColor=myColorButton->Result_Rgb();
+                myTextEdit->setColor(XColorType::TextColor,{myTextColor.at(0),myTextColor.at(1),myTextColor.at(2),myTextColor.at(3)});
+                myColorFrame->setColor(XColorType::BackgroundColor,{myTextColor.at(0),myTextColor.at(1),myTextColor.at(2),myTextColor.at(3)});
+            }
             //! draw content.
             drawWidgetVec();
 
@@ -176,15 +252,19 @@ public:
 private:
     std::string myFile;
     GLFWwindow* window;
-    std::string myDialogName="XTextEditor";
-    int myWidth=500, myHeight=250;
+    std::string myDialogName="XTextEdit";
+    int myWidth=1250, myHeight=500;
     XSize *mySize=new XSize();
+    std::vector<float> myTextColor={0.961,0.871,0.702,1.0};
 
     //! XButton *myButton = new XButton(myWindow); does not work because myWindow has not been initialised at this stage.
     XTextEdit *myTextEdit;
     XImageButtonFileOpen *myFileOpenButton;
     XImageButtonFileSave *myFileSaveAsButton;
+    XImageButtonColor *myColorButton;
     XImageButton *myFileSaveButton;
+    XImageButton *myZoomIn, *myZoomOut, *myUndo, *myRedo, *myNewDocument;
+    XFrame *myColorFrame;
     XCursor *myCursorIcon;
 };
 #endif

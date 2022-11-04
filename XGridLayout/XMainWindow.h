@@ -13,6 +13,8 @@
 #include <XTemplate.h>
 #include <XScissor.h>
 #include <XGridLayout.h>
+#include <XTextureStream.h>
+#include <XImageButton.h>
 
 class XMainWindow : public XWidget {
 public:
@@ -62,7 +64,7 @@ public:
 
         //! Create content.
         myGridLayout=new XGridLayout(Window());
-        myGridLayout->setRowsAndColums(2,3);
+        myGridLayout->setRowsAndColums(3,2);
         addWidget(myGridLayout);
 
         myButton=new XButton(Window());
@@ -70,7 +72,12 @@ public:
         myButton->setColor(XColorType::BorderColor,{0.0,0.0,0.0,0.0}); //! 100% transparant border.
         myButton->setBorderSize(10);
 
+        myImageButton=new XImageButton(Window(),"textures/button.png");
+        myImageButton->setColor(XColorType::TextColor,{0.0,0.0,0.0,0.9});
+        myImageButton->setBorderSize(10);
+
         myGridLayout->addWidgetToGridLayout(myButton,1,1);
+        myGridLayout->addWidgetToGridLayout(myImageButton,0,0);
 
         setScissorWindow(Window());
         enableScissor(1);
@@ -123,6 +130,7 @@ private:
     XSize *mySize=new XSize();
     XGridLayout *myGridLayout;
     XButton *myButton;
+    XImageButton *myImageButton;
 };
 
 #endif 

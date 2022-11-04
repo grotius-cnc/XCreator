@@ -1,0 +1,6 @@
+copy paste text including colors.
+activate syntax highlight.
+add vertical scrollbar.
+arrow down.
+
+

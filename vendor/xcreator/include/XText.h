@@ -63,20 +63,35 @@ public:
 
 class XText : public XWidget {
 public:
+
     XText(){
+        myFontName="fonts/SourceCodePro-Regular.ttf";
+        myFontSize=13;
+        myVerticalFontSpace=2;
         init();
     }
+
+
     XText(XWindow *theWindow){
         this->setWindow(theWindow);
+        myFontName="fonts/SourceCodePro-Regular.ttf";
+        myFontSize=13;
+        myVerticalFontSpace=2;
         init();
     }
+
+    XText(XWindow *theWindow, uint theFontSize, uint theVerticalFontSpace, std::string theFontName){
+        this->setWindow(theWindow);
+        myFontName=theFontName;
+        myFontSize=theFontSize;
+        myVerticalFontSpace=theVerticalFontSpace;
+        init();
+    }
+
     ~XText(){
         glDeleteProgram(myShaderProgram);
     }
     void init(){
-        myFontName="fonts/SourceCodePro-Regular.ttf";
-        myFontSize=13;
-        myVerticalFontSpace=2;
         if(!loadFont(myFontName,myFontSize)){ std::cout<<"XText loadfont failed."<<std::endl;}
         if(!initGL()){std::cout<<"XText initGL failed."<<std::endl;}
         if(!loadVaoVbo()){std::cout<<"XText loadVaoVbo failed."<<std::endl;};
@@ -139,16 +154,18 @@ public:
     //! Non virtual functions.
     void setFontName(std::string theFontName){
         myFontName=theFontName;
+         if(!loadFont(myFontName,myFontSize)){ std::cout<<"XText loadfont failed."<<std::endl;}
     }
     void setFontSize(float theFontSize){
         myFontSize=theFontSize;
+        if(!loadFont(myFontName,myFontSize)){ std::cout<<"XText loadfont failed."<<std::endl;}
     }
     void setVerticalFontSpace(float theVerticalFontSpace){
         myVerticalFontSpace=theVerticalFontSpace;
     }
     // draw a text right away.
-    void drawText(XString theText, uint theCharStartNr, uint theCharEndNr, float scrollX, float scrollY, bool useGLScissor){
-        if(!RenderText(theText, theCharStartNr, theCharEndNr, mySize->Origin().X()+scrollX, mySize->Origin().Y()+scrollY, 1.0f, useGLScissor)){std::cout<<"XText rendertext error."<<std::endl;}
+    void drawText(XString theText, uint theCharStartNr, uint theCharEndNr, float scrollX, float scrollY){
+        if(!RenderText(theText, theCharStartNr, theCharEndNr, mySize->Origin().X()+scrollX, mySize->Origin().Y()+scrollY, 1.0f)){std::cout<<"XText rendertext error."<<std::endl;}
     }
     void setMemoryText(XString theText){
         myMemoryText.setString(theText);
@@ -191,13 +208,14 @@ public:
 private:
     std::string myName;
     XSize *mySize=new XSize();
-    std::string myFontName;
-    float myFontSize, myVerticalFontSpace;
+    std::string myFontName="fonts/SourceCodePro-Regular.ttf";
+    uint myFontSize=0, myVerticalFontSpace=0;
     std::map<GLchar, XFontCharacter> XFontCharacters;
     unsigned int VAO, VBO;
     uint myShaderProgram;
     std::vector<glm::fvec4> theGlmColorVec;
     XString myMemoryText;
+    unsigned int myTexture;
 
     bool loadVaoVbo(){
         // configure VAO/VBO for texture quads
@@ -282,6 +300,7 @@ private:
     }
 
     bool loadFont(std::string theFontName, float theFontSize){
+        XFontCharacters.clear();
         // FreeType
         FT_Library ft;
         // All functions return a value different than 0 whenever an error occurred
@@ -320,10 +339,9 @@ private:
                     std::cout<<"XText ERROR::FREETYTPE: Failed to load Glyph"<<std::endl;
                     continue;
                 }
-                // generate texture
-                unsigned int texture;
-                glGenTextures(1, &texture);
-                glBindTexture(GL_TEXTURE_2D, texture);
+
+                glGenTextures(1, &myTexture);
+                glBindTexture(GL_TEXTURE_2D, myTexture);
                 glTexImage2D(
                             GL_TEXTURE_2D,
                             0,
@@ -342,7 +360,7 @@ private:
                 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
                 // now store character for later use
                 XFontCharacter character = {
-                    texture,
+                    myTexture,
                     glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
                     glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
                     static_cast<unsigned int>(face->glyph->advance.x),
@@ -359,7 +377,7 @@ private:
     }
 
     // Render text.
-    bool RenderText(XString theCharText, uint theCharStartNr, uint theCharEndNr, float x, float y, float scale, bool useGlScissor)
+    bool RenderText(XString theCharText, uint theCharStartNr, uint theCharEndNr, float x, float y, float scale)
     {
         //! Used by editing mode.
         x+=mySize->RelativeOriginOffset().X();

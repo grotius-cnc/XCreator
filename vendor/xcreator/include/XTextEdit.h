@@ -24,26 +24,60 @@ public:
     XTextEdit(XWindow *theWindow){
         this->setWindow(theWindow);
     }
+    //! Constructor setting the GLFWwindow pointer.
+    XTextEdit(XWindow *theWindow, int theFontSize, uint theVerticalFontSpace, bool theShowLineNrIndex, std::string theFontName="fonts/SourceCodePro-Regular.ttf"){
+        this->setWindow(theWindow);
+        init(theFontSize,theVerticalFontSpace,theShowLineNrIndex,theFontName);
+    }
     //! Various init methodes.
     void init(){
-        init(13,2,true);
+        init(myFontSize,myVerticalFontSpace,true,"fonts/SourceCodePro-Regular.ttf");
     }
     //! Initialize without line number index at left.
     void init_WithoutLineNrIndex(){
-        init(13,2,false);
+        init(myFontSize,myVerticalFontSpace,false,"fonts/SourceCodePro-Regular.ttf");
     }
     //! Initialize without line number index and no edit mode, view only.
     void init_WithoutLineNrIndex_ModeViewOnly(){
-        init(13,2,false);
+        init(myFontSize,myVerticalFontSpace,false,"fonts/SourceCodePro-Regular.ttf");
         myViewOnly=true;
     }
+    //! Zoom in.
+    void zoomIn(){
+        myFontSize++;
+        myCursor->setHeight(myFontSize);
+        myEditor->setFontSize(myFontSize);
+        myLineNrIndex->setFontSize(myFontSize);
+    }
+    //! Zoom out.
+    void zoomOut(){
+        myFontSize--;
+        myCursor->setHeight(myFontSize);
+        myEditor->setFontSize(myFontSize);
+        myLineNrIndex->setFontSize(myFontSize);
+    }
+    //! Undo.
+    void Undo(){
+        if((myUndoRedoIndex+myUndoRedoString.size()>0)){
+            myUndoRedoIndex--;
+            myString.setString(myUndoRedoString.at(myUndoRedoIndex+myUndoRedoString.size()));
+        }
+    }
+    //! Redo.
+    void Redo(){
+        if((myUndoRedoIndex+myUndoRedoString.size())<(myUndoRedoString.size()-1)){
+            myUndoRedoIndex++;
+            myString=myUndoRedoString.at(myUndoRedoIndex+myUndoRedoString.size());
+        }
+    }
     //! Initialisation function.
-    void init(float theFontSize, float theVerticalFontSpace, bool showLineNrIndex){
+    void init(uint theFontSize, uint theVerticalFontSpace, bool theShowLineNrIndex, std::string theFontName){
         myFontSize=theFontSize;
         myVerticalFontSpace=theVerticalFontSpace;
-        myShowLineNrIndex=showLineNrIndex;
+        myShowLineNrIndex=theShowLineNrIndex;
+        myFontName=theFontName;
 
-        myEditor=new XText(Window());
+        myEditor=new XText(Window(),myFontSize,myVerticalFontSpace,myFontName);
 
         myBorder=new XRectangular(Window());
         myBorder->setColor(myBorderColor->Color());
@@ -54,14 +88,15 @@ public:
         // myKeyWord=new XKeyWord();
 
         if(myShowLineNrIndex){
-            myLineNrIndex=new XText(Window());
+            myLineNrIndex=new XText(Window(),myFontSize,myVerticalFontSpace,myFontName);
+            myLineNrIndex->setWindow(Window());
             mySpacer=new XRectangular(Window());
             mySpacer->setColor({0.1,0.5,0.1,0.9});
         }
 
         myCursor=new XRectangular(Window());
         myCursor->setColor({1.0,0.0,0.0,1.0});
-        myCursor->setSize({{0,0,0},2,myFontSize});
+        myCursor->setSize({{0,0,0},2,float(myFontSize)});
 
         myCursorIcon=new XCursor(Window());
 
@@ -178,7 +213,7 @@ public:
     //! Draw content.
     void draw(){
         if(!myInit){
-            init(13,2,true);
+            init(13,2,true,myFontName);
         }
         //! Save the current scissor size to be restored at end of this function.
         saveScissorState();
@@ -194,8 +229,8 @@ public:
 
             if(myShowLineNrIndex){
                 myIndexWidth=processIndexWidth();
-                myLineNrIndex->setSize({{mySize->Origin().X(),mySize->Origin().Y(),mySize->Origin().Z()},myIndexWidth,mySize->Height()});
-                mySpacer->setSize({{mySize->Origin().X()+myIndexWidth,mySize->Origin().Y(),mySize->Origin().Z()},mySpacerWidth,mySize->Height()});
+                myLineNrIndex->setSize({{mySize->Origin().X(),mySize->Origin().Y(),mySize->Origin().Z()},float(myIndexWidth),mySize->Height()});
+                mySpacer->setSize({{mySize->Origin().X()+myIndexWidth,mySize->Origin().Y(),mySize->Origin().Z()},float(mySpacerWidth),mySize->Height()});
             } else {
                 mySpacerWidth=0;
             }
@@ -221,6 +256,7 @@ public:
             //! GlScissor && getStartCharNr+getEndCharNr are used to process the visible part of the text.
             //! These algo's will keep the gui responsive with huge text files.
             myBorder->setSize(mySize->Size());
+            myBorder->setColor(XColorType::BackgroundColor,myBackgroundColor->Color());
             if(myModeEdit){
                 myBorder->setRelativeOriginOffset(mySize->RelativeOriginOffset());
                 myBorder->setRelativeSizeOffset(mySize->RelativeSizeOffset());
@@ -228,6 +264,7 @@ public:
             myBorder->draw();
 
             myBackground->setSize(mySize->Size().MarginSize(myBorderSize));
+            myBackground->setColor(myBackgroundColor->Color());
             if(myModeEdit){
                 myBackground->setRelativeOriginOffset(mySize->RelativeOriginOffset());
                 myBackground->setRelativeSizeOffset(mySize->RelativeSizeOffset());
@@ -237,7 +274,8 @@ public:
             myEditor->setSize({{mySize->Origin().X()+myIndexWidth+mySpacerWidth,
                                 mySize->Origin().Y(),
                                 mySize->Origin().Z()},
-                               mySize->Width()-(myIndexWidth+mySpacerWidth),mySize->Height()});
+                                mySize->Width()-(myIndexWidth+mySpacerWidth),mySize->Height()});
+            myEditor->setColor(XColorType::BackgroundColor,myBackgroundColor->Color());
             if(myModeEdit){
                 myEditor->setRelativeOriginOffset(mySize->RelativeOriginOffset());
                 myEditor->setRelativeSizeOffset(mySize->RelativeSizeOffset());
@@ -264,7 +302,7 @@ public:
                 setScissorUnion(ParentScissorSize(),myBackground->SizeIncludeOffsets());
             }
 
-            myEditor->drawText(myString,getStartCharNrMyText(),getEndCharNrMyText(),newX,newY+getStartOffset(),0);
+            myEditor->drawText(myString,getStartCharNrMyText(),getEndCharNrMyText(),newX,newY+getStartOffset());
             //! Draw mouse cursor when in edit mode.
             if(!myViewOnly){
                 drawSelectedText();
@@ -306,8 +344,8 @@ public:
     }
     //! Non virtual functions.
     //! Load textfile.
-    void loadFile(std::string theFileName){
-        myString=XFile().readTextFile(theFileName);
+    void loadFile(std::string theFileName, XColor theTextColor){
+        myString=XFile().readTextFileIntoXString(theFileName,theTextColor);
         myFileName=theFileName;
     }
     //! Set the text and specify textcolor.
@@ -376,7 +414,7 @@ private:
     XText *myEditor;
     XRectangular *myBackground;
     XRectangular *myBorder;
-    float myBorderSize=1;
+    uint myBorderSize=1;
     XRectangular *mySpacer,*myCursor,*mySelectionRectangular;
     XSize *mySize=new XSize();
     XColor //! Create colors and set standard values.
@@ -395,12 +433,15 @@ private:
     uint myCursorCount=0;
     std::vector<std::string> myRestoreTextVec={};
     XString myString,myIndexText;
-    uint mySelectionStartCharNr=0, mySelectionEndCharNr=0;
+    std::vector<XString> myUndoRedoString;
+    int mySelectionStartCharNr=0, mySelectionEndCharNr=0;
     bool myInit=0;
     bool myUseGlScissor=0;
     bool myModeEdit=0;
     XCursor *myCursorIcon;
     std::string myCommand;
+    std::string myFontName;
+    int myUndoRedoIndex=0;
 
     //! Process the numbers for the line number index text.
     void processIndexText(){
@@ -426,7 +467,7 @@ private:
             myLineNrIndex->setRelativeOriginOffset(mySize->RelativeOriginOffset());
         }
 
-        myLineNrIndex->drawText(myIndexText,getStartCharNrMyIndexText(),getEndCharNrMyIndexText(),0,newY+getStartOffset(),myUseGlScissor);
+        myLineNrIndex->drawText(myIndexText,getStartCharNrMyIndexText(),getEndCharNrMyIndexText(),0,newY+getStartOffset());
     }
     //! Get the ammount of chars to display.
     float processIndexWidth(){
@@ -635,17 +676,39 @@ private:
         int nr=getCurrentCursorLineNr()-1;
         return getStringFromLineNr(nr);
     }
+    //! At key event, log changes.
+    void updateUndoRedo(){
+        //! Save events for undo redo, Pop front.
+        if(myUndoRedoString.size()>10){
+            std::vector<XString> theTempVec;
+
+            for(uint i=1; i<myUndoRedoString.size(); i++){
+                theTempVec.push_back(myUndoRedoString.at(i));
+            }
+            myUndoRedoString=theTempVec;
+            theTempVec.clear();
+            myUndoRedoString.push_back(myString);
+        } else {
+            myUndoRedoString.push_back(myString);
+            std::cout<<"undoredostring size:"<<myUndoRedoString.size()<<" Text:"<<myString.toStdString()<<std::endl;
+        }
+        //! Reset.
+        myUndoRedoIndex=0;
+    }
     //! Process keyboard events.
     void KeyboardEvents(){
         //! Process key events for the correct widget.
         if(XPip().getPip(Mouse.Position()->Point(),mySize->Size())){
             if(Key.Char()!=-1){
+
                 myString.insert(myCursorCount,XChar(Key.Char(),myTextColor->Color()));
                 myCursorCount++;
                 Key.resetScanCode();
                 Key.setChar(-1);
                 //! Set no selection at a left press.
                 mySelectionEndCharNr=mySelectionStartCharNr;
+                //! Update after the insert cycle.
+                updateUndoRedo();
                 return;
             } else {
                 if(Key.isGlfwRightKey()){
@@ -679,6 +742,7 @@ private:
                     }
                 }
                 if(Key.isGlfwEnterKey()){
+                    updateUndoRedo();
                     myString.insert(myCursorCount,XChar('\n'));
                     myCursorCount++;
                     Key.resetScanCode();
@@ -687,6 +751,7 @@ private:
                     //! std::cout<<"myCommand:"<<myCommand<<std::endl;
                 }
                 if(Key.isGlfwBackSpaceKey()){
+                    updateUndoRedo();
                     if(myCursorCount>0){
                         myString.erase(myCursorCount);
                         myCursorCount--;
@@ -694,6 +759,7 @@ private:
                     Key.resetScanCode();
                 }
                 if(Key.isGlfwTabKey()){
+                    updateUndoRedo();
                     myString.insert(myCursorCount,XChar(' '));
                     myCursorCount++;
                     myString.insert(myCursorCount,XChar(' '));
@@ -714,6 +780,7 @@ private:
                     clip::set_text(getSelectedText());
                 }
                 if(Key.isGlfwControlVKey()){
+                    updateUndoRedo();
                     std::string value;
                     clip::get_text(value);
 
@@ -721,9 +788,11 @@ private:
                     myCursorCount+=value.size();
                 }
                 if(Key.isGlfwControlXKey()){
+                    updateUndoRedo();
                     ControlX(true);
                 }
                 if(Key.isGlfwDeleteKey()){
+                    updateUndoRedo();
                     ControlX(false);
                 }
             }

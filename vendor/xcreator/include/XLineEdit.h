@@ -30,7 +30,7 @@ public:
         myFontSize=theFontSize;
         myVerticalFontSpace=theVerticalFontSpace;
 
-        myEditor=new XText(Window());
+        myEditor->setWindow(Window());
         myBackground=new XRectangular(Window());
         myBorder=new XRectangular(Window());
 
@@ -208,7 +208,7 @@ public:
         }
 
         myString->setColorToString(myTextColor->Color());
-        myEditor->drawText(*myString,getStartCharNrMyText(),getEndCharNrMyText(),0,0,0);
+        myEditor->drawText(*myString,getStartCharNrMyText(),getEndCharNrMyText(),0,0);
         drawSelectedText();
         if(Mouse.GlfwWindowPointer()==Window()->GlfwWindowPointer()){
             drawCursor();
@@ -252,7 +252,7 @@ public:
 
 private:
     // XKeyWord *myKeyWord;
-    XText *myEditor;
+    XText *myEditor=new XText();
     XRectangular *myBackground, *myBorder;
     XRectangular *myCursor,*mySelectionRectangular;
     XSize *mySize=new XSize();

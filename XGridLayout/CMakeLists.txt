@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Rescan project to ensure the copy is done.
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/fonts DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/textures DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 #file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/../vendor/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -25,6 +26,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/glfw-3.3.7/includ
 #target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/zlib/build")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/freetype-2.12.1/include")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/soil/inc")
+target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/lodepng")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/clip-1.5")
 target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/xcreator/include")
 target_include_directories(${PROJECT_NAME} PRIVATE "${XCREATOR_DIR}/")
@@ -49,6 +51,10 @@ set_target_properties(soil PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/soil/build/li
 add_library(clip SHARED IMPORTED)
 set_target_properties(clip PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/clip-1.5/build/libclip.a)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE soil glfw3 GLU clip xcb X11 GL glad Xrandr pthread Xi dl Xcursor freetype png)
+# Needs png xcb X11 clip
+add_library(lodepng SHARED IMPORTED)
+set_target_properties(lodepng PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/lodepng/liblodepng.a)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE soil lodepng glfw3 GLU clip xcb X11 GL glad Xrandr pthread Xi dl Xcursor freetype png)
 
 

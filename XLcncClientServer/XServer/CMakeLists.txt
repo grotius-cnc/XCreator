@@ -16,8 +16,8 @@ set(SOURCES
     "${XCREATOR_DIR}/main.cpp"
     "${XCREATOR_DIR}/XMainWindow.h"
     "${XCREATOR_DIR}/XServer.h"
-    "${XCREATOR_DIR}/XTextureStream.h"
-    "${XCREATOR_DIR}/XPixmap.h"
+    "${XCREATOR_DIR}/../../vendor/xcreator/include/XTextureStream.h"
+    "${XCREATOR_DIR}/../../vendor/xcreator/include/XPixmap.h"
     "${XCREATOR_DIR}/../../vendor/lodepng/lodepng.h"
     "${XCREATOR_DIR}/../../vendor/lodepng/lodepng.cpp"
     )

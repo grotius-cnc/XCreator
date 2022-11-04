@@ -67,6 +67,14 @@ public:
     void setSize(XSize theSize){
         mySize->setSize(theSize);
     }
+    //! Set height.
+    void setHeight(float theHeight){
+        mySize->setHeight(theHeight);
+    }
+    //! Set width.
+    void setWidth(float theWidth){
+        mySize->setWidth(theWidth);
+    }
     //! Add a origin offset.
     void setSizeOffset(XPoint theValue){
         mySize->setSizeOffset(theValue);

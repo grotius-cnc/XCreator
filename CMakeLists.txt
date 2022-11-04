@@ -1,7 +1,6 @@
 cmake_minimum_required (VERSION 3.5)
 project(XCreator)
 
-# Add sub directories
 add_subdirectory(XDesignerDialog)
 add_subdirectory(XDrawOpenGLPrimitives)
 add_subdirectory(XGridLayout)
@@ -15,3 +14,6 @@ add_subdirectory(XTextEdit)
 add_subdirectory(XTextEditorDialog)
 add_subdirectory(XTinyDialogs)
 add_subdirectory(XWindowNoBorder)
+
+
+

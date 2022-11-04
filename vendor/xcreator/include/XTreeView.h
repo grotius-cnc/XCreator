@@ -227,7 +227,7 @@ public:
                          mySize->Width(), myRowHeight});
         myText->setRelativeOriginOffset(mySize->RelativeOriginOffset());
         myString->setColorToString(myTextColor->Color());
-        myText->drawText(*myString,0,myString->size(),int(5),int(0),false);
+        myText->drawText(*myString,0,myString->size(),int(5),int(0));
 
         //! Draw child widgets, if there are present.
         for(uint i=0; i<WidgetVec().size(); i++){

@@ -190,7 +190,7 @@ public:
         setCenterText();
         myString->setColorToString(myTextColor->Color());
 
-        myText->drawText(*myString,0,myString->size(),int(myTextShiftX),int(myTextShiftY),false);
+        myText->drawText(*myString,0,myString->size(),int(myTextShiftX),int(myTextShiftY));
 
         //! draw content.
         for(uint i=0; i<WidgetVec().size(); i++){
@@ -242,6 +242,7 @@ private:
     XCursor *myCursor;
 };
 #endif
+
 
 
 

@@ -40,7 +40,7 @@ public:
     XImageButtonColor(){}
     //! Constructor setting the GLFWwindow pointer and imagepath for the icon.
     XImageButtonColor(XWindow *theWindow){
-        initImageButton(theWindow,"icons/oxygen/base/32x32/actions/format-stroke-color.png",32,32);
+        initImageButton(theWindow,"icons/format-text-color.png",32,32);
     }
     //! Empty destructor.
     ~XImageButtonColor(){}
@@ -71,7 +71,8 @@ public:
         float r=float(myRgbColor[0])/255;  //! To openGl color.
         float g=float(myRgbColor[1])/255;
         float b=float(myRgbColor[2])/255;
-        return {r,g,b};
+        float a=1.0;
+        return {r,g,b,a};
     }
 private:
     std::string myInput="", myDialogName="Color Dialog", myQuestion="Input value or text";

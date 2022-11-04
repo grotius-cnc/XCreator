@@ -217,7 +217,7 @@ public:
         myText->setRelativeOriginOffset(mySize->RelativeOriginOffset());
         setCenterText();
         myString->setColorToString(myTextColor->Color());
-        myText->drawText(*myString,0,myString->size(),int(myTextShiftX),int(myTextShiftY),false);
+        myText->drawText(*myString,0,myString->size(),int(myTextShiftX),int(myTextShiftY));
 
         //! Draw child widgets, if there are present.
         for(uint i=0; i<WidgetVec().size(); i++){
@@ -276,6 +276,7 @@ private:
     }
 };
 #endif
+
 
 
 

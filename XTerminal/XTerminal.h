@@ -74,7 +74,7 @@ public:
         myDirText->setSize({{0,mySize->Size().Height()-20,0},mySize->Width(),20});
         //! Get current working directory and display.
         XString theDirectoryPath=processDir();
-        myDirText->drawText(theDirectoryPath,0,theDirectoryPath.size(),0,0,0);
+        myDirText->drawText(theDirectoryPath,0,theDirectoryPath.size(),0,0);
 
         //! draw content.
         drawWidgetVec();
@@ -164,6 +164,7 @@ private:
     }
 };
 #endif
+
 
 
 

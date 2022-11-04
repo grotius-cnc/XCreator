@@ -1,5 +1,0 @@
-/home/user/XCreator/vendor/PyBind/CMakeFiles/rebuild_cache.dir
-/home/user/XCreator/vendor/PyBind/CMakeFiles/edit_cache.dir
-/home/user/XCreator/vendor/PyBind/CMakeFiles/example.dir
-/home/user/XCreator/vendor/PyBind/pybind11/CMakeFiles/rebuild_cache.dir
-/home/user/XCreator/vendor/PyBind/pybind11/CMakeFiles/edit_cache.dir

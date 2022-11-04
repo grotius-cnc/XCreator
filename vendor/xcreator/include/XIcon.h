@@ -54,7 +54,7 @@ class XIcon : public XWidget {
 public:
     //! Empty constuctor, set imagepath, set window, set size afterwards.
     XIcon(){}
-    // Use .png format, for .jpg format edit GL_RGBA to GL_RGB in this file.
+    //! Use .png format, for .jpg format edit GL_RGBA to GL_RGB in this file.
     XIcon(std::string theImagePath, XSize theSize):myImagePath(theImagePath){
         mySize->setSize(theSize);
         init();
@@ -144,7 +144,7 @@ private:
     XSize *mySize=new XSize();
     std::string myImagePath;
     unsigned int myTexture;
-    //! Image data.
+
     unsigned char *data;
     int width, height, nrChannels;
 
@@ -175,13 +175,12 @@ private:
                                             "    FragColor = texture(texture1, TexCoord);  \n"
                                             "} \n\0";
 
-        // build and compile our shader program
-        // ------------------------------------
-        // vertex shader
+        //! build and compile our shader program
+        //! Vertex shader
         uint vertexShader = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
         glCompileShader(vertexShader);
-        // check for shader compile errors
+        //! Check for shader compile errors
         int success;
         char infoLog[512];
         glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
@@ -190,23 +189,23 @@ private:
             glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
             std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
         }
-        // fragment shader
+        //! Fragment shader
         uint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
         glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
         glCompileShader(fragmentShader);
-        // check for shader compile errors
+        //! Check for shader compile errors
         glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
         if (!success)
         {
             glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
             std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
         }
-        // link shaders
+        //! Link shaders
         myShaderProgram = glCreateProgram();
         glAttachShader(myShaderProgram, vertexShader);
         glAttachShader(myShaderProgram, fragmentShader);
         glLinkProgram(myShaderProgram);
-        // check for linking errors
+        //! Check for linking errors
         glGetProgramiv(myShaderProgram, GL_LINK_STATUS, &success);
         if (!success) {
             glGetProgramInfoLog(myShaderProgram, 512, NULL, infoLog);
@@ -215,19 +214,18 @@ private:
         glDeleteShader(vertexShader);
         glDeleteShader(fragmentShader);
 
-        // load and create a texture
-        // -------------------------
+        //! load and create a texture
         glGenTextures(1, &myTexture);
-        glBindTexture(GL_TEXTURE_2D, myTexture); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
-        // set the texture wrapping parameters
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+        glBindTexture(GL_TEXTURE_2D, myTexture); //! All upcoming GL_TEXTURE_2D operations now have effect on this texture object
+        //! set the texture wrapping parameters
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	//! Set texture wrapping to GL_REPEAT (default wrapping method)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        // set texture filtering parameters
+        //! set texture filtering parameters
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-        // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-        // unsigned char *data = stbi_load(myImagePath.c_str(), &width, &height, &nrChannels, 0);
+        //! The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
+        //! unsigned char *data = stbi_load(myImagePath.c_str(), &width, &height, &nrChannels, 0);
         data = stbi_load(myImagePath.c_str(), &width, &height, &nrChannels, 0);
         if (data)
         {
@@ -240,12 +238,12 @@ private:
         }
         stbi_image_free(data);
     }
-    // Create vertex & fragment shader programs that are used by the GPU when compiled. Then load the shader program.
+    //! Create vertex & fragment shader programs that are used by the GPU when compiled. Then load the shader program.
     void drawImage(){
         glEnable(GL_BLEND);
-        // glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC1_ALPHA);
+        //! glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC1_ALPHA);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        // glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC1_ALPHA);
+        //! glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC1_ALPHA);
 
         float w=mySize->Width();
         float h=mySize->Height();
@@ -254,29 +252,16 @@ private:
         float z=mySize->Origin().Z()+mySize->RelativeOriginOffset().Z();
         float wh=Window()->Height();
 
-        // build and compile our shader zprogram
-        // ------------------------------------
-        // Shader ourShader("4.1.texture.vs", "4.1.texture.fs");
-
-        // set up vertex data (and buffer(s)) and configure vertex attributes
-        // ------------------------------------------------------------------
-        //        float vertices[] = {
-        //            // positions            // colors           // texture coords
-        //            x+w,  wh-y,     0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
-        //            x+w,  wh-(y+h), 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
-        //            x,    wh-(y+h), 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
-        //            x,    wh-y,     0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // top left
-        //        };
-        float vertices[] = { // Icon flipped.
-                             // positions            // colors           // texture coords
-                             x+w,  wh-y,     z,   1.0f, 0.0f, 0.0f,   1.0f, 0.0f, // top right
-                             x+w,  wh-(y+h), z,   0.0f, 1.0f, 0.0f,   1.0f, 1.0f, // bottom right
-                             x,    wh-(y+h), z,   0.0f, 0.0f, 1.0f,   0.0f, 1.0f, // bottom left
-                             x,    wh-y,     z,   1.0f, 1.0f, 0.0f,   0.0f, 0.0f  // top left
+        float vertices[] = { //! Icon flipped.
+                             //! positions            // colors           // texture coords
+                             x+w,  wh-y,     z,   1.0f, 0.0f, 0.0f,   1.0f, 0.0f, //! top right
+                             x+w,  wh-(y+h), z,   0.0f, 1.0f, 0.0f,   1.0f, 1.0f, //! bottom right
+                             x,    wh-(y+h), z,   0.0f, 0.0f, 1.0f,   0.0f, 1.0f, //! bottom left
+                             x,    wh-y,     z,   1.0f, 1.0f, 0.0f,   0.0f, 0.0f  //! top left
                            };
         unsigned int indices[] = {
-            0, 1, 3, // first triangle
-            1, 2, 3  // second triangle
+            0, 1, 3, //! first triangle
+            1, 2, 3  //! second triangle
         };
 
         glGenVertexArrays(1, &VAO);
@@ -290,13 +275,13 @@ private:
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-        // position attribute
+        //! position attribute
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
         glEnableVertexAttribArray(0);
-        // color attribute
+        //! color attribute
         glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
         glEnableVertexAttribArray(1);
-        // texture coord attribute
+        //! texture coord attribute
         glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
         glEnableVertexAttribArray(2);
 
@@ -308,8 +293,7 @@ private:
         glm::mat4 projection = glm::ortho(0.0f, Window()->Width(), 0.0f, Window()->Height());
         glUniformMatrix4fv(glGetUniformLocation(myShaderProgram, "myProjection"), 1, GL_FALSE, glm::value_ptr(projection));
 
-        // draw :
-        // render container
+        //! draw :
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 

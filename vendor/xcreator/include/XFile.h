@@ -4,6 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <XColor.h>
+#include <XChar.h>
 
 class XFile {
 public:
@@ -28,6 +30,7 @@ public:
     void reloadFile(){
         readTextFile(myFileName);
     }
+    //! Read a textfile into a std::string.
     std::string readTextFile(std::string theFileName){
         std::fstream newfile;
         std::string theString;
@@ -46,8 +49,18 @@ public:
         }
         std::cout<<"theString:"<<theString<<std::endl;
         // theString.erase(0,1); // removes first character
+
         return theString;
     }
+    //! Read a textfile into a XString.
+    XString readTextFileIntoXString(std::string theFileName, XColor theTextColor={1.0,1.0,1.0,1.0}){
+        std::string theString=readTextFile(theFileName);
+        XString theXString;
+        theXString.setStringFromStdString(theString);
+        theXString.setColorToString(theTextColor);
+        return theXString;
+    }
+
     void saveFile(std::string theFileName, std::string theString){
         std::fstream newfile;
         newfile.open(theFileName.c_str(),std::ios::out);  // open a file to perform write operation using file object

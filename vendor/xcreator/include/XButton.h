@@ -121,7 +121,6 @@ public:
     void setColor(XColorType theColorType, XColor theColor){
         if(theColorType==XColorType::BackgroundColor){
             myBackgroundColor->setColor(theColor);
-             myAnimate->setAnimationColorsStageOne(myBackgroundColor->Color(),myHoverColor->Color());
         }
         if(theColorType==XColorType::BorderColor){
             myBorderColor->setColor(theColor);
@@ -229,7 +228,7 @@ public:
             myText->setRelativeOriginOffset(mySize->RelativeOriginOffset());
             setCenterText();
             myString->setColorToString(myTextColor->Color());
-            myText->drawText(*myString,0,myString->size(),int(myTextShiftX),int(myTextShiftY),false);
+            myText->drawText(*myString,0,myString->size(),int(myTextShiftX),int(myTextShiftY));
 
             //! Draw child widgets, if there are present.
             for(uint i=0; i<WidgetVec().size(); i++){
@@ -283,8 +282,7 @@ private:
     void setCenterText(){
         if(myCenterButtonTextX){
             myTextWidth=myText->StringWidth(myString->toStdString());  // Converse to pixelsize, see XText.h for more info.
-            uint correction=4;
-            myTextShiftX=((mySize->Size().Width()-myTextWidth)/2+correction);
+            myTextShiftX=((mySize->Size().Width()-myTextWidth)/2);
         }
         if(myCenterButtonTextY){
             myTextShiftY=((mySize->Size().Height()-(myFontSize+myVerticalFontSpace))/2);
@@ -294,6 +292,7 @@ private:
     XCursor *myCursor;
 };
 #endif
+
 
 
 
